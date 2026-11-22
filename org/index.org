@@ -10,6 +10,7 @@ produce, and searches for the recipe that produces the most.
 
 - [[file:targets.org][Targets]] :: which compounds, in which plants, what is known to change them, how each is measured
 - [[file:rig.org][Rig]] :: hardware and software architecture, everything connected to one computer
+- [[file:build.org][Physical build]] :: the rack, the tubs, where everything sits, and how water is kept off the electronics, with drawings
 - [[file:assays.org][Assays]] :: how each compound is measured, and how the measurements are checked
 - [[file:experiments.org][Experiments]] :: batch pipeline, controls, screening list, optimisation method
 - [[file:roadmap.org][Roadmap]] :: stages with exit criteria, repo layout, first build step
@@ -52,7 +53,7 @@ produce, and searches for the recipe that produces the most.
 - [ ] Host: existing desktop, or a dedicated Pi or mini PC ([[file:shopping.org::#host][options]])
 - [ ] Start lean with two light zones, or build all four ([[file:shopping.org::#tiers][cost tiers]])
 - [ ] Potentiostat: buy a Rodeostat or build one ([[file:shopping.org::#potentiostat][options]])
-- [ ] LED build: strips on MOSFETs, or star LEDs on constant-current drivers ([[file:rig.org::#light][trade-offs]])
+- [ ] LED build for the red, blue and UV channels: star LEDs from an EU shop (exact wavelengths, about $130 more), or strips imported from outside the EU ([[file:rig.org::#light][trade-offs]], [[file:shopping.org][prices]])
 - [ ] Which circuits become your own boards, and when ([[file:shopping.org::#custom-boards][outline]])
 - [ ] Country, for suppliers and for nicotine standard availability
 

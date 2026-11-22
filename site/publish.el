@@ -15,6 +15,7 @@
              "<a class=\"home\" href=\"index.html\">Plant metabolite rig</a>"
              "<a href=\"targets.html\">Targets</a>"
              "<a href=\"rig.html\">Rig</a>"
+             "<a href=\"build.html\">Build</a>"
              "<a href=\"assays.html\">Assays</a>"
              "<a href=\"experiments.html\">Experiments</a>"
              "<a href=\"roadmap.html\">Roadmap</a>"
@@ -45,7 +46,12 @@
            :with-properties ("QTY" "EST" "PRICE")
            :html-head ,(concat "<style>\n" css "</style>")
            :html-preamble ,nav
-           :html-postamble nil)))
+           :html-postamble nil)
+          ("images"
+           :base-directory ,(expand-file-name "org/img" root)
+           :base-extension "svg\\|png\\|jpg"
+           :publishing-directory ,(expand-file-name "public/img" root)
+           :publishing-function org-publish-attachment)))
   (org-publish-all t))
 
 ;;; publish.el ends here

@@ -116,3 +116,8 @@ h3 + .outline-text-3 > pre.example:first-child,
 }
 li.on, li.off { list-style: none; margin-left: -1.3rem; }
 li.off code, li.on code { background: none; padding: 0; }
+
+/* drawings */
+figure { margin: 1.2rem 0; }
+figure .org-svg, figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.4rem; }

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 560" width="860" height="560" role="img" aria-label="Cross-section of a growing tub with net pot, nutrient solution, air gap and optional graphite electrodes"><title>Cross-section of a growing tub with net pot, nutrient solution, air gap and optional graphite electrodes</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#22261f; --muted:#646b5e; --line:#8b9184;
+          --frame:#5d6358; --water:#9cc7e6; --waterline:#2f78ad; --plant:#5fa052;
+          --led:#e0a020; --glow:#f6d76a; --elec:#7a5ea8; --elecfill:#e6ddf3;
+          --tray:#e9e7dd; --tub:#3a3f38; --card:#9a9a9a; --wrap:#1f221d; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#171a16; --fg:#e4e6df; --muted:#9aa193; --line:#6f7669;
+            --frame:#a3a99c; --water:#2c5f86; --waterline:#7fc0ee; --plant:#79bd6b;
+            --led:#f0b840; --glow:#8a7420; --elec:#b79be0; --elecfill:#34294a;
+            --tray:#2a2e27; --tub:#c9cdc2; --card:#8a8a8a; --wrap:#e4e6df; }
+  }
+  .bg{fill:var(--bg)} text{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--fg)}
+  .t{font-size:15px;font-weight:650} .m{fill:var(--muted)} .big{font-size:22px;font-weight:700;fill:var(--muted)}
+  .frame{fill:none;stroke:var(--frame);stroke-width:2.5} .shelf{fill:var(--bg);stroke:var(--frame);stroke-width:1.5}
+  .wire{stroke:var(--frame);stroke-width:1;stroke-dasharray:3 3} .thin{fill:none;stroke:var(--line);stroke-width:1}
+  .lead{fill:none;stroke:var(--muted);stroke-width:.8} .dim{fill:none;stroke:var(--muted);stroke-width:.8}
+  .tray{fill:var(--tray);stroke:var(--frame);stroke-width:1.5} .tub{fill:var(--bg);stroke:var(--tub);stroke-width:2}
+  .water{fill:var(--water)} .wl{stroke:var(--waterline);stroke-width:1.5;fill:none} .plant{fill:var(--plant)}
+  .root{stroke:var(--line);stroke-width:1;fill:none}
+  .led{fill:var(--led)} .glow{fill:var(--glow);opacity:.28} .alu{fill:var(--line)}
+  .elec{fill:var(--elecfill);stroke:var(--elec);stroke-width:1.5} .cable{fill:none;stroke:var(--elec);stroke-width:1.6}
+  .film{stroke:var(--fg);stroke-width:2;fill:none} .curtain{stroke:var(--fg);stroke-width:2;fill:none;stroke-dasharray:7 4}
+  .sheet{stroke:var(--fg);stroke-width:2} .cam{fill:var(--fg)} .card{fill:var(--card)} .wrap{fill:var(--wrap)}
+  .rod{fill:var(--tub)} .wool{fill:var(--tray);stroke:var(--line)} .dash{stroke-dasharray:5 4}
+</style>
+<rect class="bg" width="860" height="560"/>
+<text class="t" x="16" y="26">One tub, cut through the middle</text>
+<rect class="wrap" x="262.5" y="161.0" width="345.0" height="309.0" />
+<rect class="bg" x="270" y="161.0" width="330" height="301.5" />
+<rect class="water" x="274.5" y="272.0" width="321.0" height="186.0" />
+<line class="wl" x1="274.5" y1="272.0" x2="595.5" y2="272.0"/>
+<line class="wl dash" x1="274.5" y1="374.0" x2="595.5" y2="374.0"/>
+<rect class="wrap" x="255.0" y="146.0" width="105.0" height="15.0" />
+<rect class="wrap" x="510" y="146.0" width="105.0" height="15.0" />
+<path class="tub" d="M354.0,143.0 L516.0,143.0 L495.0,302.0 L375.0,302.0 Z"/>
+<line class="thin" x1="399.0" y1="296.0" x2="399.0" y2="242.0"/>
+<line class="thin" x1="435.0" y1="296.0" x2="435.0" y2="242.0"/>
+<line class="thin" x1="471.0" y1="296.0" x2="471.0" y2="242.0"/>
+<rect class="wool" x="381.0" y="161.0" width="108.0" height="120" />
+<path class="root" d="M396.0,281.0 L387.0,335.0 L403.5,386.0 L390.0,434.0"/>
+<path class="root" d="M417.0,281.0 L414.0,335.0 L421.5,386.0 L411.0,429.5"/>
+<path class="root" d="M435.0,281.0 L438.0,335.0 L436.5,386.0 L429.0,425.0"/>
+<path class="root" d="M453.0,281.0 L462.0,335.0 L451.5,386.0 L447.0,420.5"/>
+<path class="root" d="M474.0,281.0 L489.0,335.0 L469.5,386.0 L468.0,416.0"/>
+<ellipse class="plant" cx="435.0" cy="113.0" rx="37.8" ry="41.4"/>
+<ellipse class="plant" cx="397.2" cy="129.2" rx="30.6" ry="23.4"/>
+<ellipse class="plant" cx="472.8" cy="129.2" rx="30.6" ry="23.4"/>
+<ellipse class="plant" cx="435.0" cy="81.5" rx="27.0" ry="21.6"/>
+<rect class="rod" x="297.0" y="116.0" width="18.0" height="324.0" />
+<path class="cable" d="M306.0,116.0 L306.0,92.0 L261.0,74.0"/>
+<rect class="rod" x="555.0" y="116.0" width="18.0" height="324.0" />
+<path class="cable" d="M564.0,116.0 L564.0,92.0 L609.0,74.0"/>
+<rect class="elec" x="331.5" y="122.0" width="9.0" height="282.0" />
+<text class="" x="215" y="96" text-anchor="end">Lid</text>
+<text class="m" x="215" y="111" text-anchor="end">with a 5 cm hole for the pot</text>
+<text class="m" x="215" y="126" text-anchor="end">and small holes for the rods</text>
+<line class="lead" x1="221" y1="92" x2="255.0" y2="153.5"/>
+<circle cx="255.0" cy="153.5" r="2" fill="var(--muted)"/>
+<text class="" x="215" y="186" text-anchor="end">Light-proof wall</text>
+<text class="m" x="215" y="201" text-anchor="end">black tape or paint outside,</text>
+<text class="m" x="215" y="216" text-anchor="end">so no algae grow</text>
+<line class="lead" x1="221" y1="182" x2="264.0" y2="230"/>
+<circle cx="264.0" cy="230" r="2" fill="var(--muted)"/>
+<text class="" x="215" y="276" text-anchor="end">Temperature probe</text>
+<text class="m" x="215" y="291" text-anchor="end">in one tub per zone</text>
+<line class="lead" x1="221" y1="272" x2="336.0" y2="320"/>
+<circle cx="336.0" cy="320" r="2" fill="var(--muted)"/>
+<text class="" x="215" y="352" text-anchor="end">Graphite rods</text>
+<text class="m" x="215" y="367" text-anchor="end">only in tubs that get current,</text>
+<text class="m" x="215" y="382" text-anchor="end">on opposite sides of the roots</text>
+<line class="lead" x1="221" y1="348" x2="306.0" y2="380"/>
+<circle cx="306.0" cy="380" r="2" fill="var(--muted)"/>
+<text class="" x="640" y="96" text-anchor="start">Net pot and rockwool cube</text>
+<text class="m" x="640" y="111" text-anchor="start">the seedling moves here</text>
+<text class="m" x="640" y="126" text-anchor="start">from the nursery</text>
+<line class="lead" x1="634" y1="92" x2="492.0" y2="200"/>
+<circle cx="492.0" cy="200" r="2" fill="var(--muted)"/>
+<text class="" x="640" y="186" text-anchor="start">Air gap</text>
+<text class="m" x="640" y="201" text-anchor="start">roots here breathe;</text>
+<text class="m" x="640" y="216" text-anchor="start">do not refill to the brim</text>
+<line class="lead" x1="634" y1="182" x2="540" y2="224.0"/>
+<circle cx="540" cy="224.0" r="2" fill="var(--muted)"/>
+<text class="" x="640" y="276" text-anchor="start">Starting level</text>
+<text class="m" x="640" y="291" text-anchor="start">wets the bottom centimetre</text>
+<text class="m" x="640" y="306" text-anchor="start">of the pot</text>
+<line class="lead" x1="634" y1="272" x2="582.0" y2="272.0"/>
+<circle cx="582.0" cy="272.0" r="2" fill="var(--muted)"/>
+<text class="" x="640" y="356" text-anchor="start">Level after a week or two</text>
+<text class="m" x="640" y="371" text-anchor="start">top up to about halfway</text>
+<line class="lead" x1="634" y1="352" x2="582.0" y2="374.0"/>
+<circle cx="582.0" cy="374.0" r="2" fill="var(--muted)"/>
+<line class="dim" x1="270" y1="491.0" x2="600" y2="491.0"/>
+<line class="dim" x1="270" y1="515.0" x2="270" y2="467.0"/>
+<line class="dim" x1="600" y1="515.0" x2="600" y2="467.0"/>
+<text class="m" x="435.0" y="507.0" text-anchor="middle">about 11 cm</text></svg>

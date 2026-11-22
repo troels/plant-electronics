@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-label="Top view of one light zone with four tubs in a spill tray, grey card, light sensor and camera position"><title>Top view of one light zone with four tubs in a spill tray, grey card, light sensor and camera position</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#22261f; --muted:#646b5e; --line:#8b9184;
+          --frame:#5d6358; --water:#9cc7e6; --waterline:#2f78ad; --plant:#5fa052;
+          --led:#e0a020; --glow:#f6d76a; --elec:#7a5ea8; --elecfill:#e6ddf3;
+          --tray:#e9e7dd; --tub:#3a3f38; --card:#9a9a9a; --wrap:#1f221d; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#171a16; --fg:#e4e6df; --muted:#9aa193; --line:#6f7669;
+            --frame:#a3a99c; --water:#2c5f86; --waterline:#7fc0ee; --plant:#79bd6b;
+            --led:#f0b840; --glow:#8a7420; --elec:#b79be0; --elecfill:#34294a;
+            --tray:#2a2e27; --tub:#c9cdc2; --card:#8a8a8a; --wrap:#e4e6df; }
+  }
+  .bg{fill:var(--bg)} text{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--fg)}
+  .t{font-size:15px;font-weight:650} .m{fill:var(--muted)} .big{font-size:22px;font-weight:700;fill:var(--muted)}
+  .frame{fill:none;stroke:var(--frame);stroke-width:2.5} .shelf{fill:var(--bg);stroke:var(--frame);stroke-width:1.5}
+  .wire{stroke:var(--frame);stroke-width:1;stroke-dasharray:3 3} .thin{fill:none;stroke:var(--line);stroke-width:1}
+  .lead{fill:none;stroke:var(--muted);stroke-width:.8} .dim{fill:none;stroke:var(--muted);stroke-width:.8}
+  .tray{fill:var(--tray);stroke:var(--frame);stroke-width:1.5} .tub{fill:var(--bg);stroke:var(--tub);stroke-width:2}
+  .water{fill:var(--water)} .wl{stroke:var(--waterline);stroke-width:1.5;fill:none} .plant{fill:var(--plant)}
+  .root{stroke:var(--line);stroke-width:1;fill:none}
+  .led{fill:var(--led)} .glow{fill:var(--glow);opacity:.28} .alu{fill:var(--line)}
+  .elec{fill:var(--elecfill);stroke:var(--elec);stroke-width:1.5} .cable{fill:none;stroke:var(--elec);stroke-width:1.6}
+  .film{stroke:var(--fg);stroke-width:2;fill:none} .curtain{stroke:var(--fg);stroke-width:2;fill:none;stroke-dasharray:7 4}
+  .sheet{stroke:var(--fg);stroke-width:2} .cam{fill:var(--fg)} .card{fill:var(--card)} .wrap{fill:var(--wrap)}
+  .rod{fill:var(--tub)} .wool{fill:var(--tray);stroke:var(--line)} .dash{stroke-dasharray:5 4}
+</style>
+<rect class="bg" width="900" height="560"/>
+<text class="t" x="16" y="26">One zone, seen from above (front of the rack at the bottom)</text>
+<rect class="thin" x="250" y="120" width="450" height="360" />
+<line class="film" x1="250" y1="120" x2="700" y2="120"/>
+<line class="film" x1="700" y1="480" x2="700" y2="120"/>
+<path class="curtain" d="M250,480 L310,474.0 L370,486.0 L430,474.0 L490,486.0 L550,474.0 L610,486.0 L700,480"/>
+<rect class="tray" x="265.0" y="150" width="420" height="300" />
+<rect class="tub" x="315.0" y="170.0" width="110" height="110" />
+<ellipse class="plant" cx="370" cy="225.0" rx="46.0" ry="46.0"/>
+<text class="t" x="370" y="230.0" text-anchor="middle">1</text>
+<rect class="tub" x="525.0" y="170.0" width="110" height="110" />
+<ellipse class="plant" cx="580" cy="225.0" rx="46.0" ry="46.0"/>
+<text class="t" x="580" y="230.0" text-anchor="middle">2</text>
+<rect class="tub" x="315.0" y="320.0" width="110" height="110" />
+<ellipse class="plant" cx="370" cy="375.0" rx="46.0" ry="46.0"/>
+<text class="t" x="370" y="380.0" text-anchor="middle">3</text>
+<rect class="tub" x="525.0" y="320.0" width="110" height="110" />
+<ellipse class="plant" cx="580" cy="375.0" rx="46.0" ry="46.0"/>
+<text class="t" x="580" y="380.0" text-anchor="middle">4</text>
+<rect class="card" x="435.0" y="288.0" width="80" height="50" />
+<rect class="elec" x="462.0" y="212.0" width="26.0" height="26.0" />
+<line x1="290" y1="190" x2="660" y2="190" stroke="var(--led)" stroke-width="3" stroke-dasharray="8 5"/>
+<line x1="290" y1="410" x2="660" y2="410" stroke="var(--led)" stroke-width="3" stroke-dasharray="8 5"/>
+<line x1="330" y1="350" x2="620" y2="350" stroke="var(--led)" stroke-width="5" stroke-dasharray="3 9"/>
+<circle cx="475.0" cy="267.0" r="14" fill="none" stroke="var(--fg)" stroke-width="2" stroke-dasharray="3 3"/>
+<rect class="elec" x="120" y="240" width="100" height="120" />
+<text class="" x="170" y="309.0" text-anchor="middle">box</text>
+<path class="cable" d="M220,300 L250,300"/>
+<text class="m" x="170" y="376" text-anchor="middle">controller box,</text>
+<text class="m" x="170" y="391" text-anchor="middle">outside the frame</text>
+<text class="m" x="475.0" y="112" text-anchor="middle">back wall (film)</text>
+<text class="m" x="475.0" y="500" text-anchor="middle">front curtain</text>
+<text class="" x="730" y="96" text-anchor="start">White strips above</text>
+<text class="m" x="730" y="111" text-anchor="start">two dashed rows</text>
+<line class="lead" x1="724" y1="92" x2="660" y2="190"/>
+<circle cx="660" cy="190" r="2" fill="var(--muted)"/>
+<text class="" x="730" y="156" text-anchor="start">Light sensor</text>
+<text class="m" x="730" y="171" text-anchor="start">on a stalk at leaf height</text>
+<line class="lead" x1="724" y1="152" x2="488.0" y2="225.0"/>
+<circle cx="488.0" cy="225.0" r="2" fill="var(--muted)"/>
+<text class="" x="730" y="212" text-anchor="start">Camera above</text>
+<text class="m" x="730" y="227" text-anchor="start">centred over the tray</text>
+<line class="lead" x1="724" y1="208" x2="489.0" y2="267.0"/>
+<circle cx="489.0" cy="267.0" r="2" fill="var(--muted)"/>
+<text class="" x="730" y="268" text-anchor="start">Grey card</text>
+<text class="m" x="730" y="283" text-anchor="start">flat, in every photo</text>
+<line class="lead" x1="724" y1="264" x2="515.0" y2="320"/>
+<circle cx="515.0" cy="320" r="2" fill="var(--muted)"/>
+<text class="" x="730" y="324" text-anchor="start">Colour bar above</text>
+<text class="m" x="730" y="339" text-anchor="start">dotted row</text>
+<line class="lead" x1="724" y1="320" x2="620" y2="350"/>
+<circle cx="620" cy="350" r="2" fill="var(--muted)"/>
+<text class="" x="730" y="380" text-anchor="start">Tub positions 1 to 4</text>
+<text class="m" x="730" y="395" text-anchor="start">each tub keeps a label;</text>
+<text class="m" x="730" y="410" text-anchor="start">its position is logged</text>
+<line class="lead" x1="724" y1="376" x2="635.0" y2="400"/>
+<circle cx="635.0" cy="400" r="2" fill="var(--muted)"/>
+<text class="" x="730" y="452" text-anchor="start">Divider to next zone</text>
+<line class="lead" x1="724" y1="448" x2="700" y2="450"/>
+<circle cx="700" cy="450" r="2" fill="var(--muted)"/>
+<line class="dim" x1="250" y1="514.0" x2="700" y2="514.0"/>
+<line class="dim" x1="250" y1="522.0" x2="250" y2="506.0"/>
+<line class="dim" x1="700" y1="522.0" x2="700" y2="506.0"/>
+<text class="m" x="475.0" y="530.0" text-anchor="middle">45 cm (half the shelf)</text>
+<line class="dim" x1="80" y1="480" x2="80" y2="120"/>
+<line class="dim" x1="72.0" y1="480" x2="88.0" y2="480"/>
+<line class="dim" x1="72.0" y1="120" x2="88.0" y2="120"/>
+<text class="m" text-anchor="middle" transform="translate(63,300.0) rotate(-90)">36 cm</text></svg>

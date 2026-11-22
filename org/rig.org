@@ -33,12 +33,12 @@ Back to [[file:index.org][index]]. Parts and alternatives are in the [[file:shop
 
 Alternatives to this layout:
 
-| Layout                                  | For                              | Against                                  |
-|-----------------------------------------+----------------------------------+------------------------------------------|
-| ESP32-S3 per zone on USB (recommended)  | Exact timing, any host works     | Firmware to write                        |
-| Raspberry Pi Pico 2 per zone on USB     | Same, slightly cheaper           | A second toolchain for you to learn      |
-| Pi drives everything from its own pins  | Fewest parts, quick start        | Ties you to a Pi; weak timing; long wires |
-| ESP32 nodes on Wi-Fi with ESPHome       | Almost no code, ready dashboards | Little control of timing and experiment records |
+| Layout                                 | For                              | Against                                         |
+|----------------------------------------+----------------------------------+-------------------------------------------------|
+| ESP32-S3 per zone on USB (recommended) | Exact timing, any host works     | Firmware to write                               |
+| Raspberry Pi Pico 2 per zone on USB    | Same, slightly cheaper           | A second toolchain for you to learn             |
+| Pi drives everything from its own pins | Fewest parts, quick start        | Ties you to a Pi; weak timing; long wires       |
+| ESP32 nodes on Wi-Fi with ESPHome      | Almost no code, ready dashboards | Little control of timing and experiment records |
 
 * Light engine
 :PROPERTIES:
@@ -47,25 +47,31 @@ Alternatives to this layout:
 
 ** Channels per zone
 
-| Channel  | Wavelength  | Purpose                                 | Rough power |
-|----------+-------------+-----------------------------------------+-------------|
-| White    | broad       | Base growth light; also the photo light | 15-20 W     |
-| Deep red | 660 nm      | Efficient growth light, spectrum ratio  | 10 W        |
-| Blue     | 450 nm      | Redness and vitamin C lever             | 5-10 W      |
-| UV-A     | 385-395 nm  | Redness lever, flavonols, tobacco       | 5-10 W      |
-| Far-red  | 730 nm      | Optional; end-of-day experiments        | 5 W         |
+| Channel  | Wavelength | Purpose                                 | Rough power |
+|----------+------------+-----------------------------------------+-------------|
+| White    | broad      | Base growth light; also the photo light | 15-20 W     |
+| Deep red | 660 nm     | Efficient growth light, spectrum ratio  | 10 W        |
+| Blue     | 450 nm     | Redness and vitamin C lever             | 5-10 W      |
+| UV-A     | 385-395 nm | Redness lever, flavonols, tobacco       | 5-10 W      |
+| Far-red  | 730 nm     | Optional; end-of-day experiments        | 5 W         |
 
 The power figures are my estimates for a zone of about 30 x 45 cm at
 200 umol/m2/s of base light and up to 60 umol/m2/s of blue.
 
-** Two ways to build it
+** Ways to build it
 
-| Build                                         | For                                  | Against                             |
-|-----------------------------------------------+--------------------------------------+-------------------------------------|
-| 24 V LED strips switched by MOSFETs (recommended) | Easy, cheap, pulses to tens of kHz | Wavelengths as sold; lower efficiency |
-| 3 W star LEDs on constant-current drivers     | Exact wavelengths, efficient         | Heatsinks, more assembly; driver dimming range unverified |
-| Addressable RGBW strip                        | One data wire, good for Stage 0      | Weak, wrong red and blue, fixed internal flicker |
-| Commercial dimmable grow bars                 | No assembly                          | Little spectral control             |
+Recommended after the store search of 2026-11-22: a strip for the white
+channel, and star LEDs in series strings for red, blue, UV-A and
+far-red. The UV-A string needs only about 7 V, so it wants a 12 V feed
+or a constant-current stage; that detail is still open.
+
+| Build                                                                     | For                                                 | Against                                                                                 |
+|---------------------------------------------------------------------------+-----------------------------------------------------+-----------------------------------------------------------------------------------------|
+| 24 V LED strips switched by MOSFETs                                       | Easy, cheap, pulses to tens of kHz                  | Wavelengths as sold; lower efficiency; narrow-band strips are not sold retail in the EU |
+| Star LEDs in series strings with a resistor, switched by the same MOSFETs | Exact wavelengths, efficient, sold retail in the EU | Heatsinks, more assembly; current drifts a little with temperature                      |
+| Star LEDs on Mean Well constant-current modules                           | Steady current                                      | Ruled out: dimming range is 100 Hz to 1 kHz, inside the pulse band                      |
+| Addressable RGBW strip                                                    | One data wire, good for Stage 0                     | Weak, wrong red and blue, fixed internal flicker                                        |
+| Commercial dimmable grow bars                                             | No assembly                                         | Little spectral control                                                                 |
 
 ** Dimming and pulsing are separate layers
 
@@ -94,16 +100,16 @@ then watches for drift.
 
 * Sensors
 
-| Sensor                    | Per  | Reads                                   | Stage |
-|---------------------------+------+-----------------------------------------+-------|
-| Colour camera, top-down   | zone | Redness, greenness, leaf area           | 0     |
-| Spectral light sensor     | zone | Light level and spectrum drift          | 1     |
-| Air temperature, humidity | zone | Environment                             | 1     |
-| Solution temperature      | zone | Root-zone temperature                   | 1     |
-| pH and conductivity       | jar  | Nutrient state; manual pen or probe     | 0     |
-| Potentiostat              | rig  | Vitamin C and nicotine in extracts      | 2     |
-| Load cell under a jar     | jar  | Water use, growth (optional)            | later |
-| CO2                       | room | Environment (optional)                  | later |
+| Sensor                    | Per   | Reads                                    | Stage |
+|---------------------------+-------+------------------------------------------+-------|
+| Colour camera, top-down   | zone  | Redness, greenness, leaf area            |     0 |
+| Spectral light sensor     | zone  | Light level and spectrum drift           |     1 |
+| Air temperature, humidity | zone  | Environment                              |     1 |
+| Solution temperature      | zone  | Root-zone temperature                    |     1 |
+| pH and conductivity       | jar   | Nutrient state; manual pen or probe      |     0 |
+| Potentiostat              | rig   | Vitamin C and nicotine in extracts       |     2 |
+| Load cell under a jar     | jar   | Water use, growth (optional)             | later |
+| CO2                       | room  | Environment (optional)                   | later |
 | Plant electrodes          | plant | Electrical signals, impedance (optional) | later |
 
 ** Camera protocol

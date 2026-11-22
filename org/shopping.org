@@ -8,173 +8,364 @@ Back to [[file:index.org][index]]. What each part is for is explained in [[file:
 
 How to use this file:
 - Each item is a heading. Change =BUY= to =ORDERED=, =HAVE= or =SKIP= as you go.
-- =EST= is the estimated cost in US dollars for the whole quantity of the recommended pick.
-- =PRICE= says whether that figure was =checked= by web search on 2026-11-22 or is from =memory=. Most are from memory, so check before ordering.
+- =EST= is the estimated cost in US dollars for the whole quantity of the recommended pick, before shipping.
+- =PRICE= says whether that figure rests on a store price seen on 2026-11-22 (=checked=) or is still my guess (=memory=).
 - =C-c C-x C-c= on a section shows it as a table with the costs summed.
-- Tags give the stage that first needs the item (=s0= to =s5=) and mark =optional= items.
+- Tags give the stage that first needs the item (=s0= to =s6=) and mark =optional= items.
+
+About the links, added on 2026-11-22:
+- I assumed you buy from Denmark, so shops inside the EU come first. Say if that is wrong.
+- Prices are as the shop showed them that day, in the shop's currency: Danish shops include VAT, and other EU shops mostly show their own country's VAT. For =EST= I converted at round rates of 6.5 kr and 0.87 euro to the dollar, which I did not look up.
+- "Non-EU" means the parcel is imported: add 25% Danish VAT and a carrier's handling fee.
+- Every link was opened by a script on 2026-11-22. One was dead and has been replaced; about one in ten answered with a bot check and could not be confirmed that way.
+- Amazon.de and AliExpress entries were read through your own browser later the same day, with delivery set to Denmark and prices shown in kroner. Sellers there are mostly small marketplace traders, and their specifications are the sellers' own claims.
+- Mouser entries come from its search API, read with your key by =tools/mouser.py=. Its prices are in kroner and, as far as I know, exclude VAT. Stock figures are from 2026-11-22.
+- DigiKey, Farnell, RS and TME block automated reading, so they are thin here even though they stock many of the electronic parts.
+- Stock and prices move. Treat each link as a starting point for comparison.
 
 * Cost tiers
 :PROPERTIES:
 :CUSTOM_ID: tiers
 :END:
 
-| Tier                              | Contents                                                    | Rough total     |
-|-----------------------------------+-------------------------------------------------------------+-----------------|
-| Stage 0                           | 4-8 jars, one white light, one blue strip, one camera        | $150-180        |
-| Lean rig                          | Stage 0 plus two computer-controlled light zones             | about $450      |
-| Full rig, budget picks            | Four zones, home-built potentiostat, no PAR meter, tobacco   | about $1,200    |
-| Full rig, recommended picks       | Four zones, bought potentiostat, PAR meter, tobacco          | about $1,800    |
+| Tier                        | Contents                                                                                                  | Rough total  |
+|-----------------------------+-----------------------------------------------------------------------------------------------------------+--------------|
+| Stage 0                     | 8 tubs, nursery light, one blue strip, pH and conductivity pen, one webcam                                | about $270   |
+| Lean rig                    | Stage 0 plus two computer-controlled light zones                                                          | about $1,100 |
+| Full rig, budget picks      | Four zones, home-built potentiostat, reusable electrodes, imported LED strips, phone light meter, tobacco | about $1,900 |
+| Full rig, recommended picks | Four zones, bought potentiostat, star LEDs, four webcams, tobacco                                         | about $2,500 |
 
 These totals are sums of the estimates below and assume you own none of
-it. They are well above the "$300+" first-stage budget you gave, so the
-lean rig is the natural first purchase. Things you likely have already
-(a computer, a webcam, a bench supply, wire, a shelf) come straight off.
+it. They leave out shipping, which ran from about $5 to $20 per shop
+where I saw it, and import VAT on the non-EU items.
 
-Section subtotals for the recommended picks: growing $210, light engine
-$240, control and sensing $522, assay station $625, root-zone current
-$65, tobacco $110.
+The store search raised every tier. My earlier figures ($150-180, $450,
+$1,200 and $1,800) were guesses from memory. With real prices from shops
+that deliver to Denmark, Stage 0 came out about 60% higher, the lean rig
+more than double, and the full rig 40-60% higher. The biggest increases
+are the cameras ($140 to $245) and the narrow-band LEDs ($85 to $280).
+Amazon.de brought the pipettes, scale, tubes and pH pen back close to my
+first guesses. Only Stage 0 fits the "$300+" budget you gave.
+
+Ways to cut the lean rig: leave out the UV-A channel ($50), the spectral
+sensors and light meter ($165), or use a webcam you already own ($60
+each).
+
+Section subtotals for the recommended picks: growing $305, light engine
+$538, control and sensing $697, assay station $708, root-zone current
+$93, tobacco $140.
+
+* Shops used most
+
+| Shop                   | Country | Sells                                                 | Shipping to Denmark, where seen                                                      |
+|------------------------+---------+-------------------------------------------------------+--------------------------------------------------------------------------------------|
+| [[https://www.reichelt.com/dk/en/][Reichelt]]               | DE      | Electronic parts, supplies, tools                     | From 9.95 euro; prices include Danish VAT                                            |
+| [[https://www.berrybase.de/][BerryBase]]              | DE      | Dev boards and sensor breakouts                       | Not seen                                                                             |
+| [[https://www.kiwi-electronics.com/en/][Kiwi Electronics]]       | NL      | Dev boards and sensor breakouts                       | Not seen                                                                             |
+| [[https://let-elektronik.dk/][Let Elektronik]]         | DK      | DFRobot and SparkFun parts, often on weekly backorder | Not seen                                                                             |
+| [[https://raspberrypi.dk/][raspberrypi.dk]]         | DK      | Raspberry Pi boards and cameras                       | Not seen                                                                             |
+| [[https://www.led-tech.de/en/][LED-Tech.de]]            | DE      | Star LEDs, UV modules, profiles                       | Delivers to Denmark; cost not seen                                                   |
+| [[https://hydroponics.dk/][Hydroponics.dk]]         | DK      | Net pots, nutrients, meters, grow film                | Not seen; reviews were described as mixed                                            |
+| [[https://www.growmart.eu/][Growmart]]               | DE      | Same range as above                                   | 10 euro                                                                              |
+| [[https://shop.es-drei.de/][S3 Chemicals]]           | DE      | Chemicals and labware for private buyers              | 18.90 euro flat                                                                      |
+| [[https://www.frederiksen-scientific.dk/][Frederiksen Scientific]] | DK      | School-lab equipment                                  | 49 kr to a parcel shop; terms exclude chemicals and some lab equipment for consumers |
+| [[https://www.harald-nyborg.dk/][Harald Nyborg]]          | DK      | Household chemicals, timers                           | From 25 kr                                                                           |
+| [[https://iorodeo.com/][IO Rodeo]]               | US      | Potentiostat, electrode adapters                      | Non-EU                                                                               |
+
+One shop to avoid as a private buyer: Botland in Poland stocks many of
+these parts but now sells to registered businesses only.
 
 * Growing                                                                    :grow:
 ** BUY Red lettuce seeds                                                      :s0:
 :PROPERTIES:
-:QTY: 1
-:EST: 5
-:PRICE: memory
+:QTY: 2
+:EST: 10
+:PRICE: checked
 :END:
-- Pick: Rouxai (the variety in the lighting study).
-- Alternatives: Lollo Rosso; red oak leaf; red radish or red cabbage seed for fast microgreen runs.
+- Pick: a red oak leaf and a Lollo Rossa, both from a Danish seed shop. Rouxai, the variety in the lighting study, is not sold in hobby packs in the EU; the one small-pack seller is in the US and excludes most of Europe.
+- Alternatives: 'Merlot', a dark red Batavia; red cabbage or radish seed for fast microgreen runs (no named red microgreen variety turned up in Danish shops).
+- Where to buy:
+  - [[https://www.impecta.dk/fro/grontsager/plukkesalat-salad-bowl-rossa][Impecta: 'Salad Bowl Rossa' red oak leaf]], 41 kr.
+  - [[https://www.impecta.dk/fro/grontsager/bataviasalat-lollo-rossa][Impecta: 'Lollo Rossa']], 21.50 kr.
+  - [[https://www.impecta.dk/fro/grontsager/bataviasalat-merlot][Impecta: 'Merlot']], 31 kr, listed for hydroponics.
+  - [[https://www.bauhaus.dk/weibulls-grontsagsfro-pluksalat-lollo-rossa][Bauhaus: Weibulls Lollo Rossa]], 36.95 kr.
+  - [[https://www.johnnyseeds.com/vegetables/lettuce/oakleaf-lettuce/rouxai-lettuce-seed-3061.html][Johnny's Selected Seeds: Rouxai, 500 seeds]], $9.50. Non-EU; shipping to Denmark not confirmed.
+  - [[https://www.impecta.dk/fro/grontsager/rodkal-tete-noire][Impecta: red cabbage 'Tête Noire']], 21.50 kr.
 ** BUY Jars or tubs, opaque, 0.7-1 L                                          :s0:
 :PROPERTIES:
 :QTY: 16
 :EST: 25
-:PRICE: memory
+:PRICE: checked
 :END:
-- Pick: wide-mouth jars with a sleeve or paint to keep light off the roots.
-- Alternatives: food tubs with a hole cut in the lid; one long tub per zone (cheaper, but jars no longer independent for current treatments).
+- Pick: 800 mL lidded plastic tubs, with a hole cut in each lid for the net pot and tape or paint to keep light off the roots. They are the only option near the estimate.
+- Alternatives: black painted glass jars that are opaque as bought (about 780 kr for 16, and a 9 cm body that may not seat a 5 cm net pot); clear 1 L glass jars with sleeves; one long tub per zone (cheaper, but jars no longer independent for current treatments).
+- Where to buy:
+  - [[https://www.bauhaus.dk/plastbotte-m-lag-800-ml-4-stk][Bauhaus: plastic tubs with lids, 800 mL, pack of 4]], 34.95 kr per pack.
+  - [[https://www.ikea.com/dk/da/p/eklatera-glas-med-lag-sort-30333125/][IKEA: EKLATERA black jar, 1 L]], 49 kr each.
+  - [[https://www.ikea.com/dk/da/p/korken-glas-med-lag-klart-glas-50213546/][IKEA: KORKEN clear jar, 1 L]], 22 kr each.
+  - [[https://www.ikea.com/dk/da/p/ikea-365-madopbevaring-rektangulaer-plast-40359148/][IKEA: 365+ food box, 1 L]], 15 kr plus 15 kr for the lid.
 ** BUY Net pots and starter plugs                                             :s0:
 :PROPERTIES:
 :QTY: 25
-:EST: 15
-:PRICE: memory
+:EST: 30
+:PRICE: checked
 :END:
-- Pick: 5 cm net pots with rockwool cubes.
-- Alternatives: foam plugs; clay pebbles; coco plugs.
+- Pick: 5 cm net pots with a tray of 77 rockwool cubes.
+- Alternatives: peat-free plugs; neoprene collars; clay pebbles.
+- Where to buy:
+  - [[https://hydroponics.dk/shop/plantestart/tilbehoer-plantestart/netpotte-oe-5cm/][Hydroponics.dk: 5 cm net pot]], 2.95 kr each.
+  - [[https://hydroponics.dk/shop/plantestart/jiffy-coco-trays/rockwool-cube-36x36/][Hydroponics.dk: Grodan rockwool tray, 77 cubes]], 119 kr.
+  - [[https://www.growmart.eu/Net-cup-55cm-for-aeroponic-systems][Growmart: 5 cm net cup]], 0.45 euro each. Ships from Hamburg, 10 euro to Denmark.
+  - [[https://www.growmart.eu/Grodan-SBS-Propagation-Cubes-36-77-plastic-tray][Growmart: Grodan tray, 77 cubes]], 14.90 euro.
+  - [[https://www.growmart.eu/Eazy-Plug-Propagation-Cubes-24-pcs][Growmart: Eazy Plug tray, 24 plugs]], 7.90 euro.
+  - [[https://www.growmart.eu/Neoprene-Ring-55cm-for-Net-Pots][Growmart: neoprene collar for net pots]], 1.25 euro.
+  - [[https://www.amazon.de/dp/B0C32HXKR1][Amazon.de: 5 cm net pots, 50]], 78.43 kr.
+  - [[https://www.amazon.de/dp/B0GHP15CDZ][Amazon.de: rockwool cubes, 50]], 80 kr.
 ** BUY Hydroponic nutrient                                                    :s0:
 :PROPERTIES:
 :QTY: 1
-:EST: 25
-:PRICE: memory
+:EST: 22
+:PRICE: checked
 :END:
-- Pick: a three-part powder set (base mix, calcium nitrate, Epsom salt). Cheap per litre and lets you vary nitrogen later.
-- Alternatives: a one-part liquid, simpler but fixed composition.
+- Pick: a three-part liquid starter kit. Changing the ratio of the parts still lets you vary nitrogen.
+- Alternatives: a three-part powder set (soluble base mix, calcium nitrate, Epsom salt). It is cheaper per litre, but Danish shops only had large bags, about 480 kr for the three, and the two listings for the base mix state different analyses, so read the bag. A two-part liquid is simpler still.
+- Where to buy:
+  - [[https://hydroponics.dk/shop/plantegoedning/ghe/tripack-flora-hard-water/][Hydroponics.dk: Terra Aquatica TriPart starter kit, hard water, 3 x 0.5 L]], 139 kr.
+  - [[https://www.growmart.eu/Terra-Aquatica-TriPack-Flora-Series-Soft-Water-3-x-05L_1][Growmart: TriPart starter kit, soft water]], 22.90 euro.
+  - [[https://hydroponics.dk/shop/plantegoedning/canna/aqua-vega-ab/][Hydroponics.dk: Canna Aqua Vega A+B, 1 L]], 129 kr.
+  - [[https://www.bauhaus.dk/hornum-godning-koncentrat-2-kg][Bauhaus: Hornum soluble fertiliser, 2 kg]], 249.95 kr.
+  - [[https://www.bauhaus.dk/hornum-kalksalpeter-5-kg][Bauhaus: Hornum calcium nitrate, 5 kg]], 134.95 kr.
+  - [[https://www.matas.dk/greenish-epsom-salt-1500-g][Matas: Epsom salt, 1.5 kg]], 94.95 kr.
 ** BUY pH and conductivity measurement, pH-down                               :s0:
 :PROPERTIES:
 :QTY: 1
-:EST: 30
-:PRICE: memory
+:EST: 45
+:PRICE: checked
 :END:
-- Pick: handheld pH pen, conductivity pen, calibration sachets, pH-down. Manual readings typed into the dashboard.
-- Alternatives: analogue pH and conductivity probes on the controller (about $110 the pair, logged automatically, need regular calibration); isolated lab-grade probe modules (about $150 each).
+- Pick: one combined pH and conductivity pen from Amazon.de with its calibration powders, plus pH-down. Manual readings typed into the dashboard. Cheap pens drift, so recalibrate often.
+- Alternatives: separate pH and conductivity pens from a grow shop (about twice the price); a branded combined pen; analogue pH and conductivity probes on the controller (about 1,040 kr the pair in Denmark and on backorder; logged automatically, need regular calibration); isolated lab-grade probe kits (176 and 244 euro, also on backorder).
+- Where to buy:
+  - [[https://www.amazon.de/dp/B0GVJRYRG7][Amazon.de: Yinmik combined pH and conductivity meter with calibration]], 202.91 kr.
+  - [[https://www.amazon.de/dp/B0DJ2PB93M][Amazon.de: Yinmik 4-in-1 pH and conductivity pen]], 177.49 kr.
+  - [[https://www.amazon.de/dp/B01ENFOHN8][Amazon.de: Apera PH20 pH pen]], 367.09 kr.
+  - [[https://hydroponics.dk/shop/hydro/ph-ec-maalere-ph-ec-maalere/digital-ph-meter-til-vand/][Hydroponics.dk: digital pH pen with buffers]], 129 kr.
+  - [[https://www.growmart.eu/Milwaukee-EC-Meter-CD611][Growmart: Milwaukee CD611 conductivity pen]], 34.90 euro.
+  - [[https://www.growmart.eu/Milwaukee-pH-Meter-pH600][Growmart: Milwaukee pH600 pen]], 34.90 euro.
+  - [[https://hydroponics.dk/shop/hydro/ph-ec-maalere-ph-ec-maalere/aqua-master-ec-pen-og-termometer-e50-pro/][Hydroponics.dk: Aqua Master E50 conductivity pen]], 479 kr.
+  - [[https://hydroponics.dk/shop/hydro/ph-ec-maalere-ph-ec-maalere/aqua-master-ph-ec-combo-pen-p110-pro/][Hydroponics.dk: Aqua Master P110 combined pen]], 629 kr.
+  - [[https://www.growmart.eu/GIB-Industries-EC-14-calibration-solution-300ml][Growmart: conductivity calibration solution, 300 mL]], 9.90 euro.
+  - [[https://hydroponics.dk/shop/plantegoedning/ghe/ph-down/][Hydroponics.dk: pH-down, 0.5 L]], 69 kr.
+  - [[https://let-elektronik.dk/gravity-analog-ph-sensormeter-kit-v2][Let Elektronik: DFRobot analogue pH kit V2]], 420 kr, backorder.
+  - [[https://let-elektronik.dk/gravity-analog-electrical-conductivity-sensor-meter-v2-k1][Let Elektronik: DFRobot analogue conductivity kit V2]], 620 kr, backorder.
+  - [[https://www.berrybase.de/en/dfrobot-gravity-analogue-ph-sensor-meter-kit-v2][BerryBase: DFRobot analogue pH kit V2]], 39.90 euro.
+  - [[https://eu.robotshop.com/products/atlas-scientific-ph-sensor-kit][RobotShop EU: Atlas Scientific pH kit]], 175.99 euro, backorder.
 ** BUY Nursery tray and plain white light                                     :s0:
 :PROPERTIES:
 :QTY: 1
-:EST: 35
-:PRICE: memory
+:EST: 40
+:PRICE: checked
 :END:
-- Pick: seed tray with a cheap white LED grow bar on a mains timer.
+- Pick: a small propagator with lid, a 60 cm cool-white LED bar, and a mechanical mains timer.
 - Alternatives: a spare zone on the main shelf; a bright windowsill in summer.
+- Where to buy:
+  - [[https://www.bauhaus.dk/weibulls-minidrivhus-til-forspiring][Bauhaus: Weibulls mini propagator]], 34.95 kr.
+  - [[https://www.growmart.eu/Propagator-38x24x17-cm][Growmart: propagator 38 x 24 x 17 cm]], 8.90 euro.
+  - [[https://hydroponics.dk/shop/lys/plantelys-led/led-bar/led-bar-6500k-25-36watt/][Hydroponics.dk: LED bar 6500 K, 18 W, 60 cm]], 199 kr (90 cm 299 kr, 120 cm 349 kr).
+  - [[https://www.harald-nyborg.dk/sartano-doegnur-indendoers][Harald Nyborg: mechanical timer]], 17 kr.
+  - [[https://www.growmart.eu/Digital-Week-Timer-8-programmes][Growmart: digital week timer]], 11.90 euro.
 ** BUY Shelf unit, 90-120 cm wide                                             :s1:
 :PROPERTIES:
 :QTY: 1
-:EST: 50
-:PRICE: memory
+:EST: 90
+:PRICE: checked
 :END:
-- Pick: wire rack, so lights hang from the shelf above.
-- Alternatives: any existing shelf; a grow tent (better light isolation, about $70-100).
+- Pick: a wire rack, so lights hang from the shelf above. The cheap steel racks at about 100 kr have fibreboard shelves, which block the light mounting and do not tolerate damp.
+- Alternatives: any existing shelf; the half-height version of the same rack; a grow tent (better light isolation).
+- Where to buy:
+  - [[https://www.ikea.com/dk/da/p/omar-1-reolsektion-s69829083/][IKEA: OMAR 92 x 36 x 181 cm]], 590 kr.
+  - [[https://www.ikea.com/dk/da/p/omar-reol-forzinket-10069763/][IKEA: OMAR 92 x 36 x 94 cm]], 295 kr.
+  - [[https://jysk.dk/opbevaring/reoler-og-rumdelere/reol-vindinge-6-hylder-krom][JYSK: VINDINGE chrome wire rack, 90 x 180 x 36 cm]], 600 kr.
+  - [[https://hydroponics.dk/shop/telte/growtent/growtent-sort/growtent-black-grotelt-90x60x90-cm/][Hydroponics.dk: grow tent 90 x 60 x 90 cm]], 579 kr.
+  - [[https://www.growmart.eu/Pure-Tent-V2-60x60x160cm_1][Growmart: Pure Tent 60 x 60 x 160 cm]], 39.90 euro.
 ** BUY Zone dividers and front curtain                                        :s1:
 :PROPERTIES:
 :QTY: 1
 :EST: 25
-:PRICE: memory
+:PRICE: checked
 :END:
-- Pick: white foam board between zones, blackout cloth across the front.
-- Alternatives: reflective film; corrugated plastic sheet.
+- Pick: black-and-white grow film, white side in. One 2 x 5 m roll does the dividers and the front curtain.
+- Alternatives: white foam board between zones (stiffer, dearer); blackout curtain fabric; silvered film.
+- Where to buy:
+  - [[https://hydroponics.dk/shop/groudstyr/mylar-og-bassin-folie/black-white-foil-2x50-mtr/][Hydroponics.dk: black-and-white film, 2 x 5 m]], 129 kr.
+  - [[https://www.jemogfix.dk/skumplade-mkartondaeklag-hvid-10-x-1000-x-700-mm/4139/9032294/][jem & fix: white foam board, 100 x 70 cm]], 159 kr.
+  - [[https://www.bauhaus.dk/rias-pvc-plade-foamalux-hvid-750x1000x10-mm][Bauhaus: white PVC foam sheet, 75 x 100 cm]], 278.95 kr, water-resistant.
+  - [[https://www.ikea.com/dk/da/p/bengta-morklaegningsgardin-1-del-beige-med-rynkeband-20602137/][IKEA: BENGTA blackout curtain, 210 x 250 cm]], 99 kr.
+
+** BUY Spill trays, one per zone                                             :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 18
+:PRICE: checked
+:END:
+- Pick: a 42 x 30 x 10 cm storage box per zone. It holds about 12 L, several times the water in the four tubs that stand in it. See [[file:build.org::#water][build: water and electronics]].
+- Alternatives: photo developing trays; boot trays (shallower); one deeper box if you want a shared reservoir later.
+- Where to buy:
+  - [[https://www.ikea.com/dk/da/p/trofast-kasse-hvid-50582072/][IKEA: TROFAST box, 42 x 30 x 10 cm]], 30 kr.
 
 * Light engine, four zones                                                   :light:
 Design choices are explained in [[file:rig.org::#light][rig: light engine]].
+
+The store search changed this section. Strips with a stated 660, 450,
+385 or 730 nm peak are not sold retail in the EU: the one EU maker
+(LuxaLight) sells to businesses only, with prices behind a login. The
+retail routes are single-colour star LEDs from a German shop, which is
+what the picks below use, or strips imported from outside the EU, which
+are cheaper but have unverified wavelengths. With star LEDs this section
+comes to about $540; with imported strips, about $410. Amazon.de and
+AliExpress searches turned up no narrow-band strips either, only
+ordinary red, blue and "black light" strips and loose emitters.
 ** BUY 24 V enclosed power supply, 200 W                                      :s1:
 :PROPERTIES:
 :QTY: 1
-:EST: 30
-:PRICE: memory
+:EST: 45
+:PRICE: checked
 :END:
-- Pick: a branded enclosed supply with a fuse on each zone feed.
-- Alternatives: a 150 W unit for two zones; a bench supply while prototyping.
+- Pick: a Mean Well 200 W unit, with a fuse on each zone feed. All channels at full duty would draw about 200 W, so cap the total in firmware or go a size up.
+- Alternatives: a sealed desktop-style adapter, which costs more but has no exposed mains terminals (see [[file:build.org::#water][build: water and electronics]]); the 150 W unit for two zones; a bench supply while prototyping.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/de/shop/produkt/schaltnetzteil_geschlossen_200_w_24_v_8_4_a-147909][Reichelt: Mean Well RSP-200-24, 8.4 A]], 44.64 euro.
+  - [[https://www.amazon.de/dp/B0BZHY18V8][Amazon.de: Mean Well LRS-200-24, 8.8 A]], 383.84 kr.
+  - [[https://www.ebay.de/itm/204703375599][eBay.de: Mean Well LRS-200-24, 8.8 A]], 31-32 euro across listings. Reichelt does not stock this model.
+  - [[https://www.mouser.dk/en/ProductDetail/MEAN-WELL/RSP-200-24][Mouser: Mean Well RSP-200-24]], 300.79 kr, 291 in stock. The LRS-200-24 had no price there.
+  - [[https://www.mouser.dk/en/ProductDetail/MEAN-WELL/GST220A24-R7B][Mouser: Mean Well GST220A24 sealed desktop adapter, 24 V 9.2 A]], 479.60 kr, 878 in stock. No exposed mains terminals.
+  - [[https://www.mouser.dk/en/ProductDetail/MEAN-WELL/GST160A24-R7B][Mouser: Mean Well GST160A24 sealed desktop adapter, 24 V 6.67 A]], 347.11 kr.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/schaltnetzteil_geschlossen_150_w_24_v_6_5_a-202987][Reichelt: Mean Well LRS-150-24, 6.5 A]], 19.43 euro.
 ** BUY White LED strip, 24 V, high colour rendering                           :s1:
 :PROPERTIES:
-:QTY: 8 m
-:EST: 40
-:PRICE: memory
+:QTY: 5 m
+:EST: 93
+:PRICE: checked
 :END:
-- Pick: 4000 K, CRI 90+, on aluminium. Doubles as the photo light.
-- Alternatives: horticultural "full spectrum" strip; white 3 W star LEDs on constant-current drivers; a commercial dimmable grow bar per zone.
-** BUY Deep-red strip, 660 nm                                                 :s1:
+- Pick: one 5 m reel of 4000 K, CRI 90+, 19 W per metre. One metre per zone gives the 15-20 W the design asks for, so 5 m covers four zones, not the 8 m I first listed. Doubles as the photo light.
+- Alternatives: a CRI 95 strip at 7 W per metre (two metres per zone, two reels); a ready 24 V grow bar per zone (cheap, and it can hang off the same switching, but whether it tolerates 20 kHz dimming is not confirmed).
+- Where to buy:
+  - [[https://www.reichelt.com/dk/de/shop/produkt/led_strip_basic_128_rolle_500_cm_24_v_dc_typ_96_w_typ_4000-417912][Reichelt: Barthelme BASIC 128, 4000 K, CRI over 90, 19.2 W/m, 5 m]], 80.87 euro. Special-order item, so check the lead time.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/led_strip_basic_csp_320_5m_24v_4000k-417729][Reichelt: Barthelme BASIC CSP 320, 4000 K, CRI over 90, 10 W/m, 5 m]], 67.22 euro. Special order.
+  - [[https://www.ledrise.eu/led-strips-modules/led-strips/lumiflex1095-4000k-cri95.html][Ledrise: LumiFlex1095, 4000 K, CRI 95, 7.2 W/m, 5 m]], 69.90 euro.
+  - [[https://www.lumistrips.com/flexible-led-lumistrips-en/lumiflex3095-seoul-led-strip-warm-white-cri95-4000k.html][Lumistrips: LumiFlex3095, 4000 K, CRI 95+, 19.2 W/m, 5 m]], 199.55 euro.
+  - [[https://higarden.eu/led-lights-by-secret-jardin/secret-jardin-cosmorrow-led-20w-full-spectrum-2-85-mol-j-cop20fs][Higarden: Cosmorrow 20 W full-spectrum bar, 24 V]], 25 euro per bar.
+** BUY Deep-red LEDs, 660 nm                                                  :s1:
 :PROPERTIES:
-:QTY: 4 m
-:EST: 30
-:PRICE: memory
+:QTY: 24
+:EST: 83
+:PRICE: checked
 :END:
-- Alternatives: 660 nm star LEDs; ordinary red strip (about 625 nm, less efficient for growth); skip and use white only at first.
-** BUY Blue strip, 450 nm                                                     :s0:
+- Pick: Osram hyper-red star LEDs, six per zone in a series string on the 24 V rail with a series resistor, switched by the same MOSFETs. Six per zone is my estimate from the light levels in the design, not a tested figure.
+- Alternatives: an imported 660 nm strip (one reel does all four zones, but the wavelength is the seller's claim; the same page also sells a 635 nm version); ordinary red strip (about 625 nm, less efficient for growth); skip and use white only at first.
+- Where to buy:
+  - [[https://www.led-tech.de/en/Osram-OSLON-Square-hyper-red-on-Star-gen4][LED-Tech.de: Osram Oslon Square hyper red on star, 646-666 nm]], 2.99 euro each.
+  - [[https://www.led-tech.de/en/OSRAM-Oslon-SSL-150-Hyper-Red-on-Star][LED-Tech.de: Osram Oslon SSL 150 hyper red on star, 660 nm]], 3.49 euro each.
+  - [[https://www.superlightingled.com/ultra-bright-light-red-660-wavelength-led-strip-p-7292.html][SuperLightingLED: 660 nm strip, 24 V, 16 W/m, 5 m]], from $45.98 per reel. Non-EU.
+  - [[https://www.amazon.de/dp/B0D5MJ5QZD][Amazon.de: Spider Farmer 660 nm bars, two of 60 cm, 30 W together]], 417.79 kr. Ready-made; whether they tolerate fast switching is not stated.
+  - [[https://www.aliexpress.com/item/1005006198535363.html][AliExpress: 3 W deep-red LEDs, 650-660 nm, 10]], 53.87 kr. Bare emitters. Non-EU.
+  - [[https://luxalight.eu/en/products/led-engine/luxalight-led-strip-deep-red-660nm-protected-2835-24-volt-140-leds-2835-ip64][LuxaLight: 660 nm strip, 24 V, 24 W/m, 5 m]], business customers only, price behind login.
+** BUY Blue LEDs, 450 nm                                                      :s0:
 :PROPERTIES:
-:QTY: 4 m
-:EST: 25
-:PRICE: memory
+:QTY: 24
+:EST: 96
+:PRICE: checked
 :END:
-- One metre and a small supply is enough for Stage 0.
-- Alternatives: royal-blue star LEDs; ordinary blue strip (about 465 nm, fine for a first test).
-** BUY UV-A strip, 385-395 nm                                                 :s1:
+- Pick: Osram deep-blue star LEDs at 451 nm, six per zone, wired like the red ones.
+- For Stage 0, a metre of ordinary blue strip (about 467 nm) and a small supply is enough.
+- Alternatives: no strip with a true 450 nm peak turned up in the EU; "blue" strips state 455-470 nm.
+- Where to buy:
+  - [[https://www.led-tech.de/en/OSRAM-Oslon-SSL-120-Deep-Blue-Star-Horticulture)][LED-Tech.de: Osram Oslon SSL 120 deep blue on star, 451 nm, 610 mW]], 3.49 euro each.
+  - [[https://www.led-tech.de/en/OSRAM-Oslon-SSL-80-royal-blue-on-Star][LED-Tech.de: Osram Oslon SSL 80 royal blue on star, 451 nm]], 2.99 euro each.
+  - [[https://www.led-tech.de/en/EcoFlex500-Flexband-Blue][LED-Tech.de: EcoFlex500 blue strip, 12 V, 467 nm]], 19.90 euro. For Stage 0.
+** BUY UV-A LEDs, 385 nm                                                      :s1:
 :PROPERTIES:
-:QTY: 3 m
-:EST: 30
-:PRICE: memory
+:QTY: 8
+:EST: 100
+:PRICE: checked
 :END:
-- Pick: check the stated wavelength; many "UV" strips are 400-405 nm, which is violet.
-- Alternatives: 365-385 nm star LEDs (truer UV-A, dearer); skip, since blue did as well as UV-A for redness.
-** BUY Far-red strip, 730 nm                                         :s5:optional:
+- Pick: Luminus 380-385 nm modules, two per zone. No 385 nm strip exists anywhere I looked; strips come as 365 nm or 395 nm.
+- Two modules in series need only about 7 V, so a plain resistor on the 24 V rail wastes most of the power. Give this channel a 12 V feed or a constant-current stage. That part of the design is not done.
+- Avoid anything stated as 400-405 nm, which is violet, and UV grow bars that mix in white LEDs.
+- Alternatives: 390-395 nm or 365-370 nm versions of the same module; an imported 365 nm strip; skip, since blue did as well as UV-A for redness.
+- Where to buy:
+  - [[https://www.led-tech.de/en/Luminus-SST-10-UV-380nm-385nm-Slider][LED-Tech.de: Luminus SST-10 UV 380-385 nm module, about 1 W optical]], 10.90 euro each.
+  - [[https://www.led-tech.de/en/3x-Luminus-SST-10-UV-380nm-385nm-Slider][LED-Tech.de: triple SST-10 UV 380-385 nm module, 10.2 V]], 29.90 euro.
+  - [[https://www.led-tech.de/en/UV-modules][LED-Tech.de: UV modules, 365-370 nm and 390-395 nm versions]], 10.90 euro each.
+  - [[https://www.mouser.dk/en/ProductDetail/Luminus-Devices/SST-10-UV-B130-G385-00][Mouser: Luminus SST-10-UV 385 nm bare emitter]], 31.11 kr, 22.68 kr from ten; 16,838 in stock. For your own board.
+  - [[https://www.lumistrips.com/nichia-led-nvsu233b-uv-cu-pcb-10x10mm-1450mw-365nm.html][Lumistrips: Nichia NVSU233B 365 nm on board]], 36.97 euro each.
+  - [[https://store.waveformlighting.com/products/real-uv-led-strip-lights][Waveform Lighting: realUV strip, 365 or 395 nm, 12 V only]], from $45. Non-EU.
+** BUY Far-red LEDs, 730 nm                                          :s5:optional:
 :PROPERTIES:
-:QTY: 2 m
-:EST: 20
-:PRICE: memory
+:QTY: 8
+:EST: 32
+:PRICE: checked
 :END:
 - Only for end-of-day experiments, mainly on tobacco.
-** BUY Aluminium sheet or profile for mounting                                :s1:
+- Where to buy:
+  - [[https://www.led-tech.de/en/OSRAM-Oslon-SSL-120-Far-Red-Star][LED-Tech.de: Osram Oslon SSL 120 far red on star, 730 nm]], 3.49 euro each.
+  - [[https://www.led-tech.de/en/OSRAM-Oslon-Optimal-Far-Red-Star][LED-Tech.de: Osram Oslon Optimal far red on star, 730 nm, 440 mW]], 4.49 euro each.
+  - [[https://www.mouser.dk/en/ProductDetail/ams-OSRAM/GF-CSSPM1.24-2T4T-1-0][Mouser: Osram GF CSSPM1.24 far-red bare emitter]], 20.89 kr; 2,573 in stock. For your own board.
+** BUY Aluminium bar or profile for mounting                                  :s1:
 :PROPERTIES:
 :QTY: 4
 :EST: 30
 :PRICE: memory
 :END:
+- Pick: flat aluminium bar from a hardware shop. It carries the strip and is the heatsink for the star LEDs. Not searched.
 - Alternatives: aluminium LED channel; an old baking tray per zone.
+- Where to buy:
+  - [[https://www.led-tech.de/en/led-profiles][LED-Tech.de: aluminium LED profiles]], from 9.90 euro for 50 cm and 19.90 euro for 100 cm.
 ** BUY MOSFET switching for 16-20 channels                                    :s1:
 :PROPERTIES:
 :QTY: 20
-:EST: 20
-:PRICE: memory
+:EST: 40
+:PRICE: checked
 :END:
-- Pick: logic-level N-channel MOSFETs with gate resistors on protoboard.
-- Alternatives: ready 4-channel MOSFET boards; your own zone board ([[#custom-boards][custom boards]]); constant-current modules for star LEDs (Mean Well NLDD-700H, $4-9 each checked; their PWM range was not confirmed, so check the datasheet before using them for pulse experiments).
+- Pick: IRLZ44N MOSFETs behind dual gate-driver chips, on protoboard. Driven straight from a 3.3 V pin the IRLZ44N is only partly on, and the one through-hole part rated for that (IRF3708) is obsolete. The star-LED strings also need a series resistor each.
+- Alternatives:
+  - Small surface-mount MOSFETs that are fully on at 2.5 V (IRLML6344, AO3400A). They need no driver, but are 30 V parts on a 24 V rail, which is a thin margin.
+  - A ready five-channel board per zone, sold in Denmark: fused channels with gate drivers, rated for about 20 kHz, with its own ESP32 on board. One board would replace a zone's controller, MOSFETs and fuses, running your own firmware. Four cost about 1,960 kr.
+  - Your own zone board ([[#custom-boards][custom boards]]).
+  - Avoid the cheap optocoupler MOSFET boards; they are reported to be too slow for kilohertz switching.
+  - Mean Well constant-current modules do not suit this design. Their datasheets give a dimming range of 100 Hz to 1 kHz, which falls inside the pulse-experiment band and cannot reach 20 kHz.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/de/shop/produkt/mosfet_n-ch_55v_47a_110w_to-220ab-129819][Reichelt: IRLZ44N, 55 V]], 0.72 euro.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/low-side_mosfet_2-kanaele_1_5a_pdip-8-436838][Reichelt: TC4427 dual gate driver]], 1.94 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Infineon-Technologies/IRLZ44NPBF][Mouser: IRLZ44NPBF]], 11.94 kr, 5.68 kr from ten; 92,300 in stock.
+  - [[https://www.mouser.dk/en/ProductDetail/Microchip-Technology/TC4427CPA][Mouser: TC4427CPA dual gate driver]], 11.79 kr; 2,836 in stock.
+  - [[https://www.mouser.dk/en/ProductDetail/Texas-Instruments/UCC27517DBVR][Mouser: UCC27517 single gate driver, surface-mount]], 6.62 kr; 317 in stock.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/mosfet_n-ch_30v_5a_0_029r_sot-23-132147][Reichelt: IRLML6344, 30 V]], 0.24 euro.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/mosfet_n-ch_30v_5_7a_0_018r_sot-23-166490][Reichelt: AO3400A, 30 V]], 0.19 euro.
+  - [[https://computerstyretjulelys.dk/vare/quinled-an-penta-plus-analog-controller/][Computerstyret Julelys: QuinLED An-Penta-Plus, 5 channels]], 489 kr.
+  - [[https://www.meanwell.com/Upload/PDF/NLDD-H/NLDD-H-SPEC.PDF][Mean Well NLDD-H datasheet]] (source for the dimming range).
 ** BUY Wire, fuses, lever connectors, terminal blocks                         :s1:
 :PROPERTIES:
 :QTY: 1
-:EST: 25
-:PRICE: memory
+:EST: 35
+:PRICE: checked
 :END:
+- Buy copper wire. The cheaper look-alike reels are copper-clad aluminium.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/de/shop/produkt/verbindungsklemme_2-leiteranschluss-149798][Reichelt: Wago 221-412, two-way]], 0.58 euro each.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/verbindungsklemme_3-leiteranschluss-149799][Reichelt: Wago 221-413, three-way]], 0.58 euro each.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/kfz_-_sicherungshalter_ato_offene_enden-325426][Reichelt: inline blade-fuse holder]], 3.14 euro.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/kfz-flachsicherung_3a_violett-7789][Reichelt: 3 A blade fuse]], 0.38 euro.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/luesterklemme_12-teilig_2_5mm_-11022][Reichelt: 12-way terminal strip]], 1.04 euro.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/lautsprecherkabel_2x0_75mm_10_m_rot_schwarz_cu-364161][Reichelt: two-core copper wire, 0.75 mm2, 10 m]], 7.41 euro.
 ** BUY UV-blocking safety glasses                                             :s1:
 :PROPERTIES:
 :QTY: 1
-:EST: 10
-:PRICE: memory
+:EST: 16
+:PRICE: checked
 :END:
+- Where to buy:
+  - [[https://www.reichelt.com/dk/de/shop/produkt/buegelbrille_uvex_pheos_cx2_farblos_sv_exc_9198258-355067][Reichelt: uvex pheos cx2, lens marked UV 400]], 13.76 euro.
+  - [[https://www.reichelt.com/dk/de/shop/produkt/buegelbrille_uvex_sportstyle_farblos_sv_exc_9193265-355065][Reichelt: uvex sportstyle]], 12.39 euro. Lens marking not checked.
 
 * Control and sensing                                                        :control:
 ** HAVE Host computer                                                         :s0:
@@ -185,86 +376,182 @@ Design choices are explained in [[file:rig.org::#light][rig: light engine]].
 :PRICE: checked
 :END:
 - Pick: a desktop or laptop you already own.
-- Alternatives: Raspberry Pi 5 8 GB, now $130-200 after this year's memory-driven price rises (checked; sources disagree on the exact figure); a used mini PC at a similar price with more power; Pi 5 4 GB at about $110.
+- Alternatives: Raspberry Pi 5 with 8 GB, now 1,449 kr in Denmark (about $220) after this year's price rises, plus 119 kr for the power supply; the 4 GB model at 949 kr; a refurbished mini PC with 16 GB, from about 3,400 kr, which is more than twice the Pi and not the "similar price" I first wrote.
+- Where to buy:
+  - [[https://raspberrypi.dk/produkt/raspberry-pi-5-8-gb/][raspberrypi.dk: Raspberry Pi 5, 8 GB]], 1,449 kr.
+  - [[https://raspberrypi.dk/produkt/raspberry-pi-5-4-gb/][raspberrypi.dk: Raspberry Pi 5, 4 GB]], 949 kr.
+  - [[https://raspberrypi.dk/produkt/raspberry-pi-stroemforsyning-usb-c-eu-5v-5a-hvid/][raspberrypi.dk: official 27 W power supply]], 119 kr.
+  - [[https://www.berrybase.de/raspberry-pi-5-8gb-ram][BerryBase: Raspberry Pi 5, 8 GB]], 189 euro.
+  - [[https://www.kiwi-electronics.com/en/raspberry-pi-5-4gb-11579][Kiwi Electronics: Raspberry Pi 5, 4 GB]], 128.74 euro.
+  - [[https://www.proshop.dk/Stationaer-PC-Mac/Lenovo-Refurbished-ThinkCentre-M720q-tiny-Core-i5-8500T-21-GHz-16-GB-SSD-512-GB-refurbished/3499883][Proshop: refurbished Lenovo ThinkCentre M720q Tiny, 16 GB]], 3,419 kr.
 ** BUY Zone controllers                                                       :s1:
 :PROPERTIES:
 :QTY: 4
-:EST: 40
-:PRICE: memory
+:EST: 85
+:PRICE: checked
 :END:
-- Pick: ESP32-S3 dev boards on USB, since you know the ESP32. Native USB serial, hardware PWM at 20 kHz with about 12 bits, enough timers for pulsing.
-- Alternatives: Raspberry Pi Pico 2 ($5 each, checked) or Pico 2 W ($7); an ESP32-S3 module on your own board; Wi-Fi instead of USB (fewer cables, but a dropped link then matters).
+- Pick: the official ESP32-S3-DevKitC-1 in the N16R8 version, on USB. Native USB serial, hardware PWM at 20 kHz with about 12 bits, enough timers for pulsing. The N8 and N8R2 versions are discontinued. On this version three pins (GPIO 35-37) are used by the memory.
+- Alternatives: a compact ESP32-S3 board at about half the price, with fewer pins (enough for five light channels and the sensors, with little to spare); Raspberry Pi Pico 2; an ESP32-S3 module on your own board; Wi-Fi instead of USB (fewer cables, but a dropped link then matters).
+- Where to buy:
+  - [[https://www.reichelt.com/dk/en/shop/product/esp32-s3-wroom-1-n16r8_development_board-444792][Reichelt: ESP32-S3-DevKitC-1-N16R8]], 18.37 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Espressif-Systems/ESP32-S3-DevKitC-1-N16R8][Mouser: ESP32-S3-DevKitC-1-N16R8]], 87.73 kr, none in stock, 59 days' lead time.
+  - [[https://www.berrybase.de/espressif-esp32-s3-devkitc-1-development-kit-esp32-s3-wroom-wifi-bluetooth-le-240mhz-5v-3-3v-01a0a08fef6771fab6d4b97a830c7c92][BerryBase: ESP32-S3-DevKitC-1-N16R8]], 22.90 euro.
+  - [[https://www.amazon.de/dp/B0FYFF8CB2][Amazon.de: unbranded ESP32-S3-DevKitC-1 N16R8 copy]], 78.43 kr.
+  - [[https://www.reichelt.com/dk/en/shop/product/xiao_esp32s3_dual-core_wifi_bt5_0_with_header-406872][Reichelt: Seeed XIAO ESP32S3 with headers]], 9.44 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Seeed-Studio/113991114][Mouser: Seeed XIAO ESP32S3]], 49.61 kr, 1,967 in stock.
+  - [[https://www.berrybase.de/waveshare-esp32-s3-zero-n8r8-mini-development-board-8-mb-flash-8-mb-psram-dual-core-240-mhz][BerryBase: Waveshare ESP32-S3-Zero with headers]], 8.90 euro.
+  - [[https://raspberrypi.dk/produkt/raspberry-pi-pico-2-h-med-headers/][raspberrypi.dk: Raspberry Pi Pico 2 with headers]], 59 kr.
+  - [[https://www.kiwi-electronics.com/en/raspberry-pi-pico-2-20128][Kiwi Electronics: Raspberry Pi Pico 2]], 4.99 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Raspberry-Pi/SC1631][Mouser: Raspberry Pi Pico 2]], 33.12 kr, 2,729 in stock.
 ** BUY Powered USB hub, 7-10 ports                                            :s1:
 :PROPERTIES:
 :QTY: 1
-:EST: 25
-:PRICE: memory
+:EST: 28
+:PRICE: checked
 :END:
+- Four cameras behind one USB 2.0 hub share its bandwidth. Capture them one at a time, or plug the cameras into the host directly and keep the hub for the controllers.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/en/shop/product/usb_2_0_hub_7-port_with_power_supply_unit_metal-127214][Reichelt: LogiLink 7-port USB 2.0 hub with supply]], 24.15 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/usb_2_0_7-port_hub_with_power_supply_unit_black-131488][Reichelt: D-Link DUB-H7]], 27.21 euro.
+  - [[https://www.proshop.dk/USB-hub/Deltaco-USB-A-Hub-7x-USB-A-Ports-USB-hub-USB-30-7-ports-Sort/3373581][Proshop: Deltaco 7-port USB 3.0 hub with per-port switches]], 201 kr.
 ** BUY Cameras, one per zone                                                  :s0:
 :PROPERTIES:
 :QTY: 4
-:EST: 140
-:PRICE: memory
+:EST: 245
+:PRICE: checked
 :END:
-- Pick: USB cameras with manual exposure and white balance. They work on any host. One is enough for Stage 0.
-- Alternatives: Raspberry Pi camera modules (two fit a Pi 5 directly); a small Pi with camera per zone as a network camera; one wide camera covering two zones; a webcam you already own.
+- Pick: Logitech C920-family webcams. The listings do not mention manual control, but this family is widely reported to let Linux switch off automatic exposure, white balance and focus and set fixed values. Test that on the first one before buying four. One is enough for Stage 0.
+- This costs well above my first guess of $140 for four. No EU consumer listing I could open states manual exposure, manual white balance and fixed focus together.
+- Alternatives: a fixed-focus Arducam USB module, whose maker does state manual exposure and white balance (from the maker outside the EU; the one EU stockist sells to businesses only); bare USB camera modules with fixed focus (manual control not stated); Raspberry Pi camera modules (cheapest, but they tie the rig to a Pi, and two fit a Pi 5 directly); one camera moved between zones on a fixed mount; a webcam you already own.
+- Where to buy:
+  - [[https://www.proshop.dk/Webcam/Logitech-C920e-HD-1080p-Webcam/2918245][Proshop: Logitech C920e]], 399 kr.
+  - [[https://www.reichelt.com/dk/en/shop/product/logitech_c920s_hd_pro_webcam_with_cover-298836][Reichelt: Logitech C920S]], 61.97 euro.
+  - [[https://www.amazon.de/dp/B0CNCSFQC1][Amazon.de: InnoMaker 1080p USB camera module, wide angle]], 149.16 kr. Linux is listed; manual exposure is not mentioned, so test one first.
+  - [[https://www.arducam.com/arducam-a708-120-dfov-wide-angle-fixed-focus-12mp-hdr-usb2-uvc-camera-module.html][Arducam: 12 MP fixed-focus USB camera module]], $71.98. Non-EU.
+  - [[https://www.reichelt.com/dk/en/shop/product/usb_2_0_camera_module_5_04_megapixel-199697][Reichelt: Delock 5 MP fixed-focus USB camera module]], 63.03 euro. Bare module, cable extra.
+  - [[https://let-elektronik.dk/8-megapixels-usb-camera-with-microphone-compatible-with-raspberry-pi-lattepanda-jetson-nano][Let Elektronik: DFRobot 8 MP USB camera]], 380 kr, backorder. Lists adjustable exposure and white balance; has autofocus.
+  - [[https://raspberrypi.dk/produkt/raspberry-pi-camera-module-3/][raspberrypi.dk: Raspberry Pi Camera Module 3]], 249 kr. Pi only.
+  - [[https://www.kiwi-electronics.com/en/raspberry-pi-hq-camera-c-mount-9988][Kiwi Electronics: Raspberry Pi HQ camera, C-mount]], 56.86 euro, lens extra. Pi only.
 ** BUY Grey cards                                                             :s0:
 :PROPERTIES:
 :QTY: 4
-:EST: 15
-:PRICE: memory
+:EST: 21
+:PRICE: checked
 :END:
-- Alternatives: a full colour-reference chart (about $70-100, better colour correction); matte grey paint on card.
+- Pick: one A4 18% grey card cut into four.
+- Alternatives: small card sets; a 24-patch colour chart for better colour correction, which costs less than I first wrote (45 euro).
+- Where to buy:
+  - [[https://www.calumet.de/product/novoflex-graukarte-kontrollkarte-zebra-xl-21x30cm][Calumet: Novoflex grey card, 21 x 30 cm]], 17.99 euro.
+  - [[https://www.calumet.de/product/b-i-g-graukarten-set-10-x-12-5cm-2er-pack][Calumet: grey card set, 10 x 12.5 cm, pack of 2]], 14.95 euro.
+  - [[https://www.calumet.de/product/b-i-g-kunststoff-graukartenset-10-x-13cm-3er-pack][Calumet: plastic grey card set, pack of 3]], 24.95 euro. Water-resistant.
+  - [[https://www.calumet.de/product/datacolor-spydercheckr-24-fuer-windows-mac][Calumet: Datacolor SpyderCheckr 24]], 44.99 euro.
+  - [[https://www.calumet.de/product/calibrite-colorchecker-classic-mini][Calumet: Calibrite ColorChecker Classic Mini]], 67 euro.
 ** BUY Spectral light sensor per zone                                         :s1:
 :PROPERTIES:
 :QTY: 4
-:EST: 65
-:PRICE: memory
+:EST: 87
+:PRICE: checked
 :END:
-- Pick: AS7341 breakout, 11 channels. A 2025 preprint built a roughly $50 PAR sensor on this chip.
-- Alternatives: a plain photodiode with amplifier per zone; skip and rely on the calibration table alone.
+- Pick: AS7341 breakout. A 2025 preprint built a roughly $50 PAR sensor on this chip.
+- Alternatives: the newer AS7343 at about the same price, with more channels (as I recall, including ones nearer the 660 and 730 nm LEDs; not checked). It needs a different driver, and the preprint's calibration would not carry over. Otherwise a plain photodiode with amplifier per zone, or skip and rely on the calibration table alone.
+- Where to buy:
+  - [[https://www.berrybase.de/adafruit-as7341-10-kanal-licht-und-farb-sensor-breakout][BerryBase: Adafruit AS7341]], 18.90 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Adafruit/4698][Mouser: Adafruit AS7341]], 125.55 kr; 294 in stock.
+  - [[https://www.kiwi-electronics.com/en/adafruit-as7341-10-channel-light-color-sensor-breakout-stemma-qt-qwiic-10432][Kiwi Electronics: Adafruit AS7341]], 22.49 euro.
+  - [[https://let-elektronik.dk/gravity-as7341-11-channel-visible-light-sensor][Let Elektronik: DFRobot AS7341]], 220 kr, backorder.
+  - [[https://www.berrybase.de/pimoroni-as7343-multi-spektralsensor-breakout-14-kanaele-i2c-19x20x5-mm-3-3-5v][BerryBase: Pimoroni AS7343]], 22.90 euro.
+  - [[https://www.kiwi-electronics.com/en/adafruit-as7343-14-channel-light-color-sensor-breakout-stemma-qt-qwiic-20618][Kiwi Electronics: Adafruit AS7343]], 23.11 euro.
 ** BUY PAR meter for calibration                                              :s1:
 :PROPERTIES:
 :QTY: 1
-:EST: 175
+:EST: 120
 :PRICE: checked
 :END:
-- Pick: a generic handheld quantum meter, $174-310 (checked; accuracy claims unverified, and some cheap meters read LEDs poorly).
-- Alternatives: borrow one for a day, since calibration is a one-off; a research-grade sensor (above $450, within about 5%); a phone light-meter app with a diffuser (rough, memory); skip and work in relative units.
+- Pick: an unbranded handheld meter from Amazon.de that reads PPFD (400-700 nm) and, separately, UV-A (320-400 nm) and far-red, at 785 kr. The UV-A reading covers the one channel an ordinary PAR meter cannot see. Its accuracy is the seller's claim; the experiments need repeatable relative doses more than exact absolute ones.
+- Branded meters cost far more: the cheapest branded sensor found was 365 euro, and the research-grade handheld meter is 750-800 euro, not the "above $450" I first wrote.
+- Alternatives: a phone light-meter app with its clip-on diffuser (about $50, rough); a small app-linked meter (383 kr); borrow a meter for a day, since calibration is a one-off; a USB quantum sensor that logs straight to the computer (its older-style response is less accurate under narrow-band LEDs, as I recall); an unbranded meter from a marketplace (72-88 euro, accuracy unverified); skip and work in relative units.
+- Where to buy:
+  - [[https://www.amazon.de/dp/B0FS7F5F26][Amazon.de: Danoplus meter for PPFD, UV-A and far-red, 320-800 nm]], 785.33 kr.
+  - [[https://www.amazon.de/dp/B0BTYW7SDP][Amazon.de: Danoplus PAR meter, 400-700 nm]], 746 kr.
+  - [[https://www.amazon.de/dp/B0HHM8KBQG][Amazon.de: AH-100 app-linked PAR meter]], 383.24 kr.
+  - [[https://www.aliexpress.com/item/1005008660278436.html][AliExpress: PAR meter, 0-5000 umol]], 771.30 kr. Non-EU.
+  - [[https://lightray.io/diffuser][Lightray: Photone diffuser]], 29-40 euro; the app's LED unlock is about $6.50.
+  - [[https://alphaomega-electronics.com/en/apogee-instruments/1888-sq-420x-apogee-par-light-sensor-with-usb-outputdata-logger-included.html][Alpha Omega Electronics: Apogee SQ-420X USB quantum sensor]], 365 euro.
+  - [[https://alphaomega-electronics.com/en/1161-quantum-light][Alpha Omega Electronics: Apogee quantum meters]], full-spectrum handheld models at about 785-800 euro.
+  - [[https://www.ebay.de/itm/405474568293][eBay.de: unbranded handheld PPFD meter]], about 72-88 euro. Ships from China.
 ** BUY Air temperature and humidity sensors                                   :s1:
 :PROPERTIES:
 :QTY: 4
-:EST: 25
-:PRICE: memory
+:EST: 29
+:PRICE: checked
 :END:
-- Pick: SHT4x breakouts. Alternatives: BME280; one sensor for the whole shelf.
+- Pick: SHT40 breakouts. Alternatives: BME280; one sensor for the whole shelf.
+- Where to buy:
+  - [[https://www.berrybase.de/adafruit-sensirion-sht40-temperatur-und-feuchtigkeits-sensor][BerryBase: Adafruit SHT40]], 6.20 euro.
+  - [[https://www.kiwi-electronics.com/en/adafruit-sensirion-sht41-temperature-humidity-sensor-stemma-qt-qwiic-11501][Kiwi Electronics: Adafruit SHT41]], 7.24 euro.
+  - [[https://ardustore.dk/produkt/sht40-luftfugtigheds-temperatur-i2c-module][Ardustore: SHT40 module]], 75 kr.
+  - [[https://let-elektronik.dk/atmospheric-sensor-breakout-bme280][Let Elektronik: SparkFun BME280]], 100 kr.
 ** BUY Waterproof solution temperature probes                                 :s1:
 :PROPERTIES:
 :QTY: 4
 :EST: 12
-:PRICE: memory
+:PRICE: checked
 :END:
 - Pick: DS18B20 on a cable.
+- Where to buy:
+  - [[https://www.berrybase.de/ds18b20-ic-digitaler-temperatursensor-wasserdicht/kabellaenge-1-00-m][BerryBase: DS18B20 waterproof probe, 1 m]], 2.70 euro.
+  - [[https://let-elektronik.dk/ds18b20-waterproof-temperature-probe-sensor][Let Elektronik: DS18B20 waterproof probe, 2 m]], 55 kr.
+  - [[https://ardustore.dk/produkt/ds18b20-temperatur-sensor-3-meter][Ardustore: DS18B20 probe, 3 m]], 55 kr.
 ** BUY Protoboard, headers, sensor cabling                                    :s1:
 :PROPERTIES:
 :QTY: 1
 :EST: 25
 :PRICE: memory
 :END:
-** BUY CO2 sensor                                                    :s3:optional:
-:PROPERTIES:
-:QTY: 1
-:EST: 40
-:PRICE: memory
-:END:
-- Pick: SCD41. Room CO2 swings with people present and affects growth.
-** BUY Load cells with amplifier                                     :s6:optional:
+- The small plug-in sensor cables (Qwiic) were out of stock at both shops checked.
+- Where to buy:
+  - [[https://www.berrybase.de/lochrasterplatine-doppelseitig-verschiedene-groessen-set-mit-32-stueck][BerryBase: double-sided protoboard set, 32 pieces]], 8.80 euro.
+  - [[https://let-elektronik.dk/40-pin-break-away-male-header-long-straight-10-pcs][Let Elektronik: 40-pin headers, 10]], 34.50 kr.
+** BUY Zone fans                                                              :s1:
 :PROPERTIES:
 :QTY: 4
 :EST: 25
 :PRICE: memory
 :END:
+- Pick: one quiet 80-120 mm computer fan per zone, run from the zone's supply. A curtained zone needs moving air for the plants and to carry heat off the LEDs. Not searched.
+** BUY Controller boxes and cable glands                                      :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 20
+:PRICE: memory
+:END:
+- Pick: a small splash-proof junction box per zone with cable glands, mounted with the entries facing down. See [[file:build.org::#water][build: water and electronics]]. Not searched.
+** BUY CO2 sensor                                                    :s3:optional:
+:PROPERTIES:
+:QTY: 1
+:EST: 56
+:PRICE: checked
+:END:
+- Pick: SCD41. Room CO2 swings with people present and affects growth.
+- Alternatives: boards with the newer, cheaper STCC4 sensor (160 kr; accuracy against the SCD41 not checked). The SCD40 is not cheaper in the EU.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/en/shop/product/developer_boards_-_co2_temp_humidity_sensor_scd41-338276][Reichelt: Seeed Grove SCD41]], 48.27 euro.
+  - [[https://www.berrybase.de/adafruit-scd-41-co2-sensor-400-5000-ppm-40ppm-5-temperatur-und-feuchtigkeitssensor-3-3-5v][BerryBase: Adafruit SCD-41]], 53.50 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Adafruit/5190][Mouser: Adafruit SCD-41]], 330.93 kr; 348 in stock.
+  - [[https://let-elektronik.dk/gravity-stcc4-true-carbon-dioxide-co2-sensor-3-in-1-air-quality-monitoring.-400-5000ppm][Let Elektronik: DFRobot STCC4 CO2 sensor]], 160 kr.
+** BUY Load cells with amplifier                                     :s6:optional:
+:PROPERTIES:
+:QTY: 4
+:EST: 25
+:PRICE: checked
+:END:
 - For water use and growth per jar.
+- Where to buy:
+  - [[https://www.berrybase.de/dehnungsmessstreifen-waegezelle-1kg][BerryBase: bar load cell, 1 kg]], 3.90 euro.
+  - [[https://www.berrybase.de/dehnungsmessstreifen-waegezelle-5kg][BerryBase: bar load cell, 5 kg]], 4.50 euro.
+  - [[https://www.berrybase.de/hx711-24-bit-a-d-gewichtssensor][BerryBase: HX711 amplifier module]], 1.25 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/developer_boards_load_cell_5_kg_hx711-444850][Reichelt: 5 kg load cell with HX711]], 6.88 euro.
+  - [[https://www.adafruit.com/product/4538][Adafruit: NAU7802 amplifier, a better converter]], $5.95. Non-EU.
 
 * Assay station                                                              :assay:
 :PROPERTIES:
@@ -274,146 +561,295 @@ Design choices are explained in [[file:rig.org::#light][rig: light engine]].
 :PROPERTIES:
 :CUSTOM_ID: potentiostat
 :QTY: 1
-:EST: 250
+:EST: 240
 :PRICE: checked
 :END:
-- Pick: Rodeostat, open hardware with a Python library on USB. About $250 (a 2022 figure; check the current price). Fastest route to data.
-- Alternatives:
-  - Build one: a DAC, two op-amps and an ADC on an ESP32 or Pico, about $30 in parts. Published designs exist at $15-30. Enough for vitamin C and nicotine sweeps.
-  - Your own board around the AD5941 chip, which does both voltammetry and impedance. Chip price not checked.
-  - The official AD5941 evaluation board costs $318-416 (checked). Earlier I suggested "an AD5941-class front end" without knowing this; at that price it is not worth it.
-  - PalmSens Sensit Smart, 890 euro (checked). Polished, plugs into a phone or PC.
+- Pick: Rodeostat, open hardware with a Python library on USB serial. $240 from the maker in the US, so Danish import VAT and a carrier fee come on top. Its current ranges (1 to 1000 uA) and its 10 V output range suit both assays, and the firmware has square-wave and differential-pulse tests. No EU distributor turned up, and no other ready-made unit under 600 euro with a visible price and an open interface.
+- Build instead: the Rodeostat is itself the best design to build. The maker publishes the board under CC BY 4.0 with gerbers and JLCPCB assembly files, and it runs the same firmware and Python library. Parts cost is not stated.
+- Other alternatives:
+  - A minimal build: a DAC, two op-amps and an ADC on an ESP32 or Pico. Published designs exist at $15 (HunStat) and $30 (HunStat2), both with Windows-only software, so expect to write your own host code.
+  - Your own board around the AD5941 chip, which does voltammetry and impedance. The chip is $10-15 singly, but DigiKey showed none in stock with a 43-week lead time, so check JLCPCB stock before designing around it.
+  - The official AD5941 evaluation board costs about $416 and is not worth it. No cheaper third-party AD5941 breakout turned up.
+  - Designs around the LMP91000 chip (NanoStat, KickStat) only reach 0.6-0.8 V, which covers vitamin C but not nicotine.
+  - PalmSens Sensit Smart, 890 euro before VAT. Polished, and its script protocol is documented for use over USB serial.
+  - Small Wi-Fi potentiostats on AliExpress at 1,800-2,100 kr, which is about what the Rodeostat costs once import VAT is added. Their software and accuracy are unknown.
+- Where to buy:
+  - [[https://iorodeo.com/pages/rodeostat][IO Rodeo: Rodeostat]], $240 assembled; $130 for the bare assembled board without microcontroller, case or cables. Non-EU.
+  - [[https://blog.iorodeo.com/rodeostat-screen-printed-electrode-spe-adapters/][IO Rodeo: electrode-strip adapters]]. Type B/CWR fits DropSens 110 and Zimmer & Peacock strips. Price not confirmed (about $30 seen second-hand).
+  - [[https://github.com/iorodeo/potentiostat][Rodeostat hardware, firmware and Python library]] (design files for the build route).
+  - [[https://github.com/hunstat2/HunStat2][HunStat2]], AD5941 with a XIAO RP2040, gerbers and parts list, about $30. Cyclic voltammetry and impedance only.
+  - [[https://zenodo.org/records/5719382][PassStat]], Teensy-based, KiCad files and Python programs, CC BY 4.0.
+  - [[https://github.com/xiaojunyang0805/SaxStat][SaxStat]], ESP32 with separate DAC and ADC chips, MIT licence, Python interface.
+  - [[https://www.digikey.com/en/products/detail/analog-devices-inc/AD5941BCPZ/10659213][DigiKey: AD5941BCPZ]], $15.35 each, out of stock when checked.
+  - [[https://www.lcsc.com/product-detail/C503573.html][LCSC: AD5941BCPZ (C503573)]], about $13, low stock. Non-EU.
+  - [[https://www.mouser.dk/en/ProductDetail/Analog-Devices/AD5941BCPZ][Mouser: AD5941BCPZ]], no price or stock listed when checked.
+  - [[https://www.palmsens.com/en-gb/potentiostat/economical-potentiostat/][PalmSens: Sensit Smart]], 890 euro before VAT. EU.
+  - [[https://www.aliexpress.com/item/1005011807108800.html][AliExpress: miniature Wi-Fi potentiostat, CV and pulse methods]], 1,832.43 kr. Non-EU.
+  - [[https://www.aliexpress.com/item/1005012629130671.html][AliExpress: open-source potentiostat kit with board and source code]], 2,058.97 kr. Non-EU.
 ** BUY Screen-printed carbon electrodes                                       :s2:
 :PROPERTIES:
 :QTY: 50
 :EST: 150
 :PRICE: memory
 :END:
-- Pick: a pack of plain carbon three-electrode strips with a matching edge connector. Check the connector fits your potentiostat.
-- Alternatives: Pine Research sells 10-packs; generic strips from marketplaces (cheaper, variable); home-made pencil-lead working electrode with a silver/silver-chloride wire and a graphite rod (a few dollars, fine for development).
+- Pick: plain carbon three-electrode strips that plug into an ordinary three-pin 2.54 mm connector. Metrohm DropSens 110 and Zimmer & Peacock strips both do; Zensor strips use a wider 3.96 mm spacing.
+- Most makers quote on request, so the $150 estimate for fifty is still unconfirmed. Firm prices found: 254 kr for ten strips with a connector on AliExpress (a good trial pack), $18 per 10 for the Zimmer & Peacock strips (sold out), and about 3,400 kr per 100 on Amazon.de.
+- The DropSens 110 has a bare silver reference electrode, so peaks sit shifted from the silver/silver-chloride values in papers. Standard addition is unaffected.
+- Alternatives: a reusable set of glassy-carbon working electrode, silver/silver-chloride reference and graphite-rod counter, about 470 kr from AliExpress and reusable for years, but it needs polishing and millilitre sample volumes; home-made pencil-lead working electrode with a chlorided silver wire (a few dollars, fine for development).
+- Where to buy:
+  - [[https://www.aliexpress.com/item/1005012243207518.html][AliExpress: C300 carbon strips, 10 with connector]], 254.02 kr; packs of 50 and 100 offered. Non-EU.
+  - [[https://www.aliexpress.com/item/1005011790245366.html][AliExpress: C2000 carbon three-electrode strips]], 273.94 kr. Non-EU.
+  - [[https://www.metrohm.com/da_dk/products/d/rp-1/drp-110-u75.html][Metrohm Denmark: DropSens DRP-110]], pack of 75, price on request. EU.
+  - [[https://iorodeo.com/products/zp-hyper-value-carbon-screen-printed-electrodes][IO Rodeo: Zimmer & Peacock Hyper Value carbon]], $18 per 10, sold out when checked. Non-EU.
+  - [[https://www.palmsens.com/product/italsens-is-c/][PalmSens: ItalSens IS-C]], 20 or 100 strips, price on request. EU.
+  - [[https://pineresearch.com/products/carbon-spes/][Pine Research: carbon strips]], silver/silver-chloride reference, login needed for prices; takes a five-pin connector. Non-EU.
+  - [[https://mtxlabsglobal.com/product/screen-printed-carbon-electrode-pack-of-10/][MTX Labs: carbon strips]], $159 per 50. Non-EU; connector spacing not stated.
+  - [[https://www.aliexpress.com/item/1005004835283664.html][AliExpress: glassy-carbon disk working electrode]], 260.03 kr. Non-EU.
+  - [[https://www.aliexpress.com/item/1005004875878052.html][AliExpress: CHI111 silver/silver-chloride reference electrode]], 212.29 kr. Non-EU.
+  - [[https://www.ebay.com/itm/404728681355][eBay: 3 mm glassy-carbon working electrode]], about $40, unbranded, ships from China.
+  - [[https://stonylab.com/products/b0cp7m76cf-chloride-silver-reference-electrode][Stonylab: silver/silver-chloride reference electrode]], $65-75, sold out when checked. Non-EU.
 ** BUY Adjustable micropipettes and tips                                      :s2:
 :PROPERTIES:
 :QTY: 2
-:EST: 70
-:PRICE: memory
+:EST: 90
+:PRICE: checked
 :END:
-- Pick: 100-1000 uL and 10-100 uL.
-- Alternatives: fixed-volume pipettes; 1 mL syringes (cheap, less precise).
+- Pick: ONiLAB 100-1000 uL and 10-100 uL pipettes from Amazon.de with matching tips, about 585 kr in all. The listing says each comes with its own calibration certificate. Check them yourself by weighing water on the milligram scale.
+- Lean option: buy only the 10-100 uL pipette, which standard addition needs, and use 1 mL syringes or the scale for the larger volumes.
+- Alternatives: a three-pipette kit; the Steinberg pipettes from expondo (about twice the price); the Danish school-lab supplier (dearer still, in stock). That supplier's terms exclude chemicals and "laboratory-specific equipment" for consumers, so ask before ordering labware there.
+- Where to buy:
+  - [[https://www.amazon.de/dp/B0B5D2Q2NK][Amazon.de: ONiLAB micropipette, 100-1000 uL]], 200.97 kr.
+  - [[https://www.amazon.de/dp/B0CTMDTGJF][Amazon.de: ONiLAB micropipette, 10-100 uL]], 175.92 kr.
+  - [[https://www.amazon.de/dp/B0BCPVJTXK][Amazon.de: ONiLAB tips, 1000 uL, 500]], 120.07 kr.
+  - [[https://www.amazon.de/dp/B0BCPSZ6X6][Amazon.de: ONiLAB tips, 200 uL, 1000]], 86.73 kr.
+  - [[https://www.expondo.dk/steinberg-systems-mikropipette-100-1000-ml-autoklaverbar-10031256][expondo.dk: Steinberg micropipette, 100-1000 uL]], 377 kr (sale price).
+  - [[https://www.expondo.dk/steinberg-systems-mikropipette-20-200-l-autoklaverbar-10031259][expondo.dk: Steinberg micropipette, 20-200 uL]], 383 kr (sale price).
+  - [[https://www.expondo.dk/steinberg-systems-mikropipette-100-til-1000-l-10030259][expondo.dk: Steinberg 100-1000 uL with 100 tips]], 489 kr.
+  - [[https://shop.es-drei.de/laborbedarf/laborzubehoer/oesen-nadeln-pipetten/13152/pipettenspitzen-einmalgebrauch-konformitaetsbescheinigt][S3 Chemicals: pipette tips, bag of 1000, 200 uL or 1000 uL]], from 31.38 euro.
+  - [[https://www.frederiksen-scientific.dk/produkt/mikropipette-oekonomi-20-200-l/013406][Frederiksen Scientific: economy micropipette, 20-200 uL]], 743.75 kr.
+  - [[https://www.frederiksen-scientific.dk/produkt/mikropipette-oekonomi-100-1000-l/013408][Frederiksen Scientific: economy micropipette, 100-1000 uL]], 743.75 kr.
+  - [[https://www.amazon.de/dp/B06XZJ2S8X][Amazon.de: TopPette kit of three pipettes]], 934.56 kr.
+  - [[https://din-ecigaret.dk/e-juice-sprojter][din-ecigaret.dk: plastic syringes, 1-60 mL]], 9-22 kr.
 ** BUY Milligram scale                                                        :s2:
 :PROPERTIES:
 :QTY: 1
-:EST: 25
-:PRICE: memory
+:EST: 15
+:PRICE: checked
 :END:
-** BUY Tubes, micropestles or small mortar, filters, rack                     :s2:
+- Pick: a 50 g pocket scale reading to 0.001 g, with a calibration weight.
+- Alternatives: a 200 g bench scale with a draught shield.
+- Where to buy:
+  - [[https://www.amazon.de/dp/B0F9YHJD8F][Amazon.de: Wigearss 50 g / 0.001 g pocket scale]], 86.73 kr.
+  - [[https://www.amazon.de/dp/B0D879Y6L5][Amazon.de: calibration weight set]], 59.66 kr.
+  - [[https://www.expondo.dk/steinberg-systems-praecisionsvaegt-200-g-1-mg-hvid-10030338][expondo.dk: Steinberg 200 g / 0.001 g scale with draught shield]], 795 kr.
+  - [[https://www.rapidonline.com/voltcraft-ps50-precision-scales-weight-range-50-g-readability-0-001-g-08-1619][Rapid Electronics: Voltcraft PS-50]], 37.30 pounds. Non-EU.
+** BUY Tubes, small mortar, filters, rack                                     :s2:
 :PROPERTIES:
 :QTY: 1
-:EST: 30
-:PRICE: memory
+:EST: 50
+:PRICE: checked
 :END:
+- Pick: 1.5 mL tubes, plastic micropestles that grind the leaf in the tube, filter paper, and a home-made rack.
+- Alternatives: a small porcelain mortar and pestle; syringe filters for cleaner extracts; a bought combination rack.
+- Where to buy:
+  - [[https://www.amazon.de/dp/B0CGPTV9GK][Amazon.de: 1.5 mL tubes, 500]], 100.11 kr.
+  - [[https://www.amazon.de/dp/B0HNR8BV1B][Amazon.de: plastic micropestles for 1.5 mL tubes, 30]], 146.02 kr.
+  - [[https://www.amazon.de/dp/B0BZYS81VK][Amazon.de: nylon syringe filters, 0.45 um, 25 mm, 100]], 219.81 kr.
+  - [[https://www.frederiksen-scientific.dk/produkt/mikrocentrifugeroer-15-ml-pk-a-1000/nl117350][Frederiksen Scientific: 1.5 mL tubes, 1000]], 385 kr.
+  - [[https://shop.es-drei.de/laborbedarf/porzellanartikel/19227/moerser-eco-aus-porzellan-mit-ausguss][S3 Chemicals: porcelain mortar]], from 20.67 euro, with the [[https://shop.es-drei.de/laborbedarf/porzellanartikel/19233/pistille-eco-aus-porzellan][pestle]] from 11.78 euro.
+  - [[https://www.frederiksen-scientific.dk/produkt/kombistativ-pp-50151502-ml-roer/031160][Frederiksen Scientific: combination tube racks, 5]], 208.75 kr.
+  - [[https://www.frederiksen-scientific.dk/produkt/centrifugeroer-pp-15-ml-oe17-x-120-mm-sterile/067575][Frederiksen Scientific: 15 mL tubes, 50]], from 111.25 kr.
 ** BUY Leaf punches, 6-8 mm                                                   :s2:
 :PROPERTIES:
-:QTY: 5
-:EST: 10
-:PRICE: memory
+:QTY: 10
+:EST: 30
+:PRICE: checked
 :END:
-- Alternatives: cork borer; a paper hole punch.
+- Pick: a pack of ten 6 mm biopsy punches from a German mail-order pharmacy. Delivery to Denmark is not stated on those sites.
+- Alternatives: a paper hole punch (the sensible first buy, a few dollars); a reusable cork-borer set.
+- Where to buy:
+  - [[https://www.medizinfuchs.de/biopsy.html][medizinfuchs.de price comparison: biopsy punch 6 mm, 10]], from 25.50 euro.
+  - [[https://www.medizinfuchs.de/preisvergleich/biopsy-punch-8mm-10-stk.-glaxosmithkline-gmbh-co.-kg-pzn-3498880.html][medizinfuchs.de price comparison: biopsy punch 8 mm, 10]], from 27.12 euro.
+  - [[https://www.frederiksen-scientific.dk/produkt/propbor-4-10-mm/048000][Frederiksen Scientific: cork-borer set, 4-10 mm]], 463.75 kr.
 ** BUY Chemicals                                                              :s2:
 :PROPERTIES:
 :QTY: 1
-:EST: 40
-:PRICE: memory
+:EST: 75
+:PRICE: checked
 :END:
-- Phosphate buffer salts or tablets, distilled water.
-- Extraction acid: oxalic or metaphosphoric acid; citric acid as a fallback.
-- Pure vitamin C powder as the standard.
-- Ethanol and a little acid for pigment extracts.
-- Optional: ascorbate oxidase enzyme for the specificity check.
+- Pick: the two phosphate salts, potassium chloride and vitamin C powder from a German chemical shop that sells to private buyers (18.90 euro shipping to Denmark), and the oxalic acid, denatured spirit, hydrochloric acid and demineralised water from a Danish hardware chain.
+- Extraction acid: oxalic acid. Metaphosphoric acid is only sold to businesses, at 85 euro per 100 g. Citric acid is the fallback.
+- No private-friendly source for ready buffer tablets turned up, so mix the buffer from the two salts.
+- Ascorbate oxidase enzyme is sold to businesses only, from $65 per 100 units. Use the open-and-warm check in [[file:assays.org::#vitc][assays]] instead.
+- Denatured spirit contains other solvents. That is fine for the pigment extract, but keep it out of the electrode work.
+- Where to buy:
+  - [[https://shop.es-drei.de/salze/phosphate/13894/kaliumdihydrogenphosphat-min.-99-lebensmittelqualitaet][S3 Chemicals: potassium dihydrogen phosphate, 250 g]], 8.13 euro.
+  - [[https://shop.es-drei.de/salze/phosphate/16698/dinatriumhydrogenphosphat-wasserfrei-min.-98-lebensmittelqualitaet][S3 Chemicals: disodium hydrogen phosphate, 250 g]], 9.18 euro.
+  - [[https://shop.es-drei.de/salze/chloride/1010/kaliumchlorid-min.-99-9-ph.-eur.-usp][S3 Chemicals: potassium chloride, 250 g]], 7.71 euro.
+  - [[https://shop.es-drei.de/saeuren/12404/l-ascorbinsaeure-99-100-5-ph.-eur.-usp-bp-lebensmittelqualitaet][S3 Chemicals: L-ascorbic acid, pharmacopoeia grade, 100 g]], 6.43 euro.
+  - [[https://www.webapoteket.dk/kosttilskud/vitaminer/c-vitamin/natur-drogeriet-c-vitamin-pulver-p-682177][Webapoteket: vitamin C powder, 120 g]], 64.50 kr.
+  - [[https://shop.es-drei.de/saeuren/10584/oxalsaeure-dihydrat-min.-99-6][S3 Chemicals: oxalic acid dihydrate, 500 g]], 7.04 euro.
+  - [[https://www.harald-nyborg.dk/borup-oxalsyre-300-g][Harald Nyborg: oxalic acid, 300 g]], 29.75 kr. Purity not stated.
+  - [[https://shop.es-drei.de/saeuren/578/citronensaeure-monohydrat-min.-99-5-lebensmittelqualitaet][S3 Chemicals: citric acid, 1 kg]], 9.74 euro.
+  - [[https://www.harald-nyborg.dk/borup-sprit-denatureret-1-liter][Harald Nyborg: denatured spirit, 93% ethanol, 1 L]], 39.95 kr.
+  - [[https://shop.es-drei.de/alkohole/12098/ethanol-unvergaellt-versteuert-96-ph.-eur][S3 Chemicals: undenatured ethanol 96%, 1 L]], 56.55 euro.
+  - [[https://shop.es-drei.de/saeuren/905/salzsaeure-5-reinst][S3 Chemicals: hydrochloric acid 5%, 500 mL]], 8.33 euro.
+  - [[https://www.harald-nyborg.dk/borup-saltsyre-30-1-liter][Harald Nyborg: hydrochloric acid 30%, 1 L]], 29.75 kr.
+  - [[https://www.harald-nyborg.dk/borup-demineraliseret-vand-1-liter][Harald Nyborg: demineralised water, 1 L]], 7.95 kr.
 ** BUY Nicotine standard                                                      :s5:
 :PROPERTIES:
 :QTY: 1
-:EST: 15
-:PRICE: memory
+:EST: 5
+:PRICE: checked
 :END:
-- Pick: unflavoured nicotine base liquid of stated strength. Availability and rules vary by country.
-- Alternatives: an analytical standard from a lab supplier (dearer, may need an account); work in relative units against a reference leaf extract.
+- Pick: unflavoured freebase nicotine base at 18 mg/mL, the strongest freebase in the Danish shops checked. Bottles are capped at 10 mL and 20 mg/mL, and sold to over-18s only. The strength is a label claim, not a certified value.
+- The 20 mg/mL bases are nicotine salts with an unnamed acid, so avoid them as a standard.
+- Alternatives: work in relative units against a reference leaf extract. Pure nicotine is sold in 10 g bottles, many times a lethal dose, so I do not recommend it.
+- Where to buy:
+  - [[https://www.dampexperten.dk/10ml-nikotin-base/944-10ml-nikotin-base-vpg-5050-kob-flere-og-spar.html][dampexperten.dk: nicotine base, 50/50, 10 mL, 18 mg/mL]], 12.50 kr.
+  - [[https://din-ecigaret.dk/nord-nikotin-base-50pg-50vg-10][din-ecigaret.dk: Nord nicotine base, 50/50, 10 mL, 18 mg/mL]], 25 kr.
+  - [[https://www.dampexperten.dk/10ml-nikotin-base/3564-10ml-nord-nikotin-base-7030.html][dampexperten.dk: Nord nicotine base, 70/30, 10 mL]], 35 kr.
 ** BUY Simple photometer for pigment extracts                                 :s2:
 :PROPERTIES:
 :QTY: 1
-:EST: 20
-:PRICE: memory
+:EST: 25
+:PRICE: checked
 :END:
-- Pick: a green LED, a cuvette holder and a spare AS7341 or photodiode.
-- Alternatives: a used lab spectrophotometer ($100-300); a handheld colorimeter.
+- Pick: a 525 nm green LED, 10 mm plastic cuvettes, a home-made holder and a spare AS7341 or photodiode. No ready-made cuvette holder was found.
+- Alternatives: a used pocket colorimeter. Used lab spectrophotometers start at about 800 euro at dealers, not the $100-300 I first wrote.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/en/shop/product/led_5_mm_wired_green_37700_mcd_15_-342043][Reichelt: Nichia 5 mm green LED, 525 nm]], 0.40 euro.
+  - [[https://www.frederiksen-scientific.dk/produkt/kuvette-pe-10-mm-lysvej-ej-uv/545120][Frederiksen Scientific: cuvettes, 10 mm path, 100]], 77.50 kr.
+  - [[https://www.laboratoriumdiscounter.nl/en/disposable-cuvettes-polystyrene-macro-25-to-45-ml.html][Laboratoriumdiscounter: polystyrene cuvettes, 100]], 21.39 euro. Shipping to Denmark not stated.
+  - [[https://labstuff.eu/en/hach-lange-pocket-colorimeter-chlorine-free-total-451.html][labstuff.eu: used Hach pocket colorimeter]], 125.21 euro before tax. Whether its wavelength suits the pigment is not confirmed.
 ** BUY Gloves, eye protection, labels                                         :s2:
 :PROPERTIES:
 :QTY: 1
-:EST: 15
-:PRICE: memory
+:EST: 28
+:PRICE: checked
 :END:
-** BUY Vitamin C test strips                                         :s2:optional:
+- Where to buy:
+  - [[https://www.frederiksen-scientific.dk/produkt/nitrilhandsker-large-pudderfri/086048][Frederiksen Scientific: nitrile gloves, 100]], 110 kr.
+  - [[https://www.reichelt.com/dk/en/shop/product/safety_goggles_with_temples_light_clear_en166_1f-322542][Reichelt: safety glasses, EN 166]], 55.75 kr. Spectacles, not sealed goggles.
+  - [[https://www.reichelt.com/dk/en/shop/product/chemical_protected_glove_nitril_green_size_8-328185][Reichelt: reusable chemical glove]], 14.92 kr, for handling the 30% acid.
+** BUY Vitamin C cross-check                                         :s2:optional:
 :PROPERTIES:
-:QTY: 100
-:EST: 50
-:PRICE: memory
+:QTY: 1
+:EST: 21
+:PRICE: checked
 :END:
-- Cross-check for the electrode method.
-- Alternatives: iodine and starch titration (about $10).
+- Pick: iodine and starch titration on the same extract.
+- I first listed test strips. Both strip products start at 50 mg/L, and by my rough estimate a lettuce extract sits at 10-50 mg/L, so they would mostly read zero. One of the two is also sold to businesses only.
+- Where to buy:
+  - [[https://shop.es-drei.de/loesungen/sonstige-loesungen/837/lugolsche-loesung-2][S3 Chemicals: Lugol's iodine 2%, 100 mL]], 8.99 euro.
+  - [[https://shop.es-drei.de/polysaccharide/5910/staerke-loeslich-reinst][S3 Chemicals: soluble starch, 100 g]], 9.16 euro.
+  - [[https://shop.es-drei.de/loesungen/massloesungen/737/iod-massloesung-0-025mol/l][S3 Chemicals: iodine volumetric solution, 0.025 mol/L, 1 L]], 33.92 euro. Known strength, better for titration.
+  - [[https://mn-net.com/semi-quantitative-test-strips-quantofix-ascorbic-acid-91314][Macherey-Nagel: Quantofix ascorbic acid strips, 50-2000 mg/L]], price on request.
 
 * Root-zone current                                                          :current:
 Design in [[file:rig.org::#root-current][rig: root-zone current]].
 ** BUY Graphite rods, 6 mm                                                    :s3:
 :PROPERTIES:
-:QTY: 20
-:EST: 15
-:PRICE: memory
+:QTY: 24
+:EST: 38
+:PRICE: checked
 :END:
-- Alternatives: titanium mesh with mixed-metal-oxide coating (longer life as the positive electrode); platinum wire (best, dear); thick pencil leads.
+- Pick: three packs of eight 6 mm x 9 cm graphite rods from Amazon.de. Purity is not stated, so run the treated-solution control before trusting them.
+- Alternatives: fine-grain rods from a German metals shop, cut in half (about 53 euro for ten rods); packs shipped from China at about 10 euro per five; coated titanium anode plate (longer life as the positive electrode); platinised titanium (85 euro); platinum wire (best, but about 155 pounds per 10 cm); thick pencil leads.
+- Where to buy:
+  - [[https://www.amazon.de/dp/B0DPGGTXM2][Amazon.de: graphite rods, 6 mm x 9 cm, pack of 8]], 82.47 kr.
+  - [[https://www.amazon.de/dp/B0BRP5X2QF][Amazon.de: graphite rod, 6 x 300 mm, single]], 73.49 kr.
+  - [[https://polymet.de/graphit/rundmaterial/58/graphit-elektrode-oe-6-mm-x][Polymet: graphite electrode, 6 mm, 100/150/300 mm]], 5.90 euro each, 5.31 from ten.
+  - [[https://real-gold.de/Graphit-Elektrode-6mm/BMG-010][real-gold.de: graphite electrode, 6 mm]], 6.00 euro. Length not stated.
+  - [[https://www.tifoo.de/en/carbon-graphite-rod-anode-oe-8-mm][Tifoo: graphite rod, 8 mm x 10 cm]], 9.90 euro.
+  - [[https://www.ebay.de/itm/388185059503][eBay.de: five rods, 6 x 200 mm]], about 9.74 euro. Ships from China.
+  - [[https://www.amazon.de/Ruthenium-Iridium-Beschichtung-Ti-Elektrode-Abwasserbehandlung-Natriumhypochlorit-Generator-Alkali-Industrie/dp/B0C9J36S5K][Amazon.de: coated titanium anode, 100 x 50 mm]], 20 euro. Seller origin not confirmed.
+  - [[https://jentner-plating.com/en/Platinized-titanium-anode-260.100][Jentner: platinised titanium anode, 100 x 40 mm]], 84.99 euro before VAT.
 ** BUY Current source parts, four channels                                    :s3:
 :PROPERTIES:
 :QTY: 1
-:EST: 25
-:PRICE: memory
+:EST: 35
+:PRICE: checked
 :END:
-- Pick: a four-channel DAC, op-amps, sense resistors and analogue switches for polarity reversal.
-- Alternatives: a bench supply in constant-current mode with a series resistor for a first manual test; your own board ([[#custom-boards][custom boards]]).
+- Pick: a four-channel DAC breakout, two dual op-amps that run from 36 V, 0.1% sense resistors, and one small two-pole relay per channel for polarity reversal.
+- The suitable op-amps come only in surface-mount packages, so a breadboard build needs adapter boards. Relay minimum-load ratings at microamp currents are not yet checked.
+- Alternatives: analogue switch chips in place of the relays (two per channel); a bench supply in constant-current mode with a series resistor for a first manual test; your own board ([[#custom-boards][custom boards]]).
+- Where to buy:
+  - [[https://www.mouser.dk/en/ProductDetail/Adafruit/4470][Mouser: Adafruit MCP4728 four-channel DAC]], 49.68 kr; 549 in stock. Out of stock at BerryBase.
+  - [[https://www.adafruit.com/product/5811][Adafruit: AD5693R 16-bit single-channel DAC]], $10.95. Non-EU.
+  - [[https://www.mouser.dk/en/ProductDetail/Texas-Instruments/OPA2197IDR][Mouser: OPA2197 dual op-amp, 36 V]], 23.95 kr, but none in stock and a 182-day lead time.
+  - [[https://www.tme.eu/en/details/opa2197idr/smd-operational-amplifiers/texas-instruments/][TME: OPA2197 dual op-amp, 36 V]], about $2.60.
+  - [[https://www.digikey.com/en/products/detail/texas-instruments/OPA2197IDR/6175210][DigiKey: OPA2197]], $2.72-3.61.
+  - [[https://www.reichelt.com/dk/en/shop/product/operational_amplifier_2-fold_3_v_s_1_8_mhz_so-8-39296][Reichelt: AD822 dual op-amp, 30 V]], 12.55 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/resistor_metal_film_18_kohm_0_1_0_6_w_tk25_0207-12837][Reichelt: 0.1% metal-film resistors]], 0.19-0.29 euro each.
+  - [[https://www.reichelt.com/dk/en/shop/product/subminiature_relay_2_x_um_125vac_60v_1a_5v-28335][Reichelt: Omron G6K-2P signal relay, 5 V]], 2.52 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Aratas/G6K-2P-DC5][Mouser: G6K-2P signal relay, 5 V]], 31.18 kr; 3,318 in stock.
+  - [[https://www.reichelt.com/dk/en/shop/product/analogue_switch_ic_soic-8-185502][Reichelt: ADG419 analogue switch]], 7.71 euro.
 ** BUY Current and voltage monitors                                           :s3:
 :PROPERTIES:
-:QTY: 4
-:EST: 15
-:PRICE: memory
+:QTY: 2
+:EST: 13
+:PRICE: checked
 :END:
-- Pick: INA219 breakouts. Alternatives: read the sense resistors with the controller's ADC.
+- Pick: two ADS1115 16-bit converter boards reading across the sense resistors, two channels each. I first listed INA219 boards; their finest step is 0.1 mA, which is useless for microamp currents.
+- Alternatives: INA228 20-bit monitor boards with the shunt resistor swapped for a larger one; the controller's own ADC (coarse).
+- Where to buy:
+  - [[https://www.berrybase.de/ads1115-4-kanal-16-bit-ad-wandler-breakout-board][BerryBase: ADS1115 breakout]], 5.60 euro.
+  - [[https://www.kiwi-electronics.com/en/ads1115-16-bit-adc-4-channel-with-programmable-gain-amplifier-1575][Kiwi Electronics: Adafruit ADS1115]], 16.86 euro.
+  - [[https://www.kiwi-electronics.com/en/adafruit-ina228-i2c-85v-20-bit-high-or-low-side-power-monitor-stemma-qt-qwiic-19941][Kiwi Electronics: Adafruit INA228]], 17.86 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Adafruit/5832][Mouser: Adafruit INA228]], 99.07 kr; 308 in stock.
 ** BUY Floating supply for the current source                                 :s3:
 :PROPERTIES:
 :QTY: 1
-:EST: 10
-:PRICE: memory
+:EST: 7
+:PRICE: checked
 :END:
-- Pick: a small isolated DC-DC module. Alternatives: a battery pack.
+- Pick: a 1 W isolated DC-DC module, 5 V in, 24 V out. Alternatives: a 12 V or 15 V version; a battery pack.
+- Where to buy:
+  - [[https://www.reichelt.com/dk/en/shop/product/sil-4_dc_dc_converter_1_w_5_v_in_24_v_out-35027][Reichelt: SIM1-0524, 5 V to 24 V]], 4.73 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/dc_dc_converter_tma_series_5_12_v_dc-120444][Reichelt: Traco TMA 0512S, 5 V to 12 V]], 5.99 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/dc_dc_converter_tma_series_5_15_v_dc-120445][Reichelt: Traco TMA 0515S, 5 V to 15 V]], 5.99 euro.
 
 * Tobacco track                                                              :tobacco:
 ** BUY Tobacco seeds                                                          :s1:
 :PROPERTIES:
 :QTY: 1
 :EST: 5
-:PRICE: memory
+:PRICE: checked
 :END:
-- Pick: common tobacco, used at the rosette stage.
-- Alternatives: /Nicotiana benthamiana/ (smaller); /Nicotiana rustica/ (more nicotine, larger).
+- Pick: common tobacco, a Virginia type, used at the rosette stage.
+- Alternatives: /Nicotiana rustica/ (more nicotine, larger). /Nicotiana benthamiana/ would be smaller, but no EU hobby seller turned up.
+- Where to buy:
+  - [[https://www.magicgardenseeds.de/Virginia-Tabak-Virginia-Gold-Nicotiana-tabacum-Samen][Magic Garden Seeds: 'Virginia Gold']], 2.79 euro.
+  - [[https://www.magicgardenseeds.de/Bauerntabak-Nicotiana-rustica-Samen][Magic Garden Seeds: Nicotiana rustica]], 2.59 euro.
+  - [[https://www.tabakanbau.de/de/shop.php?id=33680][Tabakanbau.de: 'Virginia Gold', about 800 seeds]], 5.90 euro.
+  - [[https://www.tabakanbau.de/de/shop.php?id=33618][Tabakanbau.de: Nicotiana rustica, about 300 seeds]], 6.50 euro.
+  - [[https://kokopelli-semences.fr/en/p/delgold-tobacco][Kokopelli: 'Delgold' tobacco]], 3.40 euro.
 ** BUY Opaque containers, 2-4 L, with lids and net pots                       :s5:
 :PROPERTIES:
 :QTY: 8
 :EST: 25
-:PRICE: memory
+:PRICE: checked
 :END:
+- Pick: 3 L lidded buckets with a hole cut in each lid. Nothing ready-made with a net-pot lid exists at this size. Check they block light, and wrap them if not.
+- Alternatives: 5 L black buckets with lids.
+- Where to buy:
+  - [[https://www.ikea.com/dk/da/p/hallbar-spand-med-lag-lysegra-90432194/][IKEA: HÅLLBAR bucket with lid, 3 L]], 20 kr each.
+  - [[https://www.growmart.eu/Bucket-with-handle-and-lid-5-to-33-Liters][Growmart: black bucket with lid, 5 L]], 4.90 euro each.
+  - [[https://www.bauhaus.dk/plastbotte-m-lag-3100-ml-3-stk][Bauhaus: clear tubs with lids, 3.1 L, pack of 3]], 34.95 kr per pack.
 ** BUY Air pump, tubing, air stones                                           :s5:
 :PROPERTIES:
 :QTY: 1
-:EST: 20
-:PRICE: memory
+:EST: 50
+:PRICE: checked
 :END:
 - Larger plants in larger containers do better with aerated solution (memory).
+- Pick: a four-outlet pump with four air stones, split with tees to reach eight containers.
+- Where to buy:
+  - [[https://www.growmart.eu/Air-pump-basic-10-l-min-4-outlets][Growmart: air pump, 10 L/min, 4 outlets]], 24.90 euro.
+  - [[https://www.growmart.eu/Air-Stone-5mm][Growmart: air stone]], 4.95 euro each.
+  - [[https://hydroponics.dk/shop/hydro/pumper-div-tilbehor/hailea-aco-5503-luft-pumpe/][Hydroponics.dk: Hailea ACO-5503, 2 outlets]], 149 kr.
+  - [[https://hydroponics.dk/shop/hydro/pumper-div-tilbehor/luftsten-rund-oe5/][Hydroponics.dk: round air stone]], 29 kr.
 ** BUY Light for a tobacco zone                                               :s5:
 :PROPERTIES:
 :QTY: 1
@@ -430,27 +866,48 @@ Design in [[file:rig.org::#root-current][rig: root-zone current]].
 :PRICE: memory
 :END:
 - Silver wire, electrode gel, high-impedance buffers, a 24-bit ADC board, a USB isolator.
+- Not found: pure silver wire (shops showed silver-plated copper) and electrode gel. The total is still my estimate.
+- Where to buy:
+  - [[https://www.waveshare.com/18983.htm][Waveshare: ADS1263 32-bit ADC board]], $34.99. Non-EU.
+  - [[https://www.berrybase.de/waveshare-high-precision-ad-da-board-spi-8-kanal-24-bit-adc-2-kanal-16-bit-dac-gpio-3-3-5v][BerryBase: Waveshare 24-bit AD/DA board]], 41.90 euro.
+  - [[https://www.olimex.com/Products/USB-Modules/USB-ISO/][Olimex: USB-ISO isolator, full speed]], 17.95 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/usb_isolator_galvanic_isolation-321538][Reichelt: Roline USB isolator, high speed]], 70.59 euro.
+  - [[https://www.reichelt.com/dk/en/shop/product/operational_amplifier_dual_1_5mhz_soic-8-187832][Reichelt: LMC6482 low-bias dual op-amp]], 1.22 euro.
 ** BUY Impedance front end                                                    :s6:
 :PROPERTIES:
 :QTY: 1
-:EST: 30
-:PRICE: memory
+:EST: 100
+:PRICE: checked
 :END:
-- Pick: AD5933 breakout. Alternatives: the AD5941 on your own board, shared with the potentiostat.
+- Pick: the AD5933 evaluation board. It is the only priced AD5933 board found, at well above my first guess of $30.
+- Alternatives: the AD5941 on your own board, shared with the potentiostat.
+- Where to buy:
+  - [[https://www.mouser.dk/en/ProductDetail/Analog-Devices/EVAL-AD5933EBZ][Mouser: EVAL-AD5933EBZ evaluation board]], 639.02 kr; 73 in stock.
+  - [[https://digilent.com/shop/pmod-ia-impedance-analyzer/][Digilent: Pmod IA impedance analyser (AD5933)]], price not seen. Non-EU.
 ** BUY Fluorescence index parts                                               :s6:
 :PROPERTIES:
 :QTY: 1
-:EST: 40
-:PRICE: memory
+:EST: 60
+:PRICE: checked
 :END:
-- UV-A and red LEDs, a photodiode, a long-pass filter above 700 nm.
+- UV-A and red LEDs, a photodiode, a long-pass filter above 700 nm. The filter is most of the cost.
+- Where to buy:
+  - [[https://www.roithner-laser.com/pricelist.pdf][Roithner Lasertechnik price list]]: 375 nm 5 mm LED (XSL-375-5E) 2.52 euro, 385 nm (RV3-385-15-5) 2.06 euro, 660 nm (LED660N-03) 1.62 euro, before VAT. Ordered by form or email.
+  - [[https://www.reichelt.com/dk/en/shop/product/silicon_pin_photodiode_50_a_430_1100nm-5804][Reichelt: BPW34 photodiode]], 0.74 euro.
+  - [[https://www.mouser.dk/en/ProductDetail/Texas-Instruments/OPT101P][Mouser: OPT101P photodiode with amplifier]], 74 kr; 7,410 in stock.
+  - [[https://www.lcsc.com/product-detail/C1526918.html][LCSC: OPT101 photodiode with amplifier]], $9.23. Non-EU.
+  - [[https://www.edmundoptics.eu/p/schott-rg715-125mm-dia-2mm-thick-colored-glass-longpass-filter/44344/][Edmund Optics: Schott RG715 long-pass filter, 12.5 mm]], 37 euro before VAT.
 ** BUY Root-zone cooling                                                      :s3:
 :PROPERTIES:
 :QTY: 1
 :EST: 60
 :PRICE: memory
 :END:
-- Pick: Peltier module with a small pump loop. Alternatives: ice packs for a first manual test.
+- Pick: Peltier module with a heatsink fan on the hot side and a water block and small pump on the cold side. Alternatives: ice packs for a first manual test. No ready-made chiller under 150 euro turned up, and the one shop found with the water block and pump (Botland, about 25 euro for all four parts) sells to businesses only.
+- Where to buy:
+  - [[https://www.berrybase.de/tec1-12706-peltier-element-12v-72w][BerryBase: TEC1-12706 Peltier module]], 4.80 euro, out of stock when checked.
+  - [[https://www.reichelt.com/dk/en/shop/product/thermal_module_peltier_element_40x40x3_8_mm-32052][Reichelt: Peltier module, 40 x 40 mm]], 29.83 euro.
+  - [[https://www.adafruit.com/product/1335][Adafruit: assembled Peltier, heatsink and fan]], $34.95. Non-EU.
 
 * Custom boards
 :PROPERTIES:
@@ -460,11 +917,37 @@ Design in [[file:rig.org::#root-current][rig: root-zone current]].
 Since you can design boards and have them made, three boards would
 replace most of the protoboard work. None is needed for Stage 0.
 
-| Board          | Replaces                                              | Main parts                                                     |
-|----------------+-------------------------------------------------------+----------------------------------------------------------------|
-| Zone controller | Dev board, MOSFET wiring, sensor cabling             | ESP32-S3 module, 5 MOSFET channels with gate drivers, 24 V input and buck converter, sensor connectors |
-| Current source | Protoboard current source and monitors                | Four-channel DAC, op-amps, polarity switches, current sensing, isolated supply |
-| Potentiostat   | Bought potentiostat, impedance breakout               | AD5941 or a discrete op-amp design, electrode-strip connector  |
+| Board           | Replaces                                 | Main parts                                                                                             |
+|-----------------+------------------------------------------+--------------------------------------------------------------------------------------------------------|
+| Zone controller | Dev board, MOSFET wiring, sensor cabling | ESP32-S3 module, 5 MOSFET channels with gate drivers, 24 V input and buck converter, sensor connectors |
+| Current source  | Protoboard current source and monitors   | Four-channel DAC, op-amps, polarity switches, current sensing, isolated supply                         |
+| Potentiostat    | Bought potentiostat, impedance breakout  | AD5941 or a discrete op-amp design, electrode-strip connector                                          |
 
 I would prototype each on a breadboard through Stage 1 and order boards
 once the circuit has stopped changing.
+
+** Parts in the LCSC catalogue
+
+JLCPCB assembles from LCSC stock. Prices and stock are LCSC's on
+2026-11-22, for one piece unless stated; JLCPCB's own assembly stock can
+differ. "Basic" parts carry no extra assembly fee.
+
+| Use                      | Part                  | LCSC number | Price | Note                                               |
+|--------------------------+-----------------------+-------------+-------+----------------------------------------------------|
+| Controller module        | ESP32-S3-WROOM-1-N8R2 | [[https://www.lcsc.com/product-detail/C2913204.html][C2913204]]    | $4.54 | 8,720 in stock; the N16R8 version was out of stock |
+| Controller module, small | ESP32-S3-MINI-1-N4R2  | [[https://www.lcsc.com/product-detail/C3013941.html][C3013941]]    | $5.05 | 5,452 in stock                                     |
+| LED switch               | AOD4184A, 40 V        | [[https://www.lcsc.com/product-detail/C99124.html][C99124]]      | $0.34 | Needs a gate driver                                |
+| Gate driver              | UCC27517              | [[https://www.lcsc.com/product-detail/C99395.html][C99395]]      | $0.31 | One per channel                                    |
+| LED switch, light loads  | AO3400A, 30 V         | [[https://www.lcsc.com/product-detail/C20917.html][C20917]]      | $0.08 | Basic; thin margin on a 24 V rail                  |
+| 24 V to 5 V converter    | XL1509-5.0E1, 40 V in | [[https://www.lcsc.com/product-detail/C61063.html][C61063]]      | $0.25 | Basic                                              |
+| 24 V to 5 V converter    | TPS5430, 36 V in      | [[https://www.lcsc.com/product-detail/C9864.html][C9864]]       | $0.59 | Basic                                              |
+| Four-channel DAC         | MCP4728               | [[https://www.lcsc.com/product-detail/C108207.html][C108207]]     | $2.42 |                                                    |
+| Current-source op-amp    | OPA2197, 36 V         | [[https://www.lcsc.com/product-detail/C139363.html][C139363]]     | $2.19 |                                                    |
+| Current readback         | ADS1115               | [[https://www.lcsc.com/product-detail/C37593.html][C37593]]      | $1.23 |                                                    |
+| Polarity relay           | Omron G6K-2F-Y, 5 V   | [[https://www.lcsc.com/product-detail/C47190.html][C47190]]      | $1.02 |                                                    |
+| Isolated supply          | B0524S-1WR3           | [[https://www.lcsc.com/product-detail/C7500908.html][C7500908]]    | $1.12 |                                                    |
+| USB isolator chip        | ADuM3160              | [[https://www.lcsc.com/product-detail/C284149.html][C284149]]     | $5.21 |                                                    |
+| Potentiostat front end   | AD5941                | [[https://www.lcsc.com/product-detail/C650309.html][C650309]]     | $34   | Out of stock; reports of the price disagree        |
+
+Avoid the TPS54202 and TPS54331 converters on a 24 V rail; their input
+limit is 28 V.

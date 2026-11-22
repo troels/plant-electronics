@@ -1,0 +1,160 @@
+#+TITLE: Physical build
+
+Back to [[file:index.org][index]]. This page is about where things physically go: the
+rack, the tubs, and how the water is kept away from the electronics.
+The electronics themselves are in [[file:rig.org][rig]], and the parts are in [[file:shopping.org][shopping]].
+
+Nothing here has been built yet. The dimensions come from product pages
+and my own layout sums, so measure before you cut or buy in bulk.
+
+* Short answers
+
+- *What pots?* One opaque, lidded 0.8-1 L tub per plant, with a 5 cm net pot and a rockwool cube in the lid. No soil, no pump.
+- *One plastic container for all of it?* No. Use one shallow box per zone as a spill tray, with that zone's four tubs standing in it. Each tray holds several times the water above it. A grow tent around the whole rack is optional, and I would not start with one.
+- *Water and electronics?* Mains and the 24 V supply sit on the top shelf, above every water container. Only 24 V and below goes down into the zones. Controller boxes hang on the outside of the frame with their cable entries facing down. Every cable has a drip loop.
+
+* The rack
+:PROPERTIES:
+:CUSTOM_ID: rack
+:END:
+
+#+CAPTION: Front view. Purple is electronics and cabling, blue is nutrient solution, yellow is light.
+[[file:img/rack-front.svg]]
+
+The drawing uses the 92 x 36 x 181 cm wire rack from the shopping list,
+with its shelves set 54 cm apart. The product page says the shelves can
+be moved. I have not confirmed that it comes with four.
+
+| Level           | Height of shelf | What is on it                                                            |
+|-----------------+-----------------+--------------------------------------------------------------------------|
+| Top, dry shelf  | 170 cm          | 24 V supply, fuses, USB hub. LED bars for zones A and B hang beneath it. |
+| Zones A and B   | 116 cm          | Two trays of four tubs. LED bars for zones C and D hang beneath it.      |
+| Zones C and D   | 62 cm           | Two trays of four tubs. The nursery light hangs beneath it.              |
+| Nursery, spares | 8 cm            | Seedling tray for weeks 1 to 3, spare tubs and nutrient bottles.         |
+
+- Each shelf is split down the middle into two zones of 45 x 36 cm.
+- The host computer stands on a separate table beside the rack, never under it.
+- Stand the rack on a hard floor and fix it to the wall. A full rack carries about 20 kg of water above knee height.
+
+For the lean rig, build only zones A and B and leave the lower levels as
+plain shelves.
+
+* One zone
+:PROPERTIES:
+:CUSTOM_ID: zone
+:END:
+
+#+CAPTION: Side view of one zone.
+[[file:img/zone-section.svg]]
+
+#+CAPTION: The same zone from above.
+[[file:img/zone-plan.svg]]
+
+From the top down:
+
+- *LED bars.* The white strip and the colour LEDs are fixed to flat aluminium bars, which are cable-tied to the underside of the wire shelf above. The aluminium is the heatsink.
+- *Camera.* It hangs between the bars at the centre of the zone and looks straight down. At about 40 cm above the tubs it needs a field of view of roughly 60 degrees to see the whole tray, which an ordinary webcam has.
+- *Fan.* A small computer fan on the back wall blows across the leaves. A curtained zone with still, humid air gives lettuce brown leaf edges, and the fan also carries heat off the LEDs.
+- *Sensors.* The light sensor sits on a stalk at leaf height, facing up. The air sensor hangs at the back under a small shade so the LEDs do not warm it. The water-temperature probe goes through the lid of one tub.
+- *Plants.* Keep leaf tops at least 20 cm below the LEDs. With a 10 cm tub and a 15 cm plant, the 54 cm shelf spacing leaves about 25 cm.
+- *Grey card.* It lies flat in the middle of the tray, where the camera sees it in every photo.
+- *Tray and liner.* The four tubs stand in the spill tray. Under the tray, a sheet of the black-and-white film covers the wire shelf.
+
+Each tub carries a permanent label, and the software records which
+position (1 to 4) it stands in. Positions get swapped when you take tubs
+out, so the label is what identifies the plant.
+
+* The tub
+:PROPERTIES:
+:CUSTOM_ID: tub
+:END:
+
+#+CAPTION: Cross-section of one tub. The graphite rods are only fitted for root-zone current experiments.
+[[file:img/tub-detail.svg]]
+
+This is the passive method often called Kratky: the plant sits in a net
+pot in the lid, and its roots grow down into still nutrient solution.
+There is no pump and no air stone.
+
+- *Size.* 0.8-1 L per lettuce plant. As I recall, a lettuce drinks 2-4 L over a full life, so for plants harvested at four weeks expect to top up once or twice in the last week.
+- *Shape.* Square or rectangular tubs pack better in the tray than round jars. Before buying sixteen, check one: four must fit in a 42 x 30 cm tray, and the lid must be stiff enough to carry a net pot.
+- *Lid.* Cut a 5 cm hole with a hole saw or a hot knife, so the net pot hangs by its rim.
+- *Light-proofing.* Light on the solution grows algae. Wrap clear tubs in black tape or paint the outside. The lid must be opaque too.
+- *Filling.* Fill until the solution wets the bottom centimetre of the net pot. As the plant drinks, the level drops and the roots above the surface take up air. From then on, top up only to about halfway. Refilling to the brim drowns those air roots.
+- *Where to fill.* Lift the tub out and fill it at a table, not on the rack. For small top-ups in place, use a wash bottle or a large syringe.
+
+Why separate tubs and not one long trough per zone:
+
+- A root-zone current treatment needs each plant in its own solution.
+- A tub can be lifted out for weighing, sampling or a photo without disturbing its neighbours.
+- One sick or leaking tub does not affect the other three.
+
+A shared trough is less work and holds more water per plant. It is a
+reasonable choice for the nursery level and for a first Stage 0 test.
+
+Tobacco needs bigger containers (2-4 L) and more height. Plan that when
+its stage comes; the simplest way is to give it a whole level and raise
+the shelf above.
+
+* Water and electronics
+:PROPERTIES:
+:CUSTOM_ID: water
+:END:
+
+The layout follows one rule: water can only fall onto things that
+tolerate it.
+
+1. *Mains stays on top.* The 24 V supply, the fuse block and the USB hub live on the top shelf. Nothing wet is ever lifted over them. Plug the supply into a socket on your HPFI breaker, and press the breaker's test button once.
+2. *Low voltage below.* Only 24 V and below runs down into the zones. A splash there can blow a fuse or corrode a connector, but cannot shock you.
+3. *A tray under every tub.* The 42 x 30 x 10 cm box holds about 12 L. Its four tubs hold about 3 L together, so even if all four fail the water stays in the tray.
+4. *A liner under every tray.* The film sheet on each wire shelf catches drips from lifting tubs in and out, and stops light passing between levels.
+5. *Boxes outside the frame.* Each zone's controller and switching board sits in a small splash-proof box on the outside of the end frame, beside the zone and not under a tray. Cable entries face down.
+6. *Drip loops.* Every cable dips below the point where it enters a box, a connector or the supply. Water running along a cable then drips off at the low point.
+7. *A fuse per zone.* Each zone's 24 V feed has its own fuse on the dry shelf, so a short in one zone does not take down the others.
+8. *Connectors high and dry.* Plugs for the LED bars, sensors and current electrodes sit above tray height. Nutrient solution is salty and corrodes contacts, so wipe up spills and rinse with plain water.
+
+Two weak points remain:
+
+- *LED bars under a wet shelf.* Zones C and D have the trays of A and B above them. The tray and liner are the protection. If you want more, brush clear conformal coating over the LED solder joints.
+- *The supply's terminals.* Enclosed supplies of this type have exposed mains screw terminals under a flip cover. Mount the supply with the terminals away from the edge, or in a ventilated box. A sealed desktop-style 24 V adapter avoids this altogether, for about 180 kr more (see the supply item in [[file:shopping.org][shopping]]).
+
+The assay station (tubes, acids, pipettes, potentiostat) belongs on a
+separate table with its own tray, away from both the rack and the
+computer.
+
+* Light and air
+:PROPERTIES:
+:CUSTOM_ID: light-air
+:END:
+
+Zones must not light each other, or the treatments mix.
+
+- *Between left and right:* a divider of black-and-white film hung from the shelf above, white side facing the plants.
+- *Between levels:* the liner sheets.
+- *Back:* film across the whole back of the rack.
+- *Front:* a film curtain per level, clipped at the top so it lifts for access.
+- *Ends:* film on the inside of each end frame, with a small cut for the cables.
+
+Leave a gap of a few centimetres at the bottom of the front curtain and
+at the top of the back wall, so the fan can pull room air through. After
+building, check for leaks: switch one zone to full blue in a dark room
+and photograph its neighbours with their lights off.
+
+A grow tent does the same job with less fiddling, but one tent holds one
+light condition. Four zones would need four tents, which is why the rack
+with film dividers is the plan.
+
+* Before adding plants
+
+- [ ] Fill each tray with water on the rack and leave it an hour, to find leaks and check that the shelf stays level.
+- [ ] Fill four tubs, stand them in a tray, and confirm they fit with room for fingers.
+- [ ] Run all LEDs at full power for an hour with the curtain closed, and check the temperature at leaf height and on the aluminium bars.
+- [ ] Pour a cup of water into a tray's liner area and watch where it goes.
+- [ ] Tug every cable to check that its drip loop stays below its entry point.
+- [ ] Run the light-leak test described above.
+
+* Regenerating the drawings
+
+The drawings are made by =site/make_drawings.py=, with all dimensions in
+centimetres near the top of each function. Change a number and run
+=python3 site/make_drawings.py= to redraw.

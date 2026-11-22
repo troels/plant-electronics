@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-label="Front view of the shelf rack with four light zones, a dry shelf on top and a nursery tray at the bottom"><title>Front view of the shelf rack with four light zones, a dry shelf on top and a nursery tray at the bottom</title>
+<style>
+  :root { --bg:#fbfaf7; --fg:#22261f; --muted:#646b5e; --line:#8b9184;
+          --frame:#5d6358; --water:#9cc7e6; --waterline:#2f78ad; --plant:#5fa052;
+          --led:#e0a020; --glow:#f6d76a; --elec:#7a5ea8; --elecfill:#e6ddf3;
+          --tray:#e9e7dd; --tub:#3a3f38; --card:#9a9a9a; --wrap:#1f221d; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#171a16; --fg:#e4e6df; --muted:#9aa193; --line:#6f7669;
+            --frame:#a3a99c; --water:#2c5f86; --waterline:#7fc0ee; --plant:#79bd6b;
+            --led:#f0b840; --glow:#8a7420; --elec:#b79be0; --elecfill:#34294a;
+            --tray:#2a2e27; --tub:#c9cdc2; --card:#8a8a8a; --wrap:#e4e6df; }
+  }
+  .bg{fill:var(--bg)} text{font:12px system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--fg)}
+  .t{font-size:15px;font-weight:650} .m{fill:var(--muted)} .big{font-size:22px;font-weight:700;fill:var(--muted)}
+  .frame{fill:none;stroke:var(--frame);stroke-width:2.5} .shelf{fill:var(--bg);stroke:var(--frame);stroke-width:1.5}
+  .wire{stroke:var(--frame);stroke-width:1;stroke-dasharray:3 3} .thin{fill:none;stroke:var(--line);stroke-width:1}
+  .lead{fill:none;stroke:var(--muted);stroke-width:.8} .dim{fill:none;stroke:var(--muted);stroke-width:.8}
+  .tray{fill:var(--tray);stroke:var(--frame);stroke-width:1.5} .tub{fill:var(--bg);stroke:var(--tub);stroke-width:2}
+  .water{fill:var(--water)} .wl{stroke:var(--waterline);stroke-width:1.5;fill:none} .plant{fill:var(--plant)}
+  .root{stroke:var(--line);stroke-width:1;fill:none}
+  .led{fill:var(--led)} .glow{fill:var(--glow);opacity:.28} .alu{fill:var(--line)}
+  .elec{fill:var(--elecfill);stroke:var(--elec);stroke-width:1.5} .cable{fill:none;stroke:var(--elec);stroke-width:1.6}
+  .film{stroke:var(--fg);stroke-width:2;fill:none} .curtain{stroke:var(--fg);stroke-width:2;fill:none;stroke-dasharray:7 4}
+  .sheet{stroke:var(--fg);stroke-width:2} .cam{fill:var(--fg)} .card{fill:var(--card)} .wrap{fill:var(--wrap)}
+  .rod{fill:var(--tub)} .wool{fill:var(--tray);stroke:var(--line)} .dash{stroke-dasharray:5 4}
+</style>
+<rect class="bg" width="900" height="900"/>
+<text class="t" x="16" y="26">Rack, front view (curtain removed)</text>
+<rect class="shelf" x="275.2" y="126" width="9.6" height="724" />
+<rect class="shelf" x="643.2" y="126" width="9.6" height="724" />
+<rect class="shelf" x="280" y="818" width="368" height="12" />
+<line class="wire" x1="284" y1="824.0" x2="644" y2="824.0"/>
+<rect class="shelf" x="280" y="602" width="368" height="12" />
+<line class="wire" x1="284" y1="608.0" x2="644" y2="608.0"/>
+<rect class="shelf" x="280" y="386" width="368" height="12" />
+<line class="wire" x1="284" y1="392.0" x2="644" y2="392.0"/>
+<rect class="shelf" x="280" y="170" width="368" height="12" />
+<line class="wire" x1="284" y1="176.0" x2="644" y2="176.0"/>
+<line class="thin" x1="80" y1="850" x2="760" y2="850"/>
+<rect class="elec" x="312" y="138" width="120" height="32" />
+<text class="" x="372" y="158" text-anchor="middle">24 V supply</text>
+<rect class="elec" x="448" y="150" width="56" height="20" />
+<text class="" x="476" y="164.0" text-anchor="middle">fuses</text>
+<rect class="elec" x="520" y="150" width="88" height="20" />
+<text class="" x="564" y="164.0" text-anchor="middle">USB hub</text>
+<path class="cable" d="M432,144.0 L680,144.0 L680,102"/>
+<text class="m" x="688" y="100" text-anchor="start">mains to a wall socket</text>
+<text class="m" x="688" y="115" text-anchor="start">on an HPFI breaker</text>
+<line class="sheet" x1="288" y1="384.4" x2="640" y2="384.4"/>
+<line class="film" x1="464" y1="382" x2="464" y2="182"/>
+<path class="glow" d="M308,190 L444,190 L460,278 L292,278 Z"/>
+<rect class="tray" x="292" y="343.6" width="168" height="40" />
+<rect class="tub" x="312" y="339.6" width="44" height="40" />
+<rect class="water" x="313.6" y="352.0" width="40.8" height="26.0" />
+<rect class="wrap" x="310.0" y="336.4" width="48" height="3.2" />
+<ellipse class="plant" cx="334.0" cy="321.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="319.7" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="348.3" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="334.0" cy="309.1" rx="10.2" ry="8.2"/>
+<rect class="tub" x="396" y="339.6" width="44" height="40" />
+<rect class="water" x="397.6" y="352.0" width="40.8" height="26.0" />
+<rect class="wrap" x="394.0" y="336.4" width="48" height="3.2" />
+<ellipse class="plant" cx="418.0" cy="321.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="403.7" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="432.3" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="418.0" cy="309.1" rx="10.2" ry="8.2"/>
+<rect class="alu" x="304" y="182.0" width="144" height="5.6" />
+<rect class="led" x="304" y="187.6" width="144" height="3.2" />
+<rect class="cam" x="368" y="190.8" width="16" height="12" />
+<text class="big" x="376" y="242" text-anchor="middle">A</text>
+<path class="glow" d="M484,190 L620,190 L636,278 L468,278 Z"/>
+<rect class="tray" x="468" y="343.6" width="168" height="40" />
+<rect class="tub" x="488" y="339.6" width="44" height="40" />
+<rect class="water" x="489.6" y="352.0" width="40.8" height="26.0" />
+<rect class="wrap" x="486.0" y="336.4" width="48" height="3.2" />
+<ellipse class="plant" cx="510.0" cy="321.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="495.7" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="524.3" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="510.0" cy="309.1" rx="10.2" ry="8.2"/>
+<rect class="tub" x="572" y="339.6" width="44" height="40" />
+<rect class="water" x="573.6" y="352.0" width="40.8" height="26.0" />
+<rect class="wrap" x="570.0" y="336.4" width="48" height="3.2" />
+<ellipse class="plant" cx="594.0" cy="321.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="579.7" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="608.3" cy="327.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="594.0" cy="309.1" rx="10.2" ry="8.2"/>
+<rect class="alu" x="480" y="182.0" width="144" height="5.6" />
+<rect class="led" x="480" y="187.6" width="144" height="3.2" />
+<rect class="cam" x="544" y="190.8" width="16" height="12" />
+<text class="big" x="552" y="242" text-anchor="middle">B</text>
+<rect class="elec" x="212" y="198" width="48" height="44" />
+<text class="" x="236" y="224.0" text-anchor="middle">box</text>
+<path class="cable" d="M268,258 L236,258 L236,242"/>
+<path class="cable" d="M254.0,242 L254.0,250 L290.0,250 L290.0,190.8"/>
+<rect class="elec" x="668" y="198" width="48" height="44" />
+<text class="" x="692" y="224.0" text-anchor="middle">box</text>
+<path class="cable" d="M660,258 L692,258 L692,242"/>
+<path class="cable" d="M674.0,242 L674.0,250 L638.0,250 L638.0,190.8"/>
+<line class="sheet" x1="288" y1="600.4" x2="640" y2="600.4"/>
+<line class="film" x1="464" y1="598" x2="464" y2="398"/>
+<path class="glow" d="M308,406 L444,406 L460,494 L292,494 Z"/>
+<rect class="tray" x="292" y="559.6" width="168" height="40" />
+<rect class="tub" x="312" y="555.6" width="44" height="40" />
+<rect class="water" x="313.6" y="568.0" width="40.8" height="26.0" />
+<rect class="wrap" x="310.0" y="552.4" width="48" height="3.2" />
+<ellipse class="plant" cx="334.0" cy="537.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="319.7" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="348.3" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="334.0" cy="525.1" rx="10.2" ry="8.2"/>
+<rect class="tub" x="396" y="555.6" width="44" height="40" />
+<rect class="water" x="397.6" y="568.0" width="40.8" height="26.0" />
+<rect class="wrap" x="394.0" y="552.4" width="48" height="3.2" />
+<ellipse class="plant" cx="418.0" cy="537.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="403.7" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="432.3" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="418.0" cy="525.1" rx="10.2" ry="8.2"/>
+<rect class="alu" x="304" y="398.0" width="144" height="5.6" />
+<rect class="led" x="304" y="403.6" width="144" height="3.2" />
+<rect class="cam" x="368" y="406.8" width="16" height="12" />
+<text class="big" x="376" y="458" text-anchor="middle">C</text>
+<path class="glow" d="M484,406 L620,406 L636,494 L468,494 Z"/>
+<rect class="tray" x="468" y="559.6" width="168" height="40" />
+<rect class="tub" x="488" y="555.6" width="44" height="40" />
+<rect class="water" x="489.6" y="568.0" width="40.8" height="26.0" />
+<rect class="wrap" x="486.0" y="552.4" width="48" height="3.2" />
+<ellipse class="plant" cx="510.0" cy="537.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="495.7" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="524.3" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="510.0" cy="525.1" rx="10.2" ry="8.2"/>
+<rect class="tub" x="572" y="555.6" width="44" height="40" />
+<rect class="water" x="573.6" y="568.0" width="40.8" height="26.0" />
+<rect class="wrap" x="570.0" y="552.4" width="48" height="3.2" />
+<ellipse class="plant" cx="594.0" cy="537.0" rx="14.3" ry="15.6"/>
+<ellipse class="plant" cx="579.7" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="608.3" cy="543.1" rx="11.6" ry="8.8"/>
+<ellipse class="plant" cx="594.0" cy="525.1" rx="10.2" ry="8.2"/>
+<rect class="alu" x="480" y="398.0" width="144" height="5.6" />
+<rect class="led" x="480" y="403.6" width="144" height="3.2" />
+<rect class="cam" x="544" y="406.8" width="16" height="12" />
+<text class="big" x="552" y="458" text-anchor="middle">D</text>
+<rect class="elec" x="212" y="414" width="48" height="44" />
+<text class="" x="236" y="440.0" text-anchor="middle">box</text>
+<path class="cable" d="M268,474 L236,474 L236,458"/>
+<path class="cable" d="M254.0,458 L254.0,466 L290.0,466 L290.0,406.8"/>
+<rect class="elec" x="668" y="414" width="48" height="44" />
+<text class="" x="692" y="440.0" text-anchor="middle">box</text>
+<path class="cable" d="M660,474 L692,474 L692,458"/>
+<path class="cable" d="M674.0,458 L674.0,466 L638.0,466 L638.0,406.8"/>
+<path class="cable" d="M312,162 L268,162 L268,474"/>
+<path class="cable" d="M608,162 L660,162 L660,474"/>
+<rect class="tray" x="312" y="791.6" width="216" height="24" />
+<ellipse class="plant" cx="328.0" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="350.8" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="373.6" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="396.4" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="419.2" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="442.0" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="464.8" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="487.6" cy="785.2" rx="6.4" ry="5.6"/>
+<ellipse class="plant" cx="510.4" cy="785.2" rx="6.4" ry="5.6"/>
+<rect class="alu" x="312" y="614.0" width="216" height="5.6" />
+<rect class="led" x="312" y="619.6" width="216" height="3.2" />
+<rect class="shelf" x="552" y="753.2" width="80" height="64" />
+<text class="m" x="592" y="790" text-anchor="middle">spares</text>
+<text class="" x="190" y="110" text-anchor="end">Dry shelf</text>
+<text class="m" x="190" y="125" text-anchor="end">supply, fuses and hub,</text>
+<text class="m" x="190" y="140" text-anchor="end">above all the water</text>
+<line class="lead" x1="196" y1="106" x2="312" y2="154"/>
+<circle cx="312" cy="154" r="2" fill="var(--muted)"/>
+<text class="" x="190" y="178" text-anchor="end">LED bars and camera</text>
+<text class="m" x="190" y="193" text-anchor="end">under the shelf above</text>
+<line class="lead" x1="196" y1="174" x2="312" y2="188.0"/>
+<circle cx="312" cy="188.0" r="2" fill="var(--muted)"/>
+<text class="" x="190" y="232" text-anchor="end">Controller box</text>
+<text class="m" x="190" y="247" text-anchor="end">outside the frame,</text>
+<text class="m" x="190" y="262" text-anchor="end">cables enter from below</text>
+<line class="lead" x1="196" y1="228" x2="212" y2="210"/>
+<circle cx="212" cy="210" r="2" fill="var(--muted)"/>
+<text class="" x="190" y="304" text-anchor="end">Drip loop</text>
+<text class="m" x="190" y="319" text-anchor="end">each cable dips below</text>
+<text class="m" x="190" y="334" text-anchor="end">where it enters</text>
+<line class="lead" x1="196" y1="300" x2="236" y2="258"/>
+<circle cx="236" cy="258" r="2" fill="var(--muted)"/>
+<text class="" x="190" y="380" text-anchor="end">Spill tray</text>
+<text class="m" x="190" y="395" text-anchor="end">42 x 30 x 10 cm, holds</text>
+<text class="m" x="190" y="410" text-anchor="end">all four tubs' water</text>
+<line class="lead" x1="196" y1="376" x2="292" y2="362"/>
+<circle cx="292" cy="362" r="2" fill="var(--muted)"/>
+<text class="" x="190" y="452" text-anchor="end">Liner sheet</text>
+<text class="m" x="190" y="467" text-anchor="end">stops drips and light</text>
+<text class="m" x="190" y="482" text-anchor="end">between levels</text>
+<line class="lead" x1="196" y1="448" x2="292" y2="384.4"/>
+<circle cx="292" cy="384.4" r="2" fill="var(--muted)"/>
+<text class="" x="190" y="740" text-anchor="end">Nursery tray</text>
+<text class="m" x="190" y="755" text-anchor="end">seedlings, weeks 1 to 3,</text>
+<text class="m" x="190" y="770" text-anchor="end">under a white bar</text>
+<line class="lead" x1="196" y1="736" x2="312" y2="802"/>
+<circle cx="312" cy="802" r="2" fill="var(--muted)"/>
+<text class="" x="752" y="330" text-anchor="start">Divider</text>
+<text class="m" x="752" y="345" text-anchor="start">black-and-white film,</text>
+<text class="m" x="752" y="360" text-anchor="start">white side to plants</text>
+<line class="lead" x1="746" y1="326" x2="464" y2="270"/>
+<circle cx="464" cy="270" r="2" fill="var(--muted)"/>
+<text class="" x="752" y="420" text-anchor="start">Tubs</text>
+<text class="m" x="752" y="435" text-anchor="start">four per zone,</text>
+<text class="m" x="752" y="450" text-anchor="start">opaque, one plant each</text>
+<line class="lead" x1="746" y1="416" x2="594.0" y2="354"/>
+<circle cx="594.0" cy="354" r="2" fill="var(--muted)"/>
+<text class="" x="752" y="560" text-anchor="start">Zones A to D</text>
+<text class="m" x="752" y="575" text-anchor="start">each with its own</text>
+<text class="m" x="752" y="590" text-anchor="start">lights, camera, box</text>
+<line class="lead" x1="746" y1="556" x2="552" y2="458"/>
+<circle cx="552" cy="458" r="2" fill="var(--muted)"/>
+<line class="dim" x1="724" y1="386" x2="724" y2="170"/>
+<line class="dim" x1="720.8" y1="386" x2="727.2" y2="386"/>
+<line class="dim" x1="720.8" y1="170" x2="727.2" y2="170"/>
+<text class="m" text-anchor="middle" transform="translate(737,278.0) rotate(-90)">54 cm between shelves</text>
+<line class="dim" x1="36" y1="850" x2="36" y2="126"/>
+<line class="dim" x1="32.8" y1="850" x2="39.2" y2="850"/>
+<line class="dim" x1="32.8" y1="126" x2="39.2" y2="126"/>
+<text class="m" text-anchor="middle" transform="translate(19,488.0) rotate(-90)">181 cm</text>
+<line class="dim" x1="280" y1="866" x2="648" y2="866"/>
+<line class="dim" x1="280" y1="869.2" x2="280" y2="862.8"/>
+<line class="dim" x1="648" y1="869.2" x2="648" y2="862.8"/>
+<text class="m" x="464.0" y="882" text-anchor="middle">92 cm wide, 36 cm deep</text></svg>

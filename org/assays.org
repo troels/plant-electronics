@@ -34,15 +34,15 @@ with the camera index across at least 20 discs spanning pale to dark.
 
 1. Sample at the same hour each time, the same leaf position on each plant.
 2. Weigh about 0.5 g of fresh leaf.
-3. Grind in 2 mL of cold dilute acid (oxalic or metaphosphoric acid; citric acid as a household fallback).
+3. Grind in 2 mL of cold dilute oxalic acid (citric acid as a household fallback; metaphosphoric acid is the textbook choice but is only sold to businesses).
 4. Let it settle or filter; put a drop on a carbon electrode with buffer.
 5. Sweep the voltage upward from 0 V and record the oxidation peak.
 6. Add a known amount of vitamin C to the same extract and repeat (standard addition). The step in peak height calibrates that sample.
 7. Finish within minutes of grinding.
 
 *Checks:*
-- *Specificity:* measure an aliquot again after its vitamin C has been destroyed (left open and warm, or treated with the enzyme ascorbate oxidase). What remains is interference from other compounds.
-- *Cross-check:* test strips or an iodine titration on the same extract.
+- *Specificity:* measure an aliquot again after its vitamin C has been destroyed by leaving it open and warm. What remains is interference from other compounds. The enzyme ascorbate oxidase does this more cleanly, but is only sold to businesses.
+- *Cross-check:* an iodine titration on the same extract. Test strips start at 50 mg/L, which is probably above what a lettuce extract holds.
 - *Repeatability:* three samples from one plant should agree within about 15%.
 
 *Standard:* pure vitamin C powder, dissolved fresh each session.
