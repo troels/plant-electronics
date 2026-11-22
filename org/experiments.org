@@ -1,0 +1,83 @@
+#+TITLE: Experiments: pipeline, controls, screening, optimisation
+#+STARTUP: overview
+
+Back to [[file:index.org][index]]. The hardware that runs these is in [[file:rig.org][rig]].
+
+* Weekly batch pipeline (lettuce)
+
+| Week | Where          | What happens                                       |
+|------+----------------+----------------------------------------------------|
+| 0    | Nursery tray   | Sow about 20 seeds                                 |
+| 0-3  | Nursery        | Standard white light, standard nutrient            |
+| 3    | Treatment shelf | Pick the 16 most even plants, randomise into 4 zones |
+| 3-4  | Treatment shelf | One week of treatment; camera daily                |
+| 4    | Bench          | Harvest: weigh, sample for vitamin C, validate camera |
+
+Sowing every week means a treatment batch finishes every week after the
+first month. Only the last week is treated because the published light
+effects come from that week alone.
+
+* Objectives
+
+- *Concentration:* amount of compound per gram of leaf.
+- *Yield per plant:* concentration times fresh weight. This is the number to optimise, since a recipe that doubles pigment but halves growth gains nothing.
+- *Cost (later):* yield per unit of electrical energy.
+
+* Controls
+
+- *Reference zone:* every batch has one zone on the standard recipe. Which zone it is rotates weekly, so position effects average out.
+- *Sham electrodes:* jars with electrodes and no current.
+- *Pre-treated solution:* jars whose solution received current before the plant went in. This separates an effect on the plant from an effect on the solution.
+- *Positive controls:* blue light for redness, strong light for vitamin C, wounding for nicotine. If these fail, the measurement is at fault.
+- *Blinding:* assay samples are coded.
+
+* Units of replication
+
+- *Light:* the zone is the unit. Four jars under one light are not four independent tests of that light. Light recipes are replicated across weeks and zones.
+- *Root current:* the jar is the unit, so current treatments can be compared within a zone.
+- *Analysis:* a mixed model with batch and zone as random effects.
+
+* Screening list
+:PROPERTIES:
+:CUSTOM_ID: screening
+:END:
+
+One factor at a time against the reference, each repeated in at least
+three batches before it is believed.
+
+| Factor                | Levels to try                                         | Evidence so far        |
+|-----------------------+-------------------------------------------------------+------------------------|
+| Extra blue light      | 0, 30, 60 umol/m2/s                                   | Published for redness  |
+| Extra UV-A            | 0, 30 umol/m2/s                                       | Published for redness  |
+| Base intensity        | 150, 250, 350 umol/m2/s                               | Published for vitamin C |
+| Photoperiod           | 16 h, or continuous for the last 72 h                 | Published for vitamin C |
+| Fast pulsing          | Steady vs 100 Hz and 1 kHz at 50% duty, equal dose    | Mixed                  |
+| Slow light/dark cycles | Cycles of minutes to hours, equal dose               | One 2025 vitamin C study |
+| Root-zone current     | None, then a rising ladder of DC and pulsed levels    | Untested               |
+| Root-zone temperature | Room vs cooled                                        | One older study        |
+| Nitrogen in last week | Standard vs reduced                                   | Memory                 |
+
+Reference recipe to start from: white plus red at 200 umol/m2/s for
+16 hours a day (my choice; one cited study used a daily total of
+14.4 mol/m2, which is 250 umol/m2/s for 16 hours).
+
+* Optimisation
+
+- *When:* after screening shows which three to five factors matter.
+- *How:* each week the optimiser proposes three new recipes for the three experimental zones; the fourth stays on the reference. A Gaussian-process model of yield against recipe is refitted after each harvest and picks the next three.
+- *Pace:* about 36 recipes in 12 weeks. That is enough for three or four continuous factors, not for ten.
+- *Published precedent:* light recipes for lettuce have been tuned with response-surface designs and genetic algorithms. I found no study using Bayesian optimisation, so this part is your own method, not a reproduction.
+- *Confirmation:* the winning recipe is run against the reference in three fresh batches, with the comparison written down before the run.
+
+* Tobacco track
+
+- *Timeline:* sow at the start of Stage 1; plants are usable after roughly 6-8 weeks (memory).
+- *Groups, 3-4 plants each:* untouched; sham electrodes; root-zone current; leaf wounding (positive control); UV-A supplement.
+- *Sampling:* leaf punch on day 0, 3 and 7 from leaves of the same position.
+- *Order of work:* first show the assay sees the wounding effect. Only then run the electrical and light treatments.
+
+* Faster proxies (later)
+
+If early signals predict the harvest result, each optimisation step gets
+shorter. Candidates: day-2 camera redness, and the optional plant
+electrodes and impedance channel.

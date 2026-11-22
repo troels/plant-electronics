@@ -1,0 +1,82 @@
+#+TITLE: Literature
+#+STARTUP: overview
+
+Back to [[file:index.org][index]].
+
+Everything here was found by web search on 2026-11-22 and read only as
+titles, abstracts and search snippets. Full texts were not read. Check
+the paper before relying on a number.
+
+* Lettuce pigment (anthocyanin)
+- [[https://www.canr.msu.edu/floriculture/uploads/files/Improving%20lettuce%20nutrition%20and%20coloration.pdf][Improving lettuce nutrition and coloration (MSU)]]: blue or UV-A for the last six days on Rouxai.
+- [[https://doaj.org/article/9caab835ae5e4aa089259ef4ce31acef][Supplemental UVA or blue light timing, HortScience 2023]]: early application has no effect at harvest.
+- [[https://dx.doi.org/10.4236/ajps.2015.614238][Root-zone temperature and pigment in Red Wave lettuce]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10109386/][Image-based phenotyping to estimate anthocyanin in lettuce, 2023]]: the red/green camera index.
+- [[https://www.nature.com/articles/s41598-023-36220-2.pdf][Handheld spectrometer estimates of lettuce pigment, 2023]]
+
+* Vitamin C in lettuce
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7832877/][Light quality of continuous light before harvest and vitamin C, 2021]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7911886/][Night-time light intensity under continuous light, 2021]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC6857701][Continuous light and vitamin C in hydroponic lettuce]]
+- [[https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2020.00704/pdf][Continuous light, red:blue ratio and vitamin C, 2020]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12708927/][End-of-production light under different light/dark alternating frequencies, 2025]]
+
+* Vitamin C by electrode
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7038320/][Vitamin C in multifruit juices by voltammetry, Sensors 2020]]
+- [[https://hrcak.srce.hr/file/475600][Electrode comparison for vitamin C in citrus, 2025]]
+- [[https://mdpi.com/2227-9040/12/11/237][Review of electrochemical juice analysis, 2024]]
+
+* Pulsed light
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8069217/][Pulsed LEDs on baby leaf lettuce, 2021]]: more biomass at 0.5-1 kHz, equal daily dose.
+- [[https://agris.fao.org/search/fr/records/6473b0aa542a3f9f03b31787][Pulsed vs continuous LEDs, 2016]]: no difference at 1 kHz and 75% duty.
+- [[https://air.unimi.it/bitstream/2434/1117348/2/1-s2.0-S0304423824009385-main.pdf][Pulsed light on red and green lettuce, 2024]]: lower fresh weight.
+- [[https://air.unimi.it/retrieve/handle/2434/1009929/2307367/1-s2.0-S0254629923004386-main.pdf][Pulsed vs continuous at equal intensity, 2023]]: continuous better.
+
+* Other pigments and optical readouts
+- [[https://researchportal.ip-paris.fr/en/publications/dualex-a-new-instrument-for-field-measurements-of-epidermal-ultra/][Dualex: epidermal UV absorbance by chlorophyll fluorescence]]
+- [[https://link.springer.com/article/10.1007/s43630-026-00907-y][Intercomparison of Dualex instruments, 2026]]
+
+* Light recipe optimisation
+- [[https://link.springer.com/10.1186/s13007-023-01098-8][Response-surface optimisation of red/green/blue ratio for lettuce seedlings, 2023]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11434889/][Optimal light intensity for lettuce in plant factories, 2024]]
+
+* Electricity and plant compounds
+- [[https://experts.arizona.edu/en/publications/sub-lethal-levels-of-electric-current-elicit-the-biosynthesis-of-/][Sub-lethal electric current elicits plant secondary metabolites]]
+- [[https://www.mdpi.com/2076-3417/11/10/4555][Direct current and camptothecin accumulation, 2021]]
+- [[https://repositorio.unesp.br/entities/publication/ba2b0b62-dc32-4472-96cb-885c37b35837/full][Hydroponic lettuce and low-frequency electrical pulses: growth]]
+- [[https://repositorio.unesp.br/entities/publication/9b73ad68-22f4-4760-86f7-de3972a47a49/full][Hydroponic lettuce and low-frequency electrical pulses: nutrients]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC10786271][eSoil: electrical stimulation of barley roots, PNAS 2023]]
+
+* Nicotine in tobacco
+- [[https://www.cambridge.org/core/journals/new-phytologist/article/withinplant-relationships-among-wounding-jasmonic-acid-and-nicotine-implications-for-defence-in-nicotiana-sylvestris/84E131711B9AA339CF07EAD1BAD9E632][Wounding, jasmonic acid and nicotine in Nicotiana sylvestris]]
+- [[https://link.springer.com/doi/10.1007/BF02066250][Leaf-puncture timing and the damage signal]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC5156298][Topping, wounding, jasmonate and auxin]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC88874][Ethylene suppression of induced nicotine]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC366335][Near-ultraviolet and visible light intensity on tobacco leaf chemistry, 1973]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC396407][Red vs far-red end-of-day light and tobacco alkaloids, 1970]]
+- [[https://profiles.wustl.edu/en/publications/ultraviolet-radiation-increases-nicotine-production-in-nicotiana-/][UV and nicotine in callus cultures, 1990]]
+
+* Nicotine by electrode, and safety
+- [[https://www.nature.com/articles/s41598-023-47703-7][Nicotine on a modified screen-printed carbon electrode, 2023]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9323772/][Electrochemical nicotine sensor for tobacco products]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3880486/][Mayer 2013: how much nicotine kills a human]]
+- [[https://en.wikipedia.org/wiki/Green_Tobacco_Sickness][Green tobacco sickness]]
+
+* Plant electrical signals and in-plant electrodes (optional modules)
+- [[https://link.springer.com/doi/10.1007/s004250050143][Stankovic & Davies 1997: electrical stimulation and gene expression in tomato]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC4883923][Electrically evoked action potentials in Micro-Tom tomato]]
+- [[https://doi.org/10.1038/nature12478][Mousavi et al. 2013: leaf-to-leaf wound signalling]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC8401951][Review: electrical signals and stress responses]]
+- [[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10742318/][In-vein electrode for auxin and salicylic acid in tomato, 2023]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC10426379][Plant impedance spectroscopy review, 2023]]
+- [[https://pmc.ncbi.nlm.nih.gov/articles/PMC7706337][Bioristor: in-stem sap sensor in tomato, 2019]]
+
+* Prices checked
+- [[https://www.digikey.de/en/products/detail/analog-devices-inc/EVAL-AD5941ELCZ/10659272][AD5941 evaluation board, DigiKey]]
+- [[https://horizon.documentation.ird.fr/exl-doc/pleins_textes/2022-07/010085142.pdf][Low-cost potentiostat comparison, 2022]] (Rodeostat price)
+- [[https://www.palmsens.com/en-gb/potentiostat/economical-potentiostat/][PalmSens Sensit Smart]]
+- [[https://www.ornl.gov/publication/hunstat-simple-and-low-cost-potentiostat-analytical-and-educational-purposes][HunStat: a $15-30 home-built potentiostat]]
+- [[https://pineresearch.com/shop/products/electrodes/screen-printed-electrodes/carbon-spes][Pine Research carbon screen-printed electrodes]]
+- [[https://www.jameco.com/z/NLDD-700H-MEAN-WELL-DC-DC-Constant-Current-Step-Down-LED-Driver-700mA-6-52VDC-Output-10-56VDCin-PC-Pins-PWM-Remote-ON-OFF_2319863.html][Mean Well NLDD-700H, Jameco]]
+- [[https://www.preprints.org/manuscript/202504.1750/v1][AS7341-based low-cost PAR sensor, 2025 preprint]]
+- [[https://www.tomshardware.com/raspberry-pi/component-shortages-drive-raspberry-pi-prices-up-by-up-to-23-percent-escalating-lpddr4-lpddr5-costs-trigger-the-third-price-hike-of-the-year][Raspberry Pi price rises, 2026]]

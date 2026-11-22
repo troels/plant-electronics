@@ -1,0 +1,92 @@
+#+TITLE: Roadmap: stages and exit criteria
+#+TODO: TODO DOING | DONE
+#+STARTUP: overview
+
+Back to [[file:index.org][index]]. What to buy for each stage is tagged in the [[file:shopping.org][shopping list]].
+
+* TODO Stage 0: first loop (two weekends plus growing time)                  :s0:
+
+- Sow red lettuce; in parallel buy a living red lettuce from a shop to practise on.
+- Four jars under one white light; one camera on the host; grey card in frame.
+- Compute the redness index daily.
+- Add a blue strip over two of the four jars for six days.
+
+*Exit:* the camera index separates the blue-lit jars from the others.
+
+* TODO Stage 1: the rig                                                      :s1:
+
+- Shelf with light zones, each with its LED channels and a controller ([[file:rig.org::#light][light engine]]).
+- Zone sensors, cameras, host software, dashboard.
+- Calibrate every channel with a PAR meter.
+- Start the weekly sowing. Sow tobacco now.
+
+*Exit:*
+- The host sets a different recipe on each zone and logs a week unattended.
+- Measured light is within 10% of the setpoint in every zone.
+- A zone keeps its schedule through a host reboot.
+- A pulsed zone and a steady zone deliver the same measured daily light.
+
+* TODO Stage 2: assays                                                       :s2:
+
+- Potentiostat on the host; vitamin C method working on shop lettuce.
+- Camera index validated against pigment extracts.
+- Nicotine method working on a tobacco leaf.
+
+*Exit:* calibration curves, repeatability within about 15%, and a
+recovery test for each assay ([[file:assays.org][assays]]).
+
+* TODO Stage 3: reproduce and screen                                         :s3:
+
+- Reproduce the known effects first: blue light on redness, intensity on vitamin C.
+- Then the [[file:experiments.org::#screening][screening list]], including pulsing and root-zone current.
+
+*Exit:* an effect size with an interval for each factor, on redness,
+vitamin C and fresh weight.
+
+* TODO Stage 4: optimise                                                     :s4:
+
+- Optimiser chooses three recipes a week over the factors that mattered.
+
+*Exit:* a recipe that beats the reference in three fresh confirmation batches.
+
+* TODO Stage 5: tobacco and nicotine                                         :s5:
+
+Runs alongside Stages 2-4 because the plants are slow.
+
+*Exit:* the assay detects the wounding effect; then a clear yes or no on
+root-zone current and on UV-A.
+
+* TODO Stage 6: stretch                                                      :s6:
+
+- Fluorescence index for flavonols.
+- Plant electrodes and impedance as fast predictors of the harvest result.
+- Closed loop: hold a target redness by adjusting blue light from the camera reading.
+- A second species.
+
+* Repository layout
+
+#+begin_example
+org/         these documents, logbook
+hardware/    zone controller and light engine wiring, current source, pinouts
+firmware/    ESP32-S3: PWM and pulse generator, sensor polling, current source, serial protocol
+rig/         host: device manager, scheduler, recorder, dashboard
+vision/      image capture, grey-card normalisation, plant mask, indices
+assay/       potentiostat driver, sweep storage, peak finding, standard addition
+sim/         virtual zones and plants behind the same protocol as the firmware
+optimise/    screening analysis, mixed models, recipe optimiser
+protocols/   recipe and experiment definitions
+data/        gitignored: database, time series, images
+#+end_example
+
+Defaults unless told otherwise: firmware in C on ESP-IDF; Python
+managed with =uv=; numpy, scipy, polars, scikit-learn, OpenCV.
+
+* First build step (needs no hardware)
+
+1. =git init= and scaffold the layout.
+2. Write the serial protocol and the simulator.
+3. Build scheduler, recorder and dashboard against the simulator.
+4. Build the image pipeline on photos of shop lettuce.
+5. Run a simulated screening and optimisation campaign end to end.
+
+The real controllers then replace the simulator behind the same protocol.

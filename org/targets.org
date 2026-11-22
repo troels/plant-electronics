@@ -1,0 +1,80 @@
+#+TITLE: Targets: compounds, plants, levers, measurement
+#+STARTUP: overview
+
+Back to [[file:index.org][index]]. Measurement procedures are in [[file:assays.org][assays]]; sources are in [[file:literature.org][literature]].
+
+* Summary
+
+| Compound            | Plant        | Readout                          | Live? | Known levers                               |
+|---------------------+--------------+----------------------------------+-------+--------------------------------------------|
+| Anthocyanin (red)   | Red lettuce  | Camera, red vs green reflectance | Yes   | Blue or UV-A light late in growth, cool roots |
+| Vitamin C           | Lettuce      | Voltammetry on leaf extract      | No    | Light intensity, continuous light, blue fraction |
+| Chlorophyll         | Lettuce      | Camera or spectral sensor        | Yes   | Light, nitrogen (memory)                   |
+| Flavonols           | Lettuce      | Fluorescence ratio, UV vs red    | Yes   | UV and blue light (memory)                 |
+| Nicotine, alkaloids | Tobacco      | Voltammetry on leaf punch        | No    | Wounding, topping, jasmonate; near-UV      |
+
+* Anthocyanin in red lettuce
+:PROPERTIES:
+:CUSTOM_ID: anthocyanin
+:END:
+
+- *Why first:* it is the only target with a published live, contact-free readout, and it has a lever that is known to work.
+- *Readout:* the pigment absorbs green and reflects red. The index (red - green) / (red + green) from an ordinary colour camera tracked pigment content with R2 = 0.73 at canopy level in a 2023 study.
+- *Known levers:*
+  - Extra blue or UV-A light for the last six days raised redness in the variety Rouxai without reducing growth. More than 30 umol/m2/s of extra light was needed to see it. Blue and UV-A were about equal; blue is cheaper.
+  - Applying the extra light early had no effect at harvest, so only the last week matters.
+  - Cooling the root zone raised pigment in an older study.
+  - Low nitrogen in the last week is commonly reported to raise it (memory).
+- *Open:* pulsed light (studies disagree), root-zone current (untested).
+- *Varieties:* Rouxai, Lollo Rosso, red oak leaf.
+- *Faster alternative:* red radish or red cabbage microgreens finish in 7-14 days and carry the same pigment class (memory). Useful if a five-week lettuce cycle feels slow.
+
+* Vitamin C in lettuce
+:PROPERTIES:
+:CUSTOM_ID: vitamin-c
+:END:
+
+- *Readout:* vitamin C (ascorbic acid) oxidises readily at a carbon electrode. Voltammetry on plain screen-printed carbon electrodes has been used on fruit juice with almost no sample preparation, and on fresh vegetables.
+- *Not live:* each reading needs a leaf sample of roughly half a gram (my estimate; lettuce is low in vitamin C, so a single small punch may be too little).
+- *Known levers:*
+  - Higher light intensity raises it, within a range.
+  - Continuous light before harvest raised it; one study used 72 hours.
+  - A higher blue fraction raised it in some studies; reviews call the effect of spectrum uncertain.
+  - High intensity plus high blue also causes oxidative stress, so there is an optimum.
+  - A 2025 study tested light/dark alternation at different frequencies in the last days before harvest, which is close to your interest in frequency.
+- *Practical traps (memory):* vitamin C degrades within minutes once tissue is crushed, and it varies over the day. Sample at a fixed hour, extract in cold acid, measure immediately.
+
+* Other light-absorbing compounds in the same plants
+:PROPERTIES:
+:CUSTOM_ID: pigments
+:END:
+
+- *Chlorophyll:* greenness from the same camera images, or from a spectral sensor.
+- *Flavonols:* colourless UV-A absorbers in the leaf skin. The established method excites chlorophyll fluorescence once with UV-A and once with red light; the flavonols block the UV beam but not the red one, so the ratio gives their amount. Commercial clips (Dualex) do this. A home-built version needs two LEDs, a filtered photodiode and calibration against extracts. Stretch goal.
+- *Carotenoids:* hard to separate from chlorophyll by camera; needs an extract and a photometer (memory).
+
+Candidates outside lettuce, not planned, all from memory:
+
+| Compound        | Plant                  | Note                                         |
+|-----------------+------------------------+----------------------------------------------|
+| Betalains       | Red chard, amaranth    | Red pigment, camera-readable like anthocyanin |
+| Aroma compounds | Basil, mint            | Readable in air with gas sensors, non-specific |
+| Hypericin       | St John's wort         | Red photosensitiser; slow plant              |
+| Furanocoumarins | Parsnip, giant hogweed | Phototoxic on skin; avoid                    |
+
+* Nicotine in tobacco
+:PROPERTIES:
+:CUSTOM_ID: nicotine
+:END:
+
+- *Biology:* made in the roots, shipped to the leaves. Leaf wounding raises jasmonate in the leaf within 90 minutes and in the roots about 3 hours later; leaf nicotine is higher five days on.
+- *Known levers:*
+  - Wounding and topping (cutting off the growing tip) raise it.
+  - Methyl jasmonate added to the roots of hydroponic plants raises it.
+  - Ethylene suppresses the rise.
+  - Near-UV light added to visible light raised alkaloids in expanding leaves in a 1973 whole-plant study.
+  - Plants given red light last each day had more alkaloid than plants given far-red last (1970).
+- *Electrical route:* untested. A leaf-puncture experiment suggests the leaf-to-root message is slow and chemical, so stimulating a leaf is the weaker bet. Current through the root zone is the better bet, because sub-lethal current triggered defence compounds in the roots of other plants.
+- *Readout:* voltammetry on a leaf-punch extract. Nicotine oxidises at about +0.6 to +1.3 V depending on the electrode. Related alkaloids will probably appear in the same peak (my inference).
+- *Plant choice (memory):* common tobacco used young, at the rosette stage, or the smaller lab species /Nicotiana benthamiana/.
+- *Safety:* see [[file:assays.org::#safety][assay safety]].

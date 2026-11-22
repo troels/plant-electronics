@@ -1,0 +1,470 @@
+#+TITLE: Shopping list
+#+TODO: BUY ORDERED | HAVE SKIP
+#+COLUMNS: %45ITEM %7TODO %4QTY %6EST{+} %8PRICE %TAGS
+#+STARTUP: overview
+#+OPTIONS: toc:1
+
+Back to [[file:index.org][index]]. What each part is for is explained in [[file:rig.org][rig]] and [[file:assays.org][assays]].
+
+How to use this file:
+- Each item is a heading. Change =BUY= to =ORDERED=, =HAVE= or =SKIP= as you go.
+- =EST= is the estimated cost in US dollars for the whole quantity of the recommended pick.
+- =PRICE= says whether that figure was =checked= by web search on 2026-11-22 or is from =memory=. Most are from memory, so check before ordering.
+- =C-c C-x C-c= on a section shows it as a table with the costs summed.
+- Tags give the stage that first needs the item (=s0= to =s5=) and mark =optional= items.
+
+* Cost tiers
+:PROPERTIES:
+:CUSTOM_ID: tiers
+:END:
+
+| Tier                              | Contents                                                    | Rough total     |
+|-----------------------------------+-------------------------------------------------------------+-----------------|
+| Stage 0                           | 4-8 jars, one white light, one blue strip, one camera        | $150-180        |
+| Lean rig                          | Stage 0 plus two computer-controlled light zones             | about $450      |
+| Full rig, budget picks            | Four zones, home-built potentiostat, no PAR meter, tobacco   | about $1,200    |
+| Full rig, recommended picks       | Four zones, bought potentiostat, PAR meter, tobacco          | about $1,800    |
+
+These totals are sums of the estimates below and assume you own none of
+it. They are well above the "$300+" first-stage budget you gave, so the
+lean rig is the natural first purchase. Things you likely have already
+(a computer, a webcam, a bench supply, wire, a shelf) come straight off.
+
+Section subtotals for the recommended picks: growing $210, light engine
+$240, control and sensing $522, assay station $625, root-zone current
+$65, tobacco $110.
+
+* Growing                                                                    :grow:
+** BUY Red lettuce seeds                                                      :s0:
+:PROPERTIES:
+:QTY: 1
+:EST: 5
+:PRICE: memory
+:END:
+- Pick: Rouxai (the variety in the lighting study).
+- Alternatives: Lollo Rosso; red oak leaf; red radish or red cabbage seed for fast microgreen runs.
+** BUY Jars or tubs, opaque, 0.7-1 L                                          :s0:
+:PROPERTIES:
+:QTY: 16
+:EST: 25
+:PRICE: memory
+:END:
+- Pick: wide-mouth jars with a sleeve or paint to keep light off the roots.
+- Alternatives: food tubs with a hole cut in the lid; one long tub per zone (cheaper, but jars no longer independent for current treatments).
+** BUY Net pots and starter plugs                                             :s0:
+:PROPERTIES:
+:QTY: 25
+:EST: 15
+:PRICE: memory
+:END:
+- Pick: 5 cm net pots with rockwool cubes.
+- Alternatives: foam plugs; clay pebbles; coco plugs.
+** BUY Hydroponic nutrient                                                    :s0:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+- Pick: a three-part powder set (base mix, calcium nitrate, Epsom salt). Cheap per litre and lets you vary nitrogen later.
+- Alternatives: a one-part liquid, simpler but fixed composition.
+** BUY pH and conductivity measurement, pH-down                               :s0:
+:PROPERTIES:
+:QTY: 1
+:EST: 30
+:PRICE: memory
+:END:
+- Pick: handheld pH pen, conductivity pen, calibration sachets, pH-down. Manual readings typed into the dashboard.
+- Alternatives: analogue pH and conductivity probes on the controller (about $110 the pair, logged automatically, need regular calibration); isolated lab-grade probe modules (about $150 each).
+** BUY Nursery tray and plain white light                                     :s0:
+:PROPERTIES:
+:QTY: 1
+:EST: 35
+:PRICE: memory
+:END:
+- Pick: seed tray with a cheap white LED grow bar on a mains timer.
+- Alternatives: a spare zone on the main shelf; a bright windowsill in summer.
+** BUY Shelf unit, 90-120 cm wide                                             :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 50
+:PRICE: memory
+:END:
+- Pick: wire rack, so lights hang from the shelf above.
+- Alternatives: any existing shelf; a grow tent (better light isolation, about $70-100).
+** BUY Zone dividers and front curtain                                        :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+- Pick: white foam board between zones, blackout cloth across the front.
+- Alternatives: reflective film; corrugated plastic sheet.
+
+* Light engine, four zones                                                   :light:
+Design choices are explained in [[file:rig.org::#light][rig: light engine]].
+** BUY 24 V enclosed power supply, 200 W                                      :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 30
+:PRICE: memory
+:END:
+- Pick: a branded enclosed supply with a fuse on each zone feed.
+- Alternatives: a 150 W unit for two zones; a bench supply while prototyping.
+** BUY White LED strip, 24 V, high colour rendering                           :s1:
+:PROPERTIES:
+:QTY: 8 m
+:EST: 40
+:PRICE: memory
+:END:
+- Pick: 4000 K, CRI 90+, on aluminium. Doubles as the photo light.
+- Alternatives: horticultural "full spectrum" strip; white 3 W star LEDs on constant-current drivers; a commercial dimmable grow bar per zone.
+** BUY Deep-red strip, 660 nm                                                 :s1:
+:PROPERTIES:
+:QTY: 4 m
+:EST: 30
+:PRICE: memory
+:END:
+- Alternatives: 660 nm star LEDs; ordinary red strip (about 625 nm, less efficient for growth); skip and use white only at first.
+** BUY Blue strip, 450 nm                                                     :s0:
+:PROPERTIES:
+:QTY: 4 m
+:EST: 25
+:PRICE: memory
+:END:
+- One metre and a small supply is enough for Stage 0.
+- Alternatives: royal-blue star LEDs; ordinary blue strip (about 465 nm, fine for a first test).
+** BUY UV-A strip, 385-395 nm                                                 :s1:
+:PROPERTIES:
+:QTY: 3 m
+:EST: 30
+:PRICE: memory
+:END:
+- Pick: check the stated wavelength; many "UV" strips are 400-405 nm, which is violet.
+- Alternatives: 365-385 nm star LEDs (truer UV-A, dearer); skip, since blue did as well as UV-A for redness.
+** BUY Far-red strip, 730 nm                                         :s5:optional:
+:PROPERTIES:
+:QTY: 2 m
+:EST: 20
+:PRICE: memory
+:END:
+- Only for end-of-day experiments, mainly on tobacco.
+** BUY Aluminium sheet or profile for mounting                                :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 30
+:PRICE: memory
+:END:
+- Alternatives: aluminium LED channel; an old baking tray per zone.
+** BUY MOSFET switching for 16-20 channels                                    :s1:
+:PROPERTIES:
+:QTY: 20
+:EST: 20
+:PRICE: memory
+:END:
+- Pick: logic-level N-channel MOSFETs with gate resistors on protoboard.
+- Alternatives: ready 4-channel MOSFET boards; your own zone board ([[#custom-boards][custom boards]]); constant-current modules for star LEDs (Mean Well NLDD-700H, $4-9 each checked; their PWM range was not confirmed, so check the datasheet before using them for pulse experiments).
+** BUY Wire, fuses, lever connectors, terminal blocks                         :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+** BUY UV-blocking safety glasses                                             :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 10
+:PRICE: memory
+:END:
+
+* Control and sensing                                                        :control:
+** HAVE Host computer                                                         :s0:
+:PROPERTIES:
+:CUSTOM_ID: host
+:QTY: 1
+:EST: 0
+:PRICE: checked
+:END:
+- Pick: a desktop or laptop you already own.
+- Alternatives: Raspberry Pi 5 8 GB, now $130-200 after this year's memory-driven price rises (checked; sources disagree on the exact figure); a used mini PC at a similar price with more power; Pi 5 4 GB at about $110.
+** BUY Zone controllers                                                       :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 40
+:PRICE: memory
+:END:
+- Pick: ESP32-S3 dev boards on USB, since you know the ESP32. Native USB serial, hardware PWM at 20 kHz with about 12 bits, enough timers for pulsing.
+- Alternatives: Raspberry Pi Pico 2 ($5 each, checked) or Pico 2 W ($7); an ESP32-S3 module on your own board; Wi-Fi instead of USB (fewer cables, but a dropped link then matters).
+** BUY Powered USB hub, 7-10 ports                                            :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+** BUY Cameras, one per zone                                                  :s0:
+:PROPERTIES:
+:QTY: 4
+:EST: 140
+:PRICE: memory
+:END:
+- Pick: USB cameras with manual exposure and white balance. They work on any host. One is enough for Stage 0.
+- Alternatives: Raspberry Pi camera modules (two fit a Pi 5 directly); a small Pi with camera per zone as a network camera; one wide camera covering two zones; a webcam you already own.
+** BUY Grey cards                                                             :s0:
+:PROPERTIES:
+:QTY: 4
+:EST: 15
+:PRICE: memory
+:END:
+- Alternatives: a full colour-reference chart (about $70-100, better colour correction); matte grey paint on card.
+** BUY Spectral light sensor per zone                                         :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 65
+:PRICE: memory
+:END:
+- Pick: AS7341 breakout, 11 channels. A 2025 preprint built a roughly $50 PAR sensor on this chip.
+- Alternatives: a plain photodiode with amplifier per zone; skip and rely on the calibration table alone.
+** BUY PAR meter for calibration                                              :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 175
+:PRICE: checked
+:END:
+- Pick: a generic handheld quantum meter, $174-310 (checked; accuracy claims unverified, and some cheap meters read LEDs poorly).
+- Alternatives: borrow one for a day, since calibration is a one-off; a research-grade sensor (above $450, within about 5%); a phone light-meter app with a diffuser (rough, memory); skip and work in relative units.
+** BUY Air temperature and humidity sensors                                   :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 25
+:PRICE: memory
+:END:
+- Pick: SHT4x breakouts. Alternatives: BME280; one sensor for the whole shelf.
+** BUY Waterproof solution temperature probes                                 :s1:
+:PROPERTIES:
+:QTY: 4
+:EST: 12
+:PRICE: memory
+:END:
+- Pick: DS18B20 on a cable.
+** BUY Protoboard, headers, sensor cabling                                    :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+** BUY CO2 sensor                                                    :s3:optional:
+:PROPERTIES:
+:QTY: 1
+:EST: 40
+:PRICE: memory
+:END:
+- Pick: SCD41. Room CO2 swings with people present and affects growth.
+** BUY Load cells with amplifier                                     :s6:optional:
+:PROPERTIES:
+:QTY: 4
+:EST: 25
+:PRICE: memory
+:END:
+- For water use and growth per jar.
+
+* Assay station                                                              :assay:
+:PROPERTIES:
+:CUSTOM_ID: assay
+:END:
+** BUY Potentiostat                                                           :s2:
+:PROPERTIES:
+:CUSTOM_ID: potentiostat
+:QTY: 1
+:EST: 250
+:PRICE: checked
+:END:
+- Pick: Rodeostat, open hardware with a Python library on USB. About $250 (a 2022 figure; check the current price). Fastest route to data.
+- Alternatives:
+  - Build one: a DAC, two op-amps and an ADC on an ESP32 or Pico, about $30 in parts. Published designs exist at $15-30. Enough for vitamin C and nicotine sweeps.
+  - Your own board around the AD5941 chip, which does both voltammetry and impedance. Chip price not checked.
+  - The official AD5941 evaluation board costs $318-416 (checked). Earlier I suggested "an AD5941-class front end" without knowing this; at that price it is not worth it.
+  - PalmSens Sensit Smart, 890 euro (checked). Polished, plugs into a phone or PC.
+** BUY Screen-printed carbon electrodes                                       :s2:
+:PROPERTIES:
+:QTY: 50
+:EST: 150
+:PRICE: memory
+:END:
+- Pick: a pack of plain carbon three-electrode strips with a matching edge connector. Check the connector fits your potentiostat.
+- Alternatives: Pine Research sells 10-packs; generic strips from marketplaces (cheaper, variable); home-made pencil-lead working electrode with a silver/silver-chloride wire and a graphite rod (a few dollars, fine for development).
+** BUY Adjustable micropipettes and tips                                      :s2:
+:PROPERTIES:
+:QTY: 2
+:EST: 70
+:PRICE: memory
+:END:
+- Pick: 100-1000 uL and 10-100 uL.
+- Alternatives: fixed-volume pipettes; 1 mL syringes (cheap, less precise).
+** BUY Milligram scale                                                        :s2:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+** BUY Tubes, micropestles or small mortar, filters, rack                     :s2:
+:PROPERTIES:
+:QTY: 1
+:EST: 30
+:PRICE: memory
+:END:
+** BUY Leaf punches, 6-8 mm                                                   :s2:
+:PROPERTIES:
+:QTY: 5
+:EST: 10
+:PRICE: memory
+:END:
+- Alternatives: cork borer; a paper hole punch.
+** BUY Chemicals                                                              :s2:
+:PROPERTIES:
+:QTY: 1
+:EST: 40
+:PRICE: memory
+:END:
+- Phosphate buffer salts or tablets, distilled water.
+- Extraction acid: oxalic or metaphosphoric acid; citric acid as a fallback.
+- Pure vitamin C powder as the standard.
+- Ethanol and a little acid for pigment extracts.
+- Optional: ascorbate oxidase enzyme for the specificity check.
+** BUY Nicotine standard                                                      :s5:
+:PROPERTIES:
+:QTY: 1
+:EST: 15
+:PRICE: memory
+:END:
+- Pick: unflavoured nicotine base liquid of stated strength. Availability and rules vary by country.
+- Alternatives: an analytical standard from a lab supplier (dearer, may need an account); work in relative units against a reference leaf extract.
+** BUY Simple photometer for pigment extracts                                 :s2:
+:PROPERTIES:
+:QTY: 1
+:EST: 20
+:PRICE: memory
+:END:
+- Pick: a green LED, a cuvette holder and a spare AS7341 or photodiode.
+- Alternatives: a used lab spectrophotometer ($100-300); a handheld colorimeter.
+** BUY Gloves, eye protection, labels                                         :s2:
+:PROPERTIES:
+:QTY: 1
+:EST: 15
+:PRICE: memory
+:END:
+** BUY Vitamin C test strips                                         :s2:optional:
+:PROPERTIES:
+:QTY: 100
+:EST: 50
+:PRICE: memory
+:END:
+- Cross-check for the electrode method.
+- Alternatives: iodine and starch titration (about $10).
+
+* Root-zone current                                                          :current:
+Design in [[file:rig.org::#root-current][rig: root-zone current]].
+** BUY Graphite rods, 6 mm                                                    :s3:
+:PROPERTIES:
+:QTY: 20
+:EST: 15
+:PRICE: memory
+:END:
+- Alternatives: titanium mesh with mixed-metal-oxide coating (longer life as the positive electrode); platinum wire (best, dear); thick pencil leads.
+** BUY Current source parts, four channels                                    :s3:
+:PROPERTIES:
+:QTY: 1
+:EST: 25
+:PRICE: memory
+:END:
+- Pick: a four-channel DAC, op-amps, sense resistors and analogue switches for polarity reversal.
+- Alternatives: a bench supply in constant-current mode with a series resistor for a first manual test; your own board ([[#custom-boards][custom boards]]).
+** BUY Current and voltage monitors                                           :s3:
+:PROPERTIES:
+:QTY: 4
+:EST: 15
+:PRICE: memory
+:END:
+- Pick: INA219 breakouts. Alternatives: read the sense resistors with the controller's ADC.
+** BUY Floating supply for the current source                                 :s3:
+:PROPERTIES:
+:QTY: 1
+:EST: 10
+:PRICE: memory
+:END:
+- Pick: a small isolated DC-DC module. Alternatives: a battery pack.
+
+* Tobacco track                                                              :tobacco:
+** BUY Tobacco seeds                                                          :s1:
+:PROPERTIES:
+:QTY: 1
+:EST: 5
+:PRICE: memory
+:END:
+- Pick: common tobacco, used at the rosette stage.
+- Alternatives: /Nicotiana benthamiana/ (smaller); /Nicotiana rustica/ (more nicotine, larger).
+** BUY Opaque containers, 2-4 L, with lids and net pots                       :s5:
+:PROPERTIES:
+:QTY: 8
+:EST: 25
+:PRICE: memory
+:END:
+** BUY Air pump, tubing, air stones                                           :s5:
+:PROPERTIES:
+:QTY: 1
+:EST: 20
+:PRICE: memory
+:END:
+- Larger plants in larger containers do better with aerated solution (memory).
+** BUY Light for a tobacco zone                                               :s5:
+:PROPERTIES:
+:QTY: 1
+:EST: 60
+:PRICE: memory
+:END:
+- Pick: the same strip design, built taller. Alternatives: a commercial grow bar plus a UV-A strip.
+
+* Optional modules                                                           :optional:
+** BUY Plant electrodes and recording front end                              :s6:
+:PROPERTIES:
+:QTY: 1
+:EST: 120
+:PRICE: memory
+:END:
+- Silver wire, electrode gel, high-impedance buffers, a 24-bit ADC board, a USB isolator.
+** BUY Impedance front end                                                    :s6:
+:PROPERTIES:
+:QTY: 1
+:EST: 30
+:PRICE: memory
+:END:
+- Pick: AD5933 breakout. Alternatives: the AD5941 on your own board, shared with the potentiostat.
+** BUY Fluorescence index parts                                               :s6:
+:PROPERTIES:
+:QTY: 1
+:EST: 40
+:PRICE: memory
+:END:
+- UV-A and red LEDs, a photodiode, a long-pass filter above 700 nm.
+** BUY Root-zone cooling                                                      :s3:
+:PROPERTIES:
+:QTY: 1
+:EST: 60
+:PRICE: memory
+:END:
+- Pick: Peltier module with a small pump loop. Alternatives: ice packs for a first manual test.
+
+* Custom boards
+:PROPERTIES:
+:CUSTOM_ID: custom-boards
+:END:
+
+Since you can design boards and have them made, three boards would
+replace most of the protoboard work. None is needed for Stage 0.
+
+| Board          | Replaces                                              | Main parts                                                     |
+|----------------+-------------------------------------------------------+----------------------------------------------------------------|
+| Zone controller | Dev board, MOSFET wiring, sensor cabling             | ESP32-S3 module, 5 MOSFET channels with gate drivers, 24 V input and buck converter, sensor connectors |
+| Current source | Protoboard current source and monitors                | Four-channel DAC, op-amps, polarity switches, current sensing, isolated supply |
+| Potentiostat   | Bought potentiostat, impedance breakout               | AD5941 or a discrete op-amp design, electrode-strip connector  |
+
+I would prototype each on a breadboard through Stage 1 and order boards
+once the circuit has stopped changing.

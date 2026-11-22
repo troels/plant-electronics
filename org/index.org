@@ -1,0 +1,63 @@
+#+TITLE: Plant metabolite rig
+#+DATE: 2026-11-22
+#+STARTUP: overview
+
+A shelf of hydroponic plants where one computer sets the light and the
+root-zone current for each group of plants, measures what the plants
+produce, and searches for the recipe that produces the most.
+
+* Documents
+
+- [[file:targets.org][Targets]] :: which compounds, in which plants, what is known to change them, how each is measured
+- [[file:rig.org][Rig]] :: hardware and software architecture, everything connected to one computer
+- [[file:assays.org][Assays]] :: how each compound is measured, and how the measurements are checked
+- [[file:experiments.org][Experiments]] :: batch pipeline, controls, screening list, optimisation method
+- [[file:roadmap.org][Roadmap]] :: stages with exit criteria, repo layout, first build step
+- [[file:shopping.org][Shopping list]] :: every item with a recommended pick, alternatives and an estimated price
+- [[file:literature.org][Literature]] :: sources behind the claims in these documents
+
+* The approach in brief
+
+- *Main track:* red lettuce in hydroponic jars. Red pigment (anthocyanin) is read live by camera; vitamin C is read from a small leaf sample by voltammetry.
+- *Second track:* tobacco in hydroponics for nicotine, read from leaf punches by voltammetry. Slower, started in parallel.
+- *Inputs the computer controls:* light intensity, spectrum (white, red, blue, UV-A, optional far-red), photoperiod, pulse frequency, and current through the root zone.
+- *Weekly batches:* all plants grow under one standard light for about three weeks, then get a one-week treatment. A new batch finishes every week.
+- *Method:* first reproduce effects that are already published (blue light raises redness, strong light raises vitamin C, wounding raises nicotine). Then screen the untested inputs. Then let an optimiser choose recipes.
+- *One computer:* a host (desktop or Raspberry Pi) runs the scheduler, database, dashboard and analysis. One ESP32-S3 per light zone does the timing.
+
+* What is known and what is open
+
+| Question                                        | Status                                          |
+|-------------------------------------------------+-------------------------------------------------|
+| Blue or UV-A light raises lettuce redness       | Published                                       |
+| Strong or continuous light raises vitamin C     | Published, with an oxidative-stress trade-off   |
+| Pulsed light at equal daily dose helps          | Mixed: some studies gain, some lose             |
+| Wounding or topping raises nicotine             | Published                                       |
+| Near-UV raises tobacco alkaloids                | One old whole-plant study                       |
+| Root-zone current changes pigment or vitamin C  | Untested for lettuce                            |
+| Root-zone current changes nicotine              | Untested                                        |
+| Camera can read redness                         | Published, R2 = 0.73 at canopy level            |
+| Voltammetry reads vitamin C in juice            | Published; leaf extract needs your own checks   |
+| Voltammetry reads nicotine in leaf extract      | Published for tobacco products; interference is the risk |
+
+* Decisions
+
+** Made
+- [X] Ordinary plants, grown hydroponically indoors
+- [X] Live sensors preferred over offline kits
+- [X] Everything on one computer
+- [X] Lettuce pigment, vitamin C and nicotine as the first compounds
+
+** Open
+- [ ] Host: existing desktop, or a dedicated Pi or mini PC ([[file:shopping.org::#host][options]])
+- [ ] Start lean with two light zones, or build all four ([[file:shopping.org::#tiers][cost tiers]])
+- [ ] Potentiostat: buy a Rodeostat or build one ([[file:shopping.org::#potentiostat][options]])
+- [ ] LED build: strips on MOSFETs, or star LEDs on constant-current drivers ([[file:rig.org::#light][trade-offs]])
+- [ ] Which circuits become your own boards, and when ([[file:shopping.org::#custom-boards][outline]])
+- [ ] Country, for suppliers and for nicotine standard availability
+
+* Conventions in these documents
+
+- A claim marked *(memory)* is from general knowledge and was not checked.
+- Everything else with a source was checked by web search on 2026-11-22, from titles, abstracts and snippets. Full texts were not read.
+- Prices are in US dollars. Each shopping item says whether its price was checked or is from memory.

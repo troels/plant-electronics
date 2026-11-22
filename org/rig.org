@@ -1,0 +1,131 @@
+#+TITLE: Rig: hardware and software architecture
+#+STARTUP: overview
+
+Back to [[file:index.org][index]]. Parts and alternatives are in the [[file:shopping.org][shopping list]].
+
+* Overview
+
+#+begin_example
+                 +--------------------------------------+
+                 |  HOST (desktop, Pi or mini PC)       |
+                 |  scheduler, database, dashboard,     |
+                 |  image analysis, optimiser           |
+                 +---+--------+---------+----------+----+
+                     | USB    | USB     | USB      | USB
+          +----------+   +----+----+  +-+------+  ++-----------+
+          | powered hub| | cameras |  | potentio-| | pH/EC      |
+          +-+--+--+--+-+ | 1 per   |  | stat     | | (optional) |
+            |  |  |  |   | zone    |  | (assays) | +------------+
+   +--------+  |  |  +--------+
+   |           |  |           |
+ +-+------+ +--+---+ +---+----+ +--------+
+ | zone 1 | | zone 2| | zone 3 | | zone 4 |   one microcontroller each
+ +--------+ +-------+ +--------+ +--------+
+   each zone: 4-5 LED channels, light sensor, air and water
+   temperature, up to 4 root-current channels, 4 jars
+#+end_example
+
+- *Host:* owns the experiment. It knows which jar is in which zone, which recipe each zone runs, and stores every reading with a timestamp.
+- *Zone controller:* an ESP32-S3 per zone, since you already know the ESP32. It generates the light waveforms and the root current, reads the zone sensors, and reports over USB serial.
+- *Why a microcontroller per zone:* pulse-frequency experiments need exact timing, which a Linux host cannot give directly.
+- *Why USB and not Wi-Fi:* a cable gives power, a reliable link and no pairing. Wi-Fi stays available as a fallback.
+- *Custom boards:* a zone-controller board and a current-source board are natural JLCPCB projects once the breadboard versions settle ([[file:shopping.org::#custom-boards][outline]]).
+
+Alternatives to this layout:
+
+| Layout                                  | For                              | Against                                  |
+|-----------------------------------------+----------------------------------+------------------------------------------|
+| ESP32-S3 per zone on USB (recommended)  | Exact timing, any host works     | Firmware to write                        |
+| Raspberry Pi Pico 2 per zone on USB     | Same, slightly cheaper           | A second toolchain for you to learn      |
+| Pi drives everything from its own pins  | Fewest parts, quick start        | Ties you to a Pi; weak timing; long wires |
+| ESP32 nodes on Wi-Fi with ESPHome       | Almost no code, ready dashboards | Little control of timing and experiment records |
+
+* Light engine
+:PROPERTIES:
+:CUSTOM_ID: light
+:END:
+
+** Channels per zone
+
+| Channel  | Wavelength  | Purpose                                 | Rough power |
+|----------+-------------+-----------------------------------------+-------------|
+| White    | broad       | Base growth light; also the photo light | 15-20 W     |
+| Deep red | 660 nm      | Efficient growth light, spectrum ratio  | 10 W        |
+| Blue     | 450 nm      | Redness and vitamin C lever             | 5-10 W      |
+| UV-A     | 385-395 nm  | Redness lever, flavonols, tobacco       | 5-10 W      |
+| Far-red  | 730 nm      | Optional; end-of-day experiments        | 5 W         |
+
+The power figures are my estimates for a zone of about 30 x 45 cm at
+200 umol/m2/s of base light and up to 60 umol/m2/s of blue.
+
+** Two ways to build it
+
+| Build                                         | For                                  | Against                             |
+|-----------------------------------------------+--------------------------------------+-------------------------------------|
+| 24 V LED strips switched by MOSFETs (recommended) | Easy, cheap, pulses to tens of kHz | Wavelengths as sold; lower efficiency |
+| 3 W star LEDs on constant-current drivers     | Exact wavelengths, efficient         | Heatsinks, more assembly; driver dimming range unverified |
+| Addressable RGBW strip                        | One data wire, good for Stage 0      | Weak, wrong red and blue, fixed internal flicker |
+| Commercial dimmable grow bars                 | No assembly                          | Little spectral control             |
+
+** Dimming and pulsing are separate layers
+
+- *Dimming:* fast PWM at 20 kHz or more sets intensity. At that rate the plant sees steady light.
+- *Pulsing:* a slow on/off pattern on top of it, from 0.01 Hz to 1 kHz, is the experimental variable.
+- *Why this matters:* ordinary PWM dimming is already pulsed light. If dimming and pulsing share one frequency, the pulse experiments are confounded.
+- *Equal dose:* when a zone is pulsed at 50% duty, its intensity doubles so the daily light total matches the control.
+
+** Calibration
+
+Each channel in each zone gets a table of duty cycle against measured
+light at plant height, made with a PAR meter. The per-zone light sensor
+then watches for drift.
+
+* Root-zone current
+:PROPERTIES:
+:CUSTOM_ID: root-current
+:END:
+
+- *Circuit:* per jar, two inert electrodes in the solution and one channel of a programmable current source with polarity reversal. Voltage and current are logged.
+- *Electrodes:* graphite rods. Copper, steel and aluminium dissolve; copper is toxic to roots.
+- *Waveforms:* steady DC, slow pulses, and charge-balanced alternating current.
+- *Range:* start in the microamp range and step up, watching pH and root colour. The published work says only "sub-lethal"; the level for lettuce has to be found.
+- *Main confound:* current through nutrient solution changes the solution itself (pH shifts, reactive by-products). A control jar gets solution that was pre-treated with current while no plant was in it.
+- *Fail-safe:* current drops to zero if the controller loses the host or the measured voltage leaves its limits.
+
+* Sensors
+
+| Sensor                    | Per  | Reads                                   | Stage |
+|---------------------------+------+-----------------------------------------+-------|
+| Colour camera, top-down   | zone | Redness, greenness, leaf area           | 0     |
+| Spectral light sensor     | zone | Light level and spectrum drift          | 1     |
+| Air temperature, humidity | zone | Environment                             | 1     |
+| Solution temperature      | zone | Root-zone temperature                   | 1     |
+| pH and conductivity       | jar  | Nutrient state; manual pen or probe     | 0     |
+| Potentiostat              | rig  | Vitamin C and nicotine in extracts      | 2     |
+| Load cell under a jar     | jar  | Water use, growth (optional)            | later |
+| CO2                       | room | Environment (optional)                  | later |
+| Plant electrodes          | plant | Electrical signals, impedance (optional) | later |
+
+** Camera protocol
+:PROPERTIES:
+:CUSTOM_ID: camera-protocol
+:END:
+
+- Grow channels off, white channel on at a fixed level, fixed exposure and white balance, grey card in frame.
+- Same times every day, at least twice.
+- Per image: plant mask, redness index, greenness, projected leaf area.
+
+* Software
+
+- *Host services:* device manager (one serial link per controller), scheduler (recipes over time, per zone and jar), recorder, image pipeline, dashboard, optimiser.
+- *Storage:* SQLite for experiment records (batches, plants, zones, recipes, assay results); Parquet for sensor time series; images on disk.
+- *Protocol:* framed binary or line-based messages over USB serial, identical for real controllers and for the simulator.
+- *Simulator:* virtual zones with virtual plants whose pigment and growth respond to the recipe. It lets the whole software chain run before any hardware exists.
+- *Fail-safes:* a controller keeps running its last schedule from its own clock if the host goes away; UV has a hard daily limit in firmware; an over-temperature reading turns a zone off.
+
+* Safety
+
+- *UV-A:* enclose the shelf with a curtain and wear UV-blocking glasses when it is open with UV on.
+- *Mains:* one enclosed 24 V supply on a residual-current-protected socket; everything on the shelf is low voltage.
+- *Water:* electronics above or beside the jars, never below; drip loops on cables.
+- *Root current:* low voltage, current-limited, floating supply. High currents make small amounts of gas at the electrodes, so keep currents low and the room ventilated.

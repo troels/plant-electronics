@@ -1,0 +1,84 @@
+#+TITLE: Assays: how each compound is measured
+#+STARTUP: overview
+
+Back to [[file:index.org][index]]. Compounds are described in [[file:targets.org][targets]]; supplies are in the [[file:shopping.org::#assay][shopping list]].
+
+Procedure details here are starting points from general knowledge unless
+a source is named in [[file:literature.org][literature]]. Each one has to be tuned and checked on
+your own plants before its numbers are trusted.
+
+* Redness by camera
+:PROPERTIES:
+:CUSTOM_ID: camera
+:END:
+
+1. Capture under the fixed white light with a grey card in frame ([[file:rig.org::#camera-protocol][protocol]]).
+2. Normalise the image to the grey card.
+3. Mask plant pixels.
+4. Compute (red - green) / (red + green) per pixel; report the median over the plant and the red-area fraction.
+5. Report projected leaf area as the growth measure.
+
+*Validation:* at harvest, extract pigment from leaf discs and compare
+with the camera index across at least 20 discs spanning pale to dark.
+
+** Pigment extract (validation only)
+
+- Leaf disc in acidified ethanol, in the dark, until the disc is pale.
+- Measure absorbance in green light (about 530 nm) with a simple photometer.
+- This gives relative pigment per disc area, which is all the validation needs.
+
+* Vitamin C by voltammetry
+:PROPERTIES:
+:CUSTOM_ID: vitc
+:END:
+
+1. Sample at the same hour each time, the same leaf position on each plant.
+2. Weigh about 0.5 g of fresh leaf.
+3. Grind in 2 mL of cold dilute acid (oxalic or metaphosphoric acid; citric acid as a household fallback).
+4. Let it settle or filter; put a drop on a carbon electrode with buffer.
+5. Sweep the voltage upward from 0 V and record the oxidation peak.
+6. Add a known amount of vitamin C to the same extract and repeat (standard addition). The step in peak height calibrates that sample.
+7. Finish within minutes of grinding.
+
+*Checks:*
+- *Specificity:* measure an aliquot again after its vitamin C has been destroyed (left open and warm, or treated with the enzyme ascorbate oxidase). What remains is interference from other compounds.
+- *Cross-check:* test strips or an iodine titration on the same extract.
+- *Repeatability:* three samples from one plant should agree within about 15%.
+
+*Standard:* pure vitamin C powder, dissolved fresh each session.
+
+* Nicotine by voltammetry
+:PROPERTIES:
+:CUSTOM_ID: nicotine-assay
+:END:
+
+1. Punch a disc from a leaf of defined position and age.
+2. Extract in buffer.
+3. Sweep to about +1.2 V and record the peak. Its position depends on the electrode: published values run from +0.6 to +1.3 V.
+4. Standard addition with a nicotine solution of known strength.
+
+*Checks:*
+- *Interference:* a published attempt in a food mixture recovered only 27-34% of added nicotine. Always use standard addition in the leaf extract itself, and report relative change against day 0 of the same plant.
+- *Assay validation:* a wounded plant must read higher than its unwounded neighbour after about five days. If the assay cannot see that, it cannot judge the electrical treatments.
+- *Cross-check:* send a few paired samples to a lab with chromatography.
+
+* Electrodes and instrument
+
+- *Instrument:* a potentiostat controlled from the host ([[file:shopping.org::#potentiostat][options]]).
+- *Electrodes:* disposable screen-printed carbon, one per sample, or home-made pencil-lead electrodes for development work.
+- *Records:* every sweep is stored raw with its sample ID, so peak-finding can be redone later.
+
+* Quality rules for all assays
+
+- Every session includes a blank and a standard.
+- Samples are coded so the person measuring does not know the treatment.
+- Results enter the same database as the sensor data, linked to plant, zone and batch.
+
+* Safety
+:PROPERTIES:
+:CUSTOM_ID: safety
+:END:
+
+- *Nicotine:* it passes through skin from wet leaves, so wear gloves for tobacco work. A leaf punch holds tens of micrograms (my estimate); a reanalysis puts the lower limit for a fatal dose at 0.5-1 g swallowed. Do not concentrate extracts.
+- *Nicotine standard:* the stock solution is the most concentrated nicotine on the bench. Gloves, a labelled closed bottle, out of reach of children and pets.
+- *Acids and ethanol:* dilute and low-hazard, but wear eye protection when grinding.
